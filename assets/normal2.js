@@ -15,7 +15,7 @@ function find_material(searching_recipe, type, lng){
   var recipe_material = "<ul class='recipe_list'>";
   if(type = 1){
     type = 'normal';
-  }else f(type = 2){
+  }else if(type = 2){
     type = 'top';
   }
     $.getJSON(baseurl+"/alchemist/"+type+".json?version=20220801", function(data) {
