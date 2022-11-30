@@ -141,6 +141,8 @@ function get_item(item, lng, type){
   } else if(type == 2){
     type = "top";
   }
+
+  console.log(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json");
   $.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
     const info = data.find(v => v.no == item);
     console.log(info);
