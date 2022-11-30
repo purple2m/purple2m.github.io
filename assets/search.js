@@ -21,7 +21,7 @@ $(document).ready(function() {
 	let advanced = localStorage.getItem('advanced');
 	let advanced_update = localStorage.getItem('advanced_update');
 
-  const update = 20221112;
+  const update = 20221130;
 
 	normal = JSON.parse(normal);
   advanced = JSON.parse(advanced);
@@ -29,7 +29,7 @@ $(document).ready(function() {
   if(typeof normal === 'undefined' || normal === null || normal_update != update){
     $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
       localStorage.setItem('noraml', JSON.stringify(data));
-      localStorage.setItem('noraml_version', 20221112);
+      localStorage.setItem('noraml_version', 20221130);
       console.log("일반 연금 선택");
       auto_come(data, 1);
     });
@@ -43,7 +43,7 @@ $(document).ready(function() {
       if(typeof normal === 'undefined' || normal === null || normal_update != update){
         $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
     			localStorage.setItem('noraml', JSON.stringify(data));
-          localStorage.setItem('noraml_version', 20221112);
+          localStorage.setItem('noraml_version', 20221130);
           console.log("일반 연금 선택");
           auto_come(data, type);
     		});
@@ -54,7 +54,7 @@ $(document).ready(function() {
         if(typeof advanced === 'undefined' || advanced === null || advanced_update != update){
           $.getJSON("https://purple2m.github.io/item/search/top.json?version=20220809", function(data) {
       			localStorage.setItem('advanced', JSON.stringify(data));
-            localStorage.setItem('advanced_update', 20221112);
+            localStorage.setItem('advanced_update', 20221130);
             console.log("상급 연금 선택");
             auto_come(data, type);
       		});
