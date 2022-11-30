@@ -39,7 +39,7 @@ $(document).ready(function() {
 
   $('input:radio[name=type]').change(function(){
     let type = $("input:radio[name='type']:checked").val();
-    if(type === 1){
+    if(type == 1){
       if(typeof normal === 'undefined' || normal === null || normal_update != update){
         $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
     			localStorage.setItem('noraml', JSON.stringify(data));
@@ -50,7 +50,7 @@ $(document).ready(function() {
     	}else{
         auto_come(normal);
     	}
-    } else if(type === 2){
+    } else if(type == 2){
         if(typeof advanced === 'undefined' || advanced === null || advanced_update != update){
           $.getJSON("https://purple2m.github.io/item/search/top.json?version=20220809", function(data) {
       			localStorage.setItem('advanced', JSON.stringify(data));
