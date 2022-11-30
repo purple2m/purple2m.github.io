@@ -144,10 +144,10 @@ function get_item(item, lng, type){
   } else if(item_type1 == 70){ // 마력석
     item_type = "stone";
   }
-  if(type == 1){
-    type = "normal";
-  } else if(type == 2){
+  if(type == 2){
     type = "top";
+  } else {
+    type = "normal";
   }
 
   console.log(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json");
