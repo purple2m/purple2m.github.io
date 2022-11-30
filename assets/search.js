@@ -31,10 +31,10 @@ $(document).ready(function() {
       localStorage.setItem('noraml', JSON.stringify(data));
       localStorage.setItem('noraml_version', 20221112);
       console.log("일반 연금 선택");
-      auto_come(data);
+      auto_come(data, 1);
     });
   }else{
-    auto_come(normal);
+    auto_come(normal, 1);
   }
 
   $('input:radio[name=type]').change(function(){
