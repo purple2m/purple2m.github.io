@@ -21,7 +21,7 @@ function get_top(item, lng){
     txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=2\">상급 연금</a>";
   }
   var my_list2=document.getElementById("searching_recipe");
-  my_list2.innerHTML = find;
+  my_list2.innerHTML = txt;
 }
 function find_material(searching_recipe, type, lng){
   var recipe_material = "<ul class='recipe_list'>";
