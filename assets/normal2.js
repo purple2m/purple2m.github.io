@@ -7,7 +7,7 @@ $('.view_recipe').click(function(){
 });
 
 function isitem(element, item)  {
-  if(element.id === item)  {
+  if(element.no === item)  {
     return true;
   }
 }
@@ -16,7 +16,7 @@ function find_material(searching_recipe, type, lng){
 
     $.getJSON(baseurl+"/alchemist/"+type+".json?version=20220801", function(data) {
       for (var i=0; i < data.length;++i){
-        if(data[i]['id'] == searching_recipe){
+        if(data[i]['no'] == searching_recipe){
           for (var j=0; j < data[i]['recipe'].length;++j){
             if (lng == "jp"){
               find_recipe = data[i]['jp'][j].split(',');
@@ -82,14 +82,14 @@ function get_recipe(data, lng, type){
   let recipe;
 
   if(type == 1){
-    find += "<ul class=\"idrmal_alc\">";
+    find += "<ul class=\"normal_alc\">";
     if(lng == "jp"){
       find += "<h1>ふつう錬金</h1>";
     } else {
       find += "<h1>일반 연금</h1>";
     }
-    for (var i=0; i < data.idrmal.length;++i){
-      step = data.idrmal[i].split(',');
+    for (var i=0; i < data.normal.length;++i){
+      step = data.normal[i].split(',');
       recipe = step[2].split('-');
       if(lng == "jp"){
         find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
@@ -120,7 +120,7 @@ function get_recipe(data, lng, type){
   my_list2.innerHTML = find;
 }
 
-function get_item(item, lng, racipe){
+function get_item(item, lng, type){
   let item_type;
   let item_type1 = item.substr(0, 2);
   let item_type2 = item.substr(2, 2);
@@ -136,17 +136,17 @@ function get_item(item, lng, racipe){
   } else if(item_type1 == 50){ // 스킬
     item_type = "skill";
   }
-  if(racipe == 1){
-    racipe = "idrmal";
-  } else if(racipe == 2){
-    racipe = "top";
+  if(type == 1){
+    type = "normal";
+  } else if(type == 2){
+    type = "top";
   }
 
-  console.log(baseurl+"/item/"+racipe+"/"+item_type+"/"+item_type2+".json");
-  $.getJSON(baseurl+"/item/"+racipe+"/"+item_type+"/"+item_type2+".json", function(data) {
+  console.log(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json");
+  $.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
     const info = data.find(v => v.id == item);
     console.log(info);
-    get_recipe(info, lng, racipe);
+    get_recipe(info, lng, type);
   });
 }
 
