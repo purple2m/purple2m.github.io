@@ -15,11 +15,42 @@ $(document).ready(function() {
     $('.wrapper-masthead').children(":last").toggle();
   });
 	//저장
-	var item2 = localStorage.getItem('item2');
-	var update2 = localStorage.getItem('version2');
-  const version2 = 20221112;
+	let normal = localStorage.getItem('normal');
+	let normal_update = localStorage.getItem('normal_update');
 
-	item2 = JSON.parse(item2);
+	let advanced = localStorage.getItem('advanced');
+	let advanced_update = localStorage.getItem('advanced_update');
+
+  const update = 20221112;
+
+	normal = JSON.parse(normal);
+  advanced = JSON.parse(advanced);
+
+  if($('input:radio[name=type]').is(':checked') == true){
+    let type = $("input:radio[name='type']:checked").val();
+
+    if(type === 1){
+      if(typeof normal === 'undefined' || normal === null || normal_update != update){
+        $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
+    			localStorage.setItem('noraml', JSON.stringify(data));
+          localStorage.setItem('noraml_version', 20221112);
+          auto_come(data);
+    		});
+    	}else{
+        auto_come(normal);
+    	}
+    } else if(type === 2){
+        if(typeof advanced === 'undefined' || advanced === null || advanced_update != update){
+          $.getJSON("https://purple2m.github.io/item/search/top.json?version=20220809", function(data) {
+      			localStorage.setItem('advanced', JSON.stringify(data));
+            localStorage.setItem('advanced_update', 20221112);
+            auto_come(data);
+      		});
+        }else{
+          auto_come(advanced);
+        }
+    }
+  }
 
   function auto_come(data){
     var ref = data;
@@ -33,9 +64,9 @@ $(document).ready(function() {
 
             ref.forEach(function(arg){
 
-                if(arg.name.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1){
-                  if(arg.name.replace(/ /g, '').indexOf(txt) > -1){
-                    var item_name = arg.name;
+                if(arg.ko.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1){
+                  if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
+                    var item_name = arg.ko;
                     var lang = "ko";
                   } else if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
                     var item_name = arg.jp;
@@ -65,16 +96,4 @@ $(document).ready(function() {
         }
     });
   }
-
-
-	if(typeof item2 === 'undefined' || item2 === null || update2 != version2){
-    window.localStorage.clear();
-		$.getJSON("https://purple2m.github.io/alchemist/item2.json?version=20220809", function(data) {
-			localStorage.setItem('item2', JSON.stringify(data));
-      localStorage.setItem('version2', 20221112);
-      auto_come(data);
-		});
-	}else{
-    auto_come(item2);
-	}
 });
