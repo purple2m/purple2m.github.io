@@ -26,14 +26,25 @@ $(document).ready(function() {
 	normal = JSON.parse(normal);
   advanced = JSON.parse(advanced);
 
-  if($('input:radio[name=type]').is(':checked') == true){
-    let type = $("input:radio[name='type']:checked").val();
+  if(typeof normal === 'undefined' || normal === null || normal_update != update){
+    $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
+      localStorage.setItem('noraml', JSON.stringify(data));
+      localStorage.setItem('noraml_version', 20221112);
+      console.log("일반 연금 선택");
+      auto_come(data);
+    });
+  }else{
+    auto_come(normal);
+  }
 
+  $('input:radio[name=type]').change(function(){
+    let type = $("input:radio[name='type']:checked").val();
     if(type === 1){
       if(typeof normal === 'undefined' || normal === null || normal_update != update){
         $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
     			localStorage.setItem('noraml', JSON.stringify(data));
           localStorage.setItem('noraml_version', 20221112);
+          console.log("일반 연금 선택");
           auto_come(data);
     		});
     	}else{
@@ -44,13 +55,14 @@ $(document).ready(function() {
           $.getJSON("https://purple2m.github.io/item/search/top.json?version=20220809", function(data) {
       			localStorage.setItem('advanced', JSON.stringify(data));
             localStorage.setItem('advanced_update', 20221112);
+            console.log("상급 연금 선택");
             auto_come(data);
       		});
         }else{
           auto_come(advanced);
         }
     }
-  }
+  });
 
   function auto_come(data){
     var ref = data;
