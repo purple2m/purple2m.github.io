@@ -155,5 +155,5 @@ function get_item(item, lng, type){
 }
 
 if(searching_item){
-  get_item(searching_item, lng, type);
+  get_item(searching_item, lng, searching_type);
 }
