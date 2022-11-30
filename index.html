@@ -2,8 +2,8 @@
 layout: default
 description: "You can search for items in Lineage 2M to find a collection of items related to the alchemy material in which the item exists."
 ---
-<a href="{{ site.url }}/ko"><span class="flag flag-kr"> </span>   한국어</a>
-<a href="{{ site.url }}/jp"><span class="flag flag-jp"> </span>   日本語</a>
+<a href="{{ site.url }}/ko"><span class="flag flag-kr"> </span>   Kor</a>
+<a href="{{ site.url }}/jp"><span class="flag flag-jp"> </span>   Jap</a>
 
 <section class="recent-wrapper">
   <header>
@@ -12,24 +12,28 @@ description: "You can search for items in Lineage 2M to find a collection of ite
   </header>
   <div class="recent" lang="ko">
     <article class="post">
-      <h2>List of Lineage2m weapons</h2>
-      <a href="{{ site.baseurl }}ko/list/weapon/page/1/"><span class="flag flag-kr"> </span> 한국어</a>
-      <a href="{{ site.baseurl }}jp/list/weapon/page/1/"><span class="flag flag-kr"> </span> 日本語</a>
+      <h2>List of weapons</h2>
+      <img src="{{ site.url }}/images/wp.png">
+      <a href="{{ site.baseurl }}ko/list/weapon/page/1/"><span class="flag flag-kr"> </span> Kor</a>
+      <a href="{{ site.baseurl }}jp/list/weapon/page/1/"><span class="flag flag-jp"> </span> Jap</a>
     </article>
     <article class="post">
-      <h2>List of Lineage2m armors</h2>
-      <a href="{{ site.baseurl }}ko/list/armor/page/1/"><span class="flag flag-kr"> </span> 한국어</a>
-      <a href="{{ site.baseurl }}jp/list/armor/page/1/"><span class="flag flag-kr"> </span> 日本語</a>
+      <h2>List of armors</h2>
+      <img src="{{ site.url }}/images/ar.png">
+      <a href="{{ site.baseurl }}ko/list/armor/page/1/"><span class="flag flag-kr"> </span> Kor</a>
+      <a href="{{ site.baseurl }}jp/list/armor/page/1/"><span class="flag flag-jp"> </span> Jap</a>
     </article>
     <article class="post">
-      <h2>List of Lineage2m accessories</h2>
-      <a href="{{ site.baseurl }}ko/list/accessary/page/1/"><span class="flag flag-kr"> </span> 한국어</a>
-      <a href="{{ site.baseurl }}jp/list/accessary/page/1/"><span class="flag flag-kr"> </span> 日本語</a>
+      <h2>List of accessories</h2>
+      <img src="{{ site.url }}/images/acc.png">
+      <a href="{{ site.baseurl }}ko/list/accessary/page/1/"><span class="flag flag-kr"> </span> Kor</a>
+      <a href="{{ site.baseurl }}jp/list/accessary/page/1/"><span class="flag flag-jp"> </span> Jap</a>
     </article>
     <article class="post">
-      <h2>List of Lineage2m skills</h2>
-      <a href="{{ site.baseurl }}ko/list/skill/page/1/"><span class="flag flag-kr"> </span> 한국어</a>
-      <a href="{{ site.baseurl }}jp/list/skill/page/1/"><span class="flag flag-kr"> </span> 日本語</a>
+      <h2>List of skills</h2>
+      <img src="{{ site.url }}/images/skill.png">
+      <a href="{{ site.baseurl }}ko/list/skill/page/1/"><span class="flag flag-kr"> </span> Kor</a>
+      <a href="{{ site.baseurl }}jp/list/skill/page/1/"><span class="flag flag-jp"> </span> Jap</a>
     </article>
   </div>
 </section>
@@ -45,8 +49,8 @@ description: "You can search for items in Lineage 2M to find a collection of ite
         <article class="post">
           <h2>{{ post.title }}</h2>
           <h2>{{ post.jp }}</h2>
-          <a href="{{ site.baseurl }}{{ post.url }}"><span class="flag flag-kr"> </span> 한국어</a>
-          <a href="{{ site.baseurl }}{{ post.url | replace: "ko", "jp" }}"><span class="flag flag-jp"> </span>日本語</a>
+          <a href="{{ site.baseurl }}{{ post.url }}"><span class="flag flag-kr"> </span> Kor</a>
+          <a href="{{ site.baseurl }}{{ post.url | replace: "ko", "jp" }}"><span class="flag flag-jp"> </span>Jap</a>
         </article>
       {% endfor %}
     {% endif %}
@@ -62,7 +66,7 @@ description: "You can search for items in Lineage 2M to find a collection of ite
       {% for post in posts %}
         <article class="post">
           <h2>{{ post.title }}</h2>
-          <a href="{{ site.baseurl }}{{ post.url | replace: "ko", "jp" }}"><span class="flag flag-jp"> </span>日本語</a>
+          <a href="{{ site.baseurl }}{{ post.url | replace: "ko", "jp" }}"><span class="flag flag-jp"> </span>Jap</a>
         </article>
       {% endfor %}
   </div>
