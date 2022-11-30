@@ -496,18 +496,18 @@ nav {
   font-size: 1em;
   font-weight: normal;
 }
-.items{
+.recent-wrapper > .items{
   display:flex;
   text-align: center;
   flex-wrap: wrap;
 }
-.items img{
+.recent-wrapper > .items img{
   height:128px;
   @include mobile {
     height: 96px;
   }
 }
-.items > .item{
+.recent-wrapper > .items > .item{
 
 }
 footer {
