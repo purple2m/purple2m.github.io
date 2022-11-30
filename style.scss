@@ -496,6 +496,13 @@ nav {
   font-size: 1em;
   font-weight: normal;
 }
+.items{
+  display:flex;
+  text-align: center;
+}
+.items > .item{
+
+}
 footer {
   padding: 20px 0;
   text-align: center;
