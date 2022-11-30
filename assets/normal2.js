@@ -11,6 +11,18 @@ function isitem(element, item)  {
     return true;
   }
 }
+function get_top(item, lng){
+  var txt = "";
+  if (lng == "jp"){
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=1\">ふつう錬金</a>";
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=2\">上級錬金</a>";
+  } else {
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=1\">일반 연금</a>";
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=2\">상급 연금</a>";
+  }
+  var my_list2=document.getElementById("searching_recipe");
+  my_list2.innerHTML = find;
+}
 function find_material(searching_recipe, type, lng){
   var recipe_material = "<ul class='recipe_list'>";
   if(type = 1){
@@ -166,4 +178,5 @@ function get_item(item, lng, type){
 
 if(searching_item){
   get_item(searching_item, lng, searching_type);
+  get_top(searching_item, lng);
 }
