@@ -136,7 +136,6 @@ function get_item(item, lng, type){
 
   } else if(item_type1 == 30){ // 장신구
     item_type = "accessary";
-
   } else if(item_type1 == 50){ // 스킬
     item_type = "skill";
   } else if(item_type1 == 60){ // 기타
