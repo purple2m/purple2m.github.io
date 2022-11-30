@@ -67,6 +67,43 @@ $(document).ready(function() {
   function auto_come(data){
     var ref = data;
     var isComplete = false;  //autoMaker 자식이 선택 되었는지 여부
+
+    if($('#search_area').val()){
+      var txt = $('#search_area').val();
+      txt = txt.replace(/ /g, '');
+      if(txt != ''){  //빈줄이 들어오면
+          $('#autoMaker').show();
+          $('#autoMaker').children().remove();
+
+          ref.forEach(function(arg){
+
+              if(arg.ko.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1){
+                if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.ko;
+                  var lang = "ko";
+                } else if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.jp;
+                  var lang = "jp";
+                }
+                  $('#autoMaker').append(
+                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
+                  );
+              }
+          });
+          $('#autoMaker').children().each(function(){
+              $(this).click(function(){
+                  $('#search_area').val($(this).text());
+                  $('#insert_target').val($(this).text());
+                  $('#autoMaker').children().remove();
+                  isComplete = true;
+              });
+          });
+      } else {
+          $('#autoMaker').children().remove();
+          $('#autoMaker').hide();
+      }
+    }
+    
     $('#search_area').keyup(function(){
         var txt = $(this).val();
         txt = txt.replace(/ /g, '');
@@ -85,7 +122,7 @@ $(document).ready(function() {
                     var lang = "jp";
                   }
                     $('#autoMaker').append(
-                        $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.no+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
+                        $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
                     );
                 }
             });
