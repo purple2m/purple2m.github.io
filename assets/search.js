@@ -45,10 +45,10 @@ $(document).ready(function() {
     			localStorage.setItem('noraml', JSON.stringify(data));
           localStorage.setItem('noraml_version', 20221112);
           console.log("일반 연금 선택");
-          auto_come(data);
+          auto_come(data, type);
     		});
     	}else{
-        auto_come(normal);
+        auto_come(normal, type);
     	}
     } else if(type == 2){
         if(typeof advanced === 'undefined' || advanced === null || advanced_update != update){
@@ -56,15 +56,15 @@ $(document).ready(function() {
       			localStorage.setItem('advanced', JSON.stringify(data));
             localStorage.setItem('advanced_update', 20221112);
             console.log("상급 연금 선택");
-            auto_come(data);
+            auto_come(data, type);
       		});
         }else{
-          auto_come(advanced);
+          auto_come(advanced, type);
         }
     }
   });
 
-  function auto_come(data){
+  function auto_come(data, type){
     var ref = data;
     var isComplete = false;  //autoMaker 자식이 선택 되었는지 여부
 
@@ -86,7 +86,7 @@ $(document).ready(function() {
                   var lang = "jp";
                 }
                   $('#autoMaker').append(
-                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
+                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"&type="+type+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
                   );
               }
           });
@@ -103,7 +103,7 @@ $(document).ready(function() {
           $('#autoMaker').hide();
       }
     }
-    
+
     $('#search_area').keyup(function(){
         var txt = $(this).val();
         txt = txt.replace(/ /g, '');
@@ -122,7 +122,7 @@ $(document).ready(function() {
                     var lang = "jp";
                   }
                     $('#autoMaker').append(
-                        $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
+                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"&type="+type+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
                     );
                 }
             });
