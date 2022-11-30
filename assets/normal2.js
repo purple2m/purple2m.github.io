@@ -120,7 +120,7 @@ function get_recipe(data, lng, type){
   my_list2.innerHTML = find;
 }
 
-function get_item(item, lng, type){
+function get_item(item, lng, racipe){
   let item_type;
   let item_type1 = item.substr(0, 2);
   let item_type2 = item.substr(2, 2);
@@ -136,17 +136,17 @@ function get_item(item, lng, type){
   } else if(item_type1 == 50){ // 스킬
     item_type = "skill";
   }
-  if(type == 1){
-    type = "idrmal";
-  } else if(type == 2){
-    type = "top";
+  if(racipe == 1){
+    racipe = "idrmal";
+  } else if(racipe == 2){
+    racipe = "top";
   }
 
-  console.log(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json");
-  $.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
+  console.log(baseurl+"/item/"+racipe+"/"+item_type+"/"+item_type2+".json");
+  $.getJSON(baseurl+"/item/"+racipe+"/"+item_type+"/"+item_type2+".json", function(data) {
     const info = data.find(v => v.id == item);
     console.log(info);
-    get_recipe(info, lng, type);
+    get_recipe(info, lng, racipe);
   });
 }
 
