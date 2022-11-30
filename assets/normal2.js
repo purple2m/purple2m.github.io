@@ -75,7 +75,7 @@ function find_material(searching_recipe, type, lng){
 let searching_item = getParameterByName('item');
 let searching_recipe = getParameterByName('recipe');
 
-function get_recipe(data, lng){
+function get_recipe(data, lng, type){
   var step = '';
   var find = '';
   let recipe;
@@ -92,7 +92,7 @@ function get_recipe(data, lng){
     if(lng == "jp"){
       find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
     } else {
-      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.name+" ("+step[1]+")</li>";
+      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
     }
   }
   find += "</ul>";
@@ -109,7 +109,7 @@ function get_recipe(data, lng){
     if(lng == "jp"){
       find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
     } else {
-      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.name+" ("+step[1]+")</li>";
+      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
     }
   }
   find += "</ul>";

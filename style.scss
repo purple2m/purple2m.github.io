@@ -252,7 +252,7 @@ nav {
   flex-direction: column;
   height: 20em;
   overflow: auto;
-  width: 50%;
+  width: 20em;
   @include mobile {
     width: 90%;
     margin-left: 5%;
@@ -286,11 +286,17 @@ nav {
   }
 }
 .search input[type="text"] {
-  width: 100%;
-  padding : 0.1em 0.1em;
-  box-sizing: border-box;
-  font-size: 1em;
+    width: 20em;
+    padding: 0.1em 0.1em;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: rgb(28, 28, 31);
+    border: 0;
+    padding: 0.5em;
+    color: white;
+    border-radius: 0.5em;
 }
+
 .search_button{
   width:100%;
   border: 0;
@@ -500,6 +506,7 @@ nav {
   display:flex;
   text-align: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .recent-wrapper > .items img{
   height:128px;
