@@ -501,6 +501,12 @@ nav {
   text-align: center;
   flex-wrap: wrap;
 }
+.items img{
+  height:128px;
+  @include mobile {
+    height: 96px;
+  }
+}
 .items > .item{
 
 }
