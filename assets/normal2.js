@@ -74,42 +74,44 @@ function find_material(searching_recipe, type, lng){
 
 let searching_item = getParameterByName('item');
 let searching_recipe = getParameterByName('recipe');
+let searching_type = getParameterByName('type');
 
 function get_recipe(data, lng, type){
   var step = '';
   var find = '';
   let recipe;
 
-  find += "<ul class=\"normal_alc\">";
-  if(lng == "jp"){
-    find += "<h1>ふつう錬金</h1>";
-  } else {
-    find += "<h1>일반 연금</h1>";
-  }
-  for (var i=0; i < data.normal.length;++i){
-    step = data.normal[i].split(',');
-    recipe = step[2].split('-');
+  if(type == 1){
+    find += "<ul class=\"normal_alc\">";
     if(lng == "jp"){
-      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+      find += "<h1>ふつう錬金</h1>";
     } else {
-      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+      find += "<h1>일반 연금</h1>";
     }
-  }
-  find += "</ul>";
-
-  find += "<ul class=\"top_alc\">";
-  if(lng == "jp"){
-    find += "<h1>上級錬金</h1>";
-  } else {
-    find += "<h1>상급 연금</h1>";
-  }
-  for (var i=0; i < data.top.length;++i){
-    step = data.top[i].split(',');
-    recipe = step[2].split('-');
+    for (var i=0; i < data.normal.length;++i){
+      step = data.normal[i].split(',');
+      recipe = step[2].split('-');
+      if(lng == "jp"){
+        find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+      } else {
+        find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+      }
+    }
+  } else if(type == 2){
+    find += "<ul class=\"top_alc\">";
     if(lng == "jp"){
-      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+      find += "<h1>上級錬金</h1>";
     } else {
-      find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+      find += "<h1>상급 연금</h1>";
+    }
+    for (var i=0; i < data.top.length;++i){
+      step = data.top[i].split(',');
+      recipe = step[2].split('-');
+      if(lng == "jp"){
+        find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+      } else {
+        find += "<li onclick=\"find_material('"+recipe[0]+"','recipe', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+      }
     }
   }
   find += "</ul>";
@@ -118,7 +120,7 @@ function get_recipe(data, lng, type){
   my_list2.innerHTML = find;
 }
 
-function get_item(item, lng){
+function get_item(item, lng, type){
   let item_type;
   let item_type1 = item.substr(0, 2);
   let item_type2 = item.substr(2, 2);
@@ -134,8 +136,12 @@ function get_item(item, lng){
   } else if(item_type1 == 50){ // 스킬
     item_type = "skill";
   }
-
-  $.getJSON(baseurl+"/item/"+item_type+"/"+item_type2+".json", function(data) {
+  if(type == 1){
+    type = "normal";
+  } else if(type == 2){
+    type = "top";
+  }
+  $.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
     const info = data.find(v => v.no == item);
 
     if (lng == "jp"){
@@ -144,10 +150,10 @@ function get_item(item, lng){
       document.getElementById("searching_item").innerHTML = "<img class=\"thumb2\" src=\"https://wstatic-cdn.plaync.com/powerbook/l2m/icon/Icon_128/Item/Icon_"+info.icon+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">"+info.name;
     }
 
-    get_recipe(info, lng)
+    get_recipe(info, lng, type);
   });
 }
 
 if(searching_item){
-  get_item(searching_item, lng);
+  get_item(searching_item, lng, type);
 }
