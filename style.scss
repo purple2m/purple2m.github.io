@@ -515,7 +515,9 @@ nav {
   }
 }
 .recent-wrapper > .items > .item{
-
+  @include mobile {
+    flex:50%;
+  }
 }
 footer {
   padding: 20px 0;
