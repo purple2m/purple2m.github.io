@@ -636,9 +636,12 @@ footer {
    	flex-direction: column;
 
     .price_info{
-      position: absolute;
-      background-color:rgb(24,29,35);
-  		padding:0.2em;
+	    background-color:rgba(24,29,35);
+	    padding:0 0.5em 0 0.5em;
+    }
+    .price_select{
+  		display:flex;
+  		align-items: center;
     }
   }
 
