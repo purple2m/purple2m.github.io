@@ -1,14 +1,8 @@
 <div class="alc_wrap">
   <div class="top">
     <div class="info">
-      <h1 id="searching_item">
-{% case lang[1] %}
-  {% when "jp" %}
-アイテムを検索すると、該当アイテムが存在する錬金材料に関連するアイテムコレクションを確認できます。
-  {% else %}
-아이템을 검색하여 해당 아이템이 존재하는 연금 재료와 연관된 아이템 컬렉션을 확인할 수 있습니다.
-{% endcase %}
-      </h1>
+      <img class="thumb2" src="https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png">
+      <h1 id="item_name"></h1>
       <div id="list"></div>
       <div id="searching_recipe"></div>
       <div id="searching_find"></div>
@@ -16,6 +10,51 @@
     </div>
   </div>
 </div>
+
+<div class="alc_wrap">
+	<div class="top">
+		<div class="thumb">
+			<img class="thumb2" src="https://wstatic-cdn.plaync.com/powerbook/l2m/icon/Icon_128/Item/Icon_WP_Sword_G2_002.png">
+		</div>
+      	<div class="title">
+			<h1 id="item_name" class="legendary">포가튼 블레이드</h1>
+			정보 / 일반 연금 / 상급 연금 / 컬렉션(5)
+		</div>
+	</div>
+	<div class="price">
+		<img src="{{ base.url | prepend: site.url }}/trade.svg" style="opacity: 0.5;">
+		<select>
+			<option>+0</option>
+			<option>+1</option>
+			<option>+2</option>
+			<option>+3</option>
+			<option>+4</option>
+		</select>
+		포가튼 블레이드
+		<div class="price_info">
+			<ul>
+				<li>X</li>
+				<li>평균 시세 : <img src="{{ base.url | prepend: site.url }}/images/dia.svg"> 2222</li>
+				<li>현재 최저가 : 바츠1 <img src="{{ base.url | prepend: site.url }}/dia.svg"> 102</li>
+				<li>최저 거래가 : 바츠2 <img src="{{ base.url | prepend: site.url }}/dia.svg"> 500</li>
+				<li>최고 거래가 : 바츠3 <img src="{{ base.url | prepend: site.url }}/dia.svg"> 5100</li>
+			</ul>
+		</div>
+	</div>
+	<div class="info">
+		<h2>석궁</h2>
+		<ul>
+			<li>무기 대미지 +18</li>
+			<li>무기 대미지 +18</li>
+			<li>무기 대미지 +18</li>
+			<li>무기 대미지 +18</li>
+			<li>무기 대미지 +18</li>
+			<li>무기 대미지 +18</li>
+			<li>무기 대미지 +18</li>
+		</ul>
+	</div>
+</div>
+
 <script type="text/javascript">
   var lng = "{{ lang[1] }}";
 </script>
