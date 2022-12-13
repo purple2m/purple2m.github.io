@@ -34,6 +34,7 @@
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <script>
   ncapi("items", getParameterByName('item'), 0);
+  ncapi("price", getParameterByName('item'), 0);
 
   $('#enchant_level').on('change', function() {
     ncapi("price", getParameterByName('item'), this.value);
