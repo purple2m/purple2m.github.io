@@ -36,6 +36,6 @@
   ncapi("items", getParameterByName('item'), 0);
 
   $('#enchant_level').on('change', function() {
-    ncapi("price", 100630002, this.value);
+    ncapi("price", getParameterByName('item'), this.value);
   });
 </script>
