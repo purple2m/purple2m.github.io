@@ -24,11 +24,9 @@
 	<div class="price">
 		<img src="{{ base.url | prepend: site.url }}/trade.svg" style="opacity: 0.5;">
 		<select>
-			<option>+0</option>
-			<option>+1</option>
-			<option>+2</option>
-			<option>+3</option>
-			<option>+4</option>
+      {% for i in (1..13) %}
+      <option>+{{ i }}</option>
+      {% endfor %}
 		</select>
 		포가튼 블레이드
 		<div class="price_info">
