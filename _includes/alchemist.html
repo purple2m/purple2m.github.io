@@ -10,7 +10,7 @@
 	</div>
 	<div class="price">
 		<div class="price_select">
-			<img src="test/trade.svg" style="opacity: 0.5;">
+			<img src="{{ base.url | prepend: site.url }}/assets/trade.svg" style="opacity: 0.5;">
 			<select>
         {% for i in (1..13) %}
         <option>+{{ i }}</option>
