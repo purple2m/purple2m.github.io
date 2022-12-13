@@ -163,7 +163,7 @@ img {
   width:100%;
   min-height: 90px;
   padding:0;
-  background: #1a1c39;
+  background: #282844;
   color:white;
   overflow: hidden;
 
@@ -597,24 +597,60 @@ footer {
   margin-right: 10px;
 }
 .alc_wrap{
-  display: flex;
+  display:flex;
+  background-color:rgba(17,18,22);
   flex-direction: column;
+  color:white;
+
   .top{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    .info{
-      h1{
-        margin: 0 0 0.2em;
-        display: flex;
-        align-items: center;
-        @include mobile {
-          font-size: 1.2em;
-        }
-      }
+    display:flex;
+    background-color:rgba(24,29,35);
+    h1{
+      font-size:1.2em;
+    }
+    .thumb2{
+      width:64px;
+      height:64px;
+      margin:0.5em;
+    }
+    .legendary{
+      color: rgba(126,61,207,0.93);
+    }
+    .epic{
+      color: rgba(198,0,0,0.93);
+    }
+    .rare{
+      color:#006fc6;
+    }
+    .uncommon{
+      color:rgba(0,135,11,0.93);
+    }
+    .common{
+      color:rgba(0,0,0,0.68);
+    }
+  }
+
+  .price{
+		display: flex;
+		padding: 0.5em;
+   	flex-direction: column;
+
+    .price_info{
+      position: absolute;
+      background-color:rgba(24,29,35);
+  		padding:0.2em;
+    }
+  }
+
+  .info{
+    padding:0 0.5em 0 0.5em;
+    h2{
+      color:rgba(153,134,119);
+      margin:0.2em;
     }
   }
 }
+
 
 .list-wrapper{
   padding: 0 1em 0;
