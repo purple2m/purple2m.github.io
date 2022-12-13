@@ -5,15 +5,15 @@
 		</div>
       	<div class="title">
 			<h1 id="item_name"></h1>
-			정보 / 일반 연금 / 상급 연금 / 컬렉션(5)
+			정보 / 일반 연금 / 상급 연금 / 컬렉션(<span class=""></span>)
 		</div>
 	</div>
 	<div class="price">
 		<div class="price_select">
 			<img src="{{ base.url | prepend: site.url }}/images/trade.svg" style="opacity: 0.5;">
-			<select>
+			<select id="enchant_level">
         {% for i in (1..13) %}
-        <option>+{{ i }}</option>
+        <option value="{{ i }}">+{{ i }}</option>
         {% endfor %}
 			</select>
 			<span id="item_name2"></span>
@@ -32,3 +32,10 @@
   var lng = "{{ lang[1] }}";
 </script>
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
+<script>
+  ncapi("items", getParameterByName('item'), 0);
+
+  $('#enchant_level').on('change', function() {
+    ncapi("price", 100630002, this.value);
+  });
+</script>

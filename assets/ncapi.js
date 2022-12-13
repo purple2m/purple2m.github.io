@@ -51,9 +51,10 @@ function ncapi(get_url, item_id, enchant_level){
 			let trade_category_name = document.getElementsByClassName("trade_category_name");
 				trade_category_name[0].innerHTML = data.trade_category_name;
 
+			let collection_count = document.getElementsByClassName("collection_count");
+			    collection_count[0].innerHTML = data.attribute.collection_count;
+
 			let options = document.getElementsByClassName("options");
-
-
 			if (data.options.length == 0){
 				var str = data.attribute.description.replace(/\[/g, '<br>[');
 				options[0].innerHTML = '<li>' + str + '</li>';
