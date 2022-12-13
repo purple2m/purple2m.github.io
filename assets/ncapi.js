@@ -26,7 +26,7 @@ function ncapi(get_url, item_id, enchant_level){
 			let data = JSON.parse(this.responseText);
 
 			let price_div = document.getElementsByClassName("price_info");
-				price_div[0].innerHTML = '<img src="{{ base.url | prepend: site.url }}/assets/dia.svg"> ' + data.now.unit_price + ' ' + data.now.server_name;
+				price_div[0].innerHTML = '<img src="{{ base.url | prepend: site.url }}/images/dia.svg"> ' + data.now.unit_price + ' ' + data.now.server_name;
 		  }
 		};
 		xhr.send('');
