@@ -631,36 +631,17 @@ footer {
   }
 
   .price{
-    display: flex;
-    align-items: center;
-    position:relative;
-    padding:0.5em;
+		display: flex;
+		padding: 0.5em;
+   	flex-direction: column;
 
     .price_info{
       position: absolute;
-      background-color: rgba(255,255,255,0.9);
-      color: black;
-      top:5px;
-      left:5px;
-      border:1px solid rgba(24,29,35);
-      display:none;
-      ul{
-        list-style:none;
-        margin:0;
-        padding:0;
-      }
-      li{
-        padding:0.2em;
-      }
-      li:first-child{
-        text-align:right;
-        font-size:0.8em;
-        background-color:rgba(24,29,35);
-        color:white;
-        padding-right:0.3em;
-      }
+      background-color:rgba(24,29,35);
+  		padding:0.2em;
     }
   }
+
   .info{
     padding:0 0.5em 0 0.5em;
     h2{
