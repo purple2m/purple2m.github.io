@@ -82,8 +82,8 @@ function ncapi(get_url, item_id, enchant_level, target){
 		let lng = step[1];
 
 		let item_type;
-		let item_type1 = this.item.substr(0, 2);
-		let item_type2 = this.item.substr(2, 2);
+		let item_type1 = item.substr(0, 2);
+		let item_type2 = item.substr(2, 2);
 	  
 		if(item_type1 == 10){ // 무기
 		  item_type = "weapone";
