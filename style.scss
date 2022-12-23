@@ -196,12 +196,16 @@ img {
 }
 
 .site-avatar {
+  display: block;
   width: 32px;
   height: 32px;
+  margin-left: 0.5em;
   }
 
   img {
     border-radius: 5px;
+    width: 32px;
+    height: 32px;
   }
 
 .site-info {
