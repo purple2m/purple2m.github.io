@@ -43,9 +43,8 @@
         <option value="{{ i }}">+{{ i }}</option>
         {% endfor %}
 			</select>
-			<span id="item_name2"></span>
+			<div class="price_info"></div>
 		</div>
-		<div class="price_info"></div>
 	</div>
 	<div class="info">
 		<h2 class="trade_category_name"></h2>
@@ -70,10 +69,18 @@
 	$(".menu").eq(1).children().children().eq(2).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=2');
 	$(".menu").eq(1).children().children().eq(3).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=3');
 
-	ncapi("price", this_item_id, 0);
+	let step = $(location).attr('pathname').split('/');
+	let lng = step[1];
+	if(lng == 'jp'){
+		$(".menu").eq(1).children().children().eq(0).children().text('情報');
+		$(".menu").eq(1).children().children().eq(1).children().text('ふつう錬金');
+		$(".menu").eq(1).children().children().eq(2).children().text('上級錬金');
+		$(".menu").eq(1).children().children().eq(3).children().html('コレクション(<span class="collection_count"></span>)');
+	}
+
 	ncapi("items", this_item_id, 0);
 
 	$('#enchant_level').on('change', function() {
-	ncapi("price", this_item_id, this.value);
+		ncapi("price", this_item_id, this.value);
 	});
 </script>

@@ -77,7 +77,7 @@ function ncapi(get_url, item_id, enchant_level, target){
 	function get_item(item){
 		item = String(item);
 		let type = getParameterByName('type');
-		
+
 		let step = $(location).attr('pathname').split('/');
 		let lng = step[1];
 
@@ -110,14 +110,11 @@ function ncapi(get_url, item_id, enchant_level, target){
 		  const info = data.find(v => v.id == item);
 
 		  let item_name = document.getElementById("item_name");
-		  let item_name2 = document.getElementById("item_name2");
 
 		  if (lng == "jp"){
 			item_name.innerHTML = info.jp;
-			item_name2.innerHTML = info.jp;
 		  } else {
 			item_name.innerHTML = info.ko;
-			item_name2.innerHTML = info.ko;
 		  }
 		});
 	}
