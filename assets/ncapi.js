@@ -266,7 +266,7 @@ function get_recipe(item, lng, type){
 	}
 	find += "</ul>";
   
-	var my_list2= document.getElementsByClassName("thumb2");
+	var my_list2= document.getElementsByClassName("info");
 	
 	my_list2[0].innerHTML = find;
 }
