@@ -27,7 +27,7 @@ body {
 
 .container {
   margin: 0;
-  padding: 10px 10px 0 10px
+  padding: 10px 10px 0 10px;
   width: 100%;
 }
 
@@ -283,10 +283,14 @@ nav {
 }
 .search{
   width: 100%;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: 0;
+  border-right: 0;
   @include mobile {
     padding-right: 5%;
     padding-left: 5%;
     width: 100%;
+    border:0;
   }
 }
 .search input[type="text"] {
