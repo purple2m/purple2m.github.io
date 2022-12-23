@@ -227,3 +227,63 @@ function get_recipe(item, lng, type){
 	
 	my_list2[0].innerHTML = find;
 }
+
+function find_material(searching_recipe, type, lng){
+	var recipe_material = "<ul class='recipe_list'>";
+	  $.getJSON(baseurl+"/alchemist/"+type+".json?version=20220801", function(data) {
+		for (var i=0; i < data.length;++i){
+		  if(data[i]['no'] == searching_recipe){
+			for (var j=0; j < data[i]['recipe'].length;++j){
+			  if (lng == "jp"){
+				find_recipe = data[i]['jp'][j].split(',');
+			  } else {
+				find_recipe = data[i]['recipe'][j].split(',');
+			  }
+  
+			  if(find_recipe[0] === undefined){
+				find_recipe[0] = '';
+			  } else {
+				recipe_material += "<li>";
+				recipe_material += "<span>"+find_recipe[0]+"</span>";
+			  }
+  
+			  if(find_recipe[1] === undefined){
+				find_recipe[1] = '';
+			  } else {
+				recipe_material += "<span>"+find_recipe[1]+"</span>";
+			  }
+  
+			  if(find_recipe[2] === undefined){
+				find_recipe[2] = '';
+			  } else {
+				recipe_material += "<span>"+find_recipe[2]+"</span>";
+			  }
+  
+			  if(find_recipe[3] === undefined){
+				find_recipe[3] = '';
+			  } else {
+				recipe_material += "<span>"+find_recipe[3]+"</span>";
+			  }
+  
+			  if(find_recipe[4] === undefined){
+				find_recipe[4] = '';
+			  } else {
+				recipe_material += "<span>"+find_recipe[4]+"</span>";
+			  }
+			  if(find_recipe[0] === undefined){
+				recipe_material += "</li>";
+			  }
+			}
+  
+			break;
+		  }
+		}
+		if (recipe_material != "<ul class='recipe_list'>"){
+		  recipe_material += "</ul>";
+		  document.getElementById("recipe_material").innerHTML = recipe_material;
+  
+		  $('#recipe_material').show();
+		}
+  
+	  });
+  }
