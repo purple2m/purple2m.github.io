@@ -69,8 +69,6 @@
 	$(".menu").eq(1).children().children().eq(2).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=2');
 	$(".menu").eq(1).children().children().eq(3).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=3');
 
-	let step = $(location).attr('pathname').split('/');
-	let lng = step[1];
 	if(lng == 'jp'){
 		$(".menu").eq(1).children().children().eq(0).children().text('情報');
 		$(".menu").eq(1).children().children().eq(1).children().text('ふつう錬金');
