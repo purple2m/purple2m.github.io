@@ -199,9 +199,9 @@ function get_recipe2(data, lng, type){
 		  step = data.normal[i].split(',');
 		  recipe = step[2].split('-');
 		  if(lng == "jp"){
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
 		  } else {
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
 		  }
 		}
 	  } else if(type == 'top'){
@@ -215,9 +215,9 @@ function get_recipe2(data, lng, type){
 		  step = data.top[i].split(',');
 		  recipe = step[2].split('-');
 		  if(lng == "jp"){
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
 		  } else {
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
 		  }
 		}
 	  }
@@ -228,7 +228,7 @@ function get_recipe2(data, lng, type){
 	my_list2[0].innerHTML = find;
 }
 
-function find_material(searching_recipe, type, lng){
+function find_material(searching_recipe, type, lng, event){
 	var recipe_material = "<ul class='recipe_list'>";
 	  $.getJSON(baseurl+"/alchemist/"+type+".json?version=20220801", function(data) {
 		for (var i=0; i < data.length;++i){
