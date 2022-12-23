@@ -161,7 +161,7 @@ img {
 }
 .wrapper-masthead .container:first-child{
   width:100%;
-  min-height: 90px;
+  min-height: 143px;
   padding:0;
   background: #282844;
   color:white;
@@ -192,6 +192,26 @@ img {
   @include mobile {
     flex-direction: column;
     width: 100%;
+  }
+}
+.menu{
+  ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  li{
+    display: flex;
+  }
+  a{
+    padding: 0.5em;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  @include mobile {
+    a:first-child{
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
   }
 }
 
@@ -286,6 +306,7 @@ nav {
   border: 1px solid rgba(255,255,255,0.1);
   border-left: 0;
   border-right: 0;
+  padding: 5px;
   @include mobile {
     padding-right: 5%;
     padding-left: 5%;
