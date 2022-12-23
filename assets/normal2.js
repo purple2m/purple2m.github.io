@@ -115,11 +115,11 @@ function get_recipe(data, lng, type){
   }
   find += "</ul>";
 
-  var my_list2=$(".info").eq(0);
+  var my_list2=document.getElementById("info");
   my_list2.innerHTML = find;
 }
 
-function get_item(item, lng, type){
+function get_recipe(item, lng, type){
   let item_type;
   let item_type1 = item.substr(0, 2);
   let item_type2 = item.substr(2, 2);
