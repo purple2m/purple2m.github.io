@@ -29,10 +29,10 @@ function ncapi(get_url, item_id, enchant_level, target){
 			let data = JSON.parse(this.responseText);
 
 			let price_div = document.getElementsByClassName("price_info");
-				if(data.now.unit_price == "undefined"){
-					price_div[0].innerHTML = '<img src="'+baseurl+'/images/dia.svg"> ';
-				}else{
+				if(data.now.unit_price){
 					price_div[0].innerHTML = '<img src="'+baseurl+'/images/dia.svg"> ' + data.now.unit_price + ' ' + data.now.server_name;
+				}else{
+					price_div[0].innerHTML = '<img src="'+baseurl+'/images/dia.svg"> ';
 				}
 		  }
 		};
@@ -133,31 +133,47 @@ function get_recipe(data, lng, type){
 	  } else {
 		find += "<h1>일반 연금</h1>";
 	  }
-	  for (var i=0; i < data.normal.length;++i){
-		step = data.normal[i].split(',');
-		recipe = step[2].split('-');
+	  if (data.normal.length) {
+		for (var i=0; i < data.normal.length;++i){
+			step = data.normal[i].split(',');
+			recipe = step[2].split('-');
+			if(lng == "jp"){
+				find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+			} else {
+				find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+			}
+		}
+	  }else{
 		if(lng == "jp"){
-		  find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+			find += "<li>見つかりません。</li>";
 		} else {
-		  find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+			find += "<li>찾을 수 없습니다.</li>";
 		}
 	  }
 	} else if(type == 'top'){
-	  find += "<ul class=\"alc_recipe\">";
-	  if(lng == "jp"){
-		find += "<h1>上級錬金</h1>";
-	  } else {
-		find += "<h1>상급 연금</h1>";
-	  }
-	  for (var i=0; i < data.top.length;++i){
-		step = data.top[i].split(',');
-		recipe = step[2].split('-');
+		find += "<ul class=\"alc_recipe\">";
 		if(lng == "jp"){
-		  find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+		find += "<h1>上級錬金</h1>";
 		} else {
-		  find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+		find += "<h1>상급 연금</h1>";
 		}
-	  }
+		if (data.top.length) {
+			for (var i=0; i < data.top.length;++i){
+				step = data.top[i].split(',');
+				recipe = step[2].split('-');
+				if(lng == "jp"){
+				  find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
+				} else {
+				  find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"');\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+				}
+			  }
+		}else{
+			if(lng == "jp"){
+				find += "<li>見つかりません。</li>";
+			} else {
+				find += "<li>찾을 수 없습니다.</li>";
+			}
+		}
 	}
 	find += "</ul>";
   
