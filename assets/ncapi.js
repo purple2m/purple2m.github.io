@@ -50,7 +50,6 @@ function ncapi(get_url, item_id, enchant_level, target){
 				image[0].src = data.image;
 
 			let item_name = document.getElementById("item_name");
-			let item_name2 = document.getElementById("item_name2");
 				item_name.className = data.grade;
 
 			let trade_category_name = document.getElementsByClassName("trade_category_name");
@@ -68,14 +67,14 @@ function ncapi(get_url, item_id, enchant_level, target){
 					options[0].innerHTML += '<li>' + data.options[i].option_name + ' ' + data.options[i].display + '</li>';
 				}
 			}
-			get_item();
+			get_item(data.item_id);
 				console.log(data);
 		  }
 		};
 		xhr.send('');
 	}
 
-	function get_item(){
+	function get_item(item){
 		let step = $(location).attr('pathname').split('/');
 		let lng = step[1];
 
@@ -106,7 +105,10 @@ function ncapi(get_url, item_id, enchant_level, target){
 	  
 		$.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
 		  const info = data.find(v => v.id == item);
-	  
+
+		  let item_name = document.getElementById("item_name");
+		  let item_name2 = document.getElementById("item_name2");
+
 		  if (lng == "jp"){
 			item_name.innerHTML = info.jp;
 			item_name2.innerHTML = info.jp;
