@@ -29,7 +29,11 @@ function ncapi(get_url, item_id, enchant_level, target){
 			let data = JSON.parse(this.responseText);
 
 			let price_div = document.getElementsByClassName("price_info");
-				price_div[0].innerHTML = '<img src="'+baseurl+'/images/dia.svg"> ' + data.now.unit_price + ' ' + data.now.server_name;
+				if(data.now.unit_price == "undefined"){
+					price_div[0].innerHTML = '<img src="'+baseurl+'/images/dia.svg"> ';
+				}else{
+					price_div[0].innerHTML = '<img src="'+baseurl+'/images/dia.svg"> ' + data.now.unit_price + ' ' + data.now.server_name;
+				}
 		  }
 		};
 		xhr.send('');
