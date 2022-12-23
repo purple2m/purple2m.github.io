@@ -80,13 +80,15 @@ function get_recipe(data, lng, type){
   var find = '';
   let recipe;
 
+  find += '<h2 class="trade_category_name">';
   if(type == 'normal'){
-    find += "<ul class=\"normal_alc\">";
     if(lng == "jp"){
-      find += "<h1>ふつう錬金</h1>";
+      find += "ふつう錬金";
     } else {
-      find += "<h1>일반 연금</h1>";
+      find += "일반 연금";
     }
+    
+    find += "</h2><ul class=\"normal_alc\">";
     for (var i=0; i < data.normal.length;++i){
       step = data.normal[i].split(',');
       recipe = step[2].split('-');
@@ -97,12 +99,12 @@ function get_recipe(data, lng, type){
       }
     }
   } else if(type == 'top'){
-    find += "<ul class=\"top_alc\">";
     if(lng == "jp"){
-      find += "<h1>上級錬金</h1>";
+      find += "上級錬金";
     } else {
-      find += "<h1>상급 연금</h1>";
+      find += "상급 연금";
     }
+    find += "</h2><ul class=\"normal_alc\">";
     for (var i=0; i < data.top.length;++i){
       step = data.top[i].split(',');
       recipe = step[2].split('-');
