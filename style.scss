@@ -436,10 +436,15 @@ nav {
   display: none;
 }
 
-.alc_recipe{
-  list-style: none;
-  padding: 0.5em 0 0.5em;
-  margin: 0;
+.alc_wrap > .info{
+  ul{
+    list-style: none;
+    padding: 0.5em 1em 0.5em;
+    margin: 0;
+    @include mobile {
+      padding: 0.5em 0em 0.5em;
+    }
+  }
   li{
     padding: 0.5em 0;
     border-bottom: 1px solid $white8;
