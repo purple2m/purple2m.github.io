@@ -60,16 +60,16 @@
 </script>
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <script>
-	$(window).onload(function(){
-		let item_id = getParameterByName('item');
-		let page_type = getParameterByName('type');
-		
-		let url = $(location).attr('host') + '' +$(location).attr('pathname');
-		$(".menu").eq(1).children().children().eq(0).children().attr("href", 'https://'+ url + '?item='+ item_id)
-		$(".menu").eq(1).children().children().eq(1).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=1')
-		$(".menu").eq(1).children().children().eq(2).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=2')
-		$(".menu").eq(1).children().children().eq(3).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=3')
-	});
+	
+	let item_id = getParameterByName('item');
+	let page_type = getParameterByName('type');
+	
+	let url = $(location).attr('host') + '' +$(location).attr('pathname');
+	$(".menu").eq(1).children().children().eq(0).children().attr("href", 'https://'+ url + '?item='+ item_id);
+	$(".menu").eq(1).children().children().eq(1).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=1');
+	$(".menu").eq(1).children().children().eq(2).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=2');
+	$(".menu").eq(1).children().children().eq(3).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=3');
+
 	ncapi("price", getParameterByName('item'), 0);
 	ncapi("items", getParameterByName('item'), 0);
 
