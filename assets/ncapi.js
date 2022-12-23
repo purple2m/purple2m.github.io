@@ -51,8 +51,6 @@ function ncapi(get_url, item_id, enchant_level, target){
 
 			let item_name = document.getElementById("item_name");
 			let item_name2 = document.getElementById("item_name2");
-				item_name.innerHTML = data.item_name;
-				item_name2.innerHTML = data.item_name;
 				item_name.className = data.grade;
 
 			let trade_category_name = document.getElementsByClassName("trade_category_name");
@@ -111,8 +109,10 @@ function ncapi(get_url, item_id, enchant_level, target){
 	  
 		  if (lng == "jp"){
 			item_name.innerHTML = info.jp;
+			item_name2.innerHTML = info.jp;
 		  } else {
 			item_name.innerHTML = info.ko;
+			item_name2.innerHTML = info.ko;
 		  }
 		});
 	}
