@@ -34,14 +34,14 @@
             <a href="{{ site.url }}/ko"><span class="flag flag-kr"> </span>  한국어</a>
             <a href="{{ site.url }}/jp"><span class="flag flag-jp"> </span>  日本語</a>
           </div>
-          <div class="search">
+          <div class="search" role="search">
             <label><input type='radio' name='type' value='1' checked>일반</label>
             <label><input type='radio' name='type' value='2'>상급</label>
             <input type="hidden" id='insert_target' readonly style='background: #cacaca' name='item'>
             <input type="text" id='search_area' placeholder="아이템 검색">
             <div id='autoMaker'></div>
           </div>
-          <div class="menu">
+          <div class="menu" role="navigation">
             <ul>
               <li><a href="{{ site.baseurl }}/ko/list">아이템</a></li>
               <li><a href="">컬렉션</a></li>
@@ -64,7 +64,9 @@
 </amp-ad>
         {{ content }}
       </div>
-
+      <div id="footer" role="region">
+        Powered by PLAYNC Developers
+      </div>
     </div>
     {% include analytics.html %}
   </body>
