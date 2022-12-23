@@ -229,6 +229,8 @@ function get_recipe2(data, lng, type){
 }
 
 function find_material(searching_recipe, type, lng, event){
+	var y1 = event.clientY;
+	$(".div2").css("top",y1 + "px");
 	var recipe_material = "<ul class='recipe_list'>";
 	  $.getJSON(baseurl+"/alchemist/"+type+".json?version=20220801", function(data) {
 		for (var i=0; i < data.length;++i){

@@ -429,8 +429,8 @@ nav {
 #recipe_material{
   margin: 0.5em 0;
   position: absolute;
-  top: 0;
-  right: 1em;
+  left: 2em;
+  cursor: pointer;
   background: black;
   padding: 0.3em;
   display: none;
@@ -450,6 +450,7 @@ nav {
     border-bottom: 1px solid $white8;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
   li>span:first-child{
     padding: 0.3em;
