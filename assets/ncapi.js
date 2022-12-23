@@ -266,5 +266,7 @@ function get_recipe(item, lng, type){
 	}
 	find += "</ul>";
   
-	$(".menu").eq(0).html(find);;
+	var my_list2= document.getElementsByClassName("thumb2");
+	
+	my_list2[0].innerHTML = find;
 }
