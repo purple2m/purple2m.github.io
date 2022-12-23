@@ -104,3 +104,5 @@ function item_icon(item_id, enchant_level){
 		xhr.send('');
 	}
 }
+
+$(".menu").eq(1)
