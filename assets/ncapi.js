@@ -70,10 +70,51 @@ function ncapi(get_url, item_id, enchant_level, target){
 					options[0].innerHTML += '<li>' + data.options[i].option_name + ' ' + data.options[i].display + '</li>';
 				}
 			}
+			get_item();
 				console.log(data);
 		  }
 		};
 		xhr.send('');
+	}
+
+	function get_item(){
+		let step = $(location).attr('pathname').split('/');
+		let lng = step[1];
+
+		let item_type;
+		let item_type1 = this.item.substr(0, 2);
+		let item_type2 = this.item.substr(2, 2);
+	  
+		if(item_type1 == 10){ // 무기
+		  item_type = "weapone";
+		} else if(item_type1 == 20){ // 방어구
+		  item_type = "armor";
+		} else if(item_type1 == 30){ // 장신구
+		  item_type = "accessary";
+		} else if(item_type1 == 31){ // 장신구
+		  item_type = "rune";
+		} else if(item_type1 == 50){ // 스킬
+		  item_type = "skill";
+		} else if(item_type1 == 60){ // 기타
+		  item_type = "etc";
+		} else if(item_type1 == 70){ // 마력석
+		  item_type = "stone";
+		}
+		if(type == 2){
+		  type = "top";
+		} else {
+		  type = "normal";
+		}
+	  
+		$.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
+		  const info = data.find(v => v.id == item);
+	  
+		  if (lng == "jp"){
+			item_name.innerHTML = info.jp;
+		  } else {
+			item_name.innerHTML = info.ko;
+		  }
+		});
 	}
 }
 

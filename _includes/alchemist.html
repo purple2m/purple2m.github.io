@@ -64,7 +64,7 @@
 	let this_item_id = getParameterByName('item');
 	let this_type = getParameterByName('type');
 	
-	let this_page = $(location).attr('host') + '' +$(location).attr('pathname');
+	let this_page = $(location).attr('host') + '' + $(location).attr('pathname');
 	$(".menu").eq(1).children().children().eq(0).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id);
 	$(".menu").eq(1).children().children().eq(1).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=1');
 	$(".menu").eq(1).children().children().eq(2).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=2');
