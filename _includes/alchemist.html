@@ -64,19 +64,22 @@
 	let this_type = getParameterByName('type');
 	
 	let this_page = $(location).attr('host') + '' + $(location).attr('pathname');
-	$(".menu").eq(1).children().children().eq(0).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id);
-	$(".menu").eq(1).children().children().eq(1).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=1');
-	$(".menu").eq(1).children().children().eq(2).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=2');
 	$(".menu").eq(1).children().children().eq(3).children().attr("href", 'https://'+ this_page + '?item='+ this_item_id + '&type=3');
 
 	if(lng == 'jp'){
-		$(".menu").eq(1).children().children().eq(0).children().text('情報');
-		$(".menu").eq(1).children().children().eq(1).children().text('ふつう錬金');
-		$(".menu").eq(1).children().children().eq(2).children().text('上級錬金');
+		$(".menu").eq(1).children().children().eq(0).text('情報');
+		$(".menu").eq(1).children().children().eq(1).text('ふつう錬金');
+		$(".menu").eq(1).children().children().eq(2).text('上級錬金');
 		$(".menu").eq(1).children().children().eq(3).children().html('コレクション(<span class="collection_count"></span>)');
 	}
 
-	ncapi("items", this_item_id, 0);
+	if(this_type > 1){
+		ncapi('items', this_item_id, 0);
+		get_recipe(this_item_id, lng, this_type);
+	}else{
+		ncapi('items', this_item_id, 0);
+	}
+	
 	function menu_info(this_item_id){
 		var my_list2= document.getElementsByClassName("info");
 		my_list2[0].innerHTML = '<h2 class="trade_category_name"></h2><ul class="options"></ul>';
@@ -88,5 +91,8 @@
 	});
 	$('#recipe_material').click(function(){
 		$('#recipe_material').toggle();
+	});
+	$(window).scroll(function(){
+		$('#recipe_material').hide();
 	});
 </script>
