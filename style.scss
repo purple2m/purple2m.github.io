@@ -455,7 +455,7 @@ nav {
     align-items: center;
     cursor: pointer;
   }
-  li>span:first-child{
+  .normal_alc li>span:first-child{
     padding: 0.3em;
     font-weight: bold;
     border-radius: 1em;
@@ -463,7 +463,7 @@ nav {
     border: 1px solid;
     color: black;
   }
-  li>span:nth-child(2){
+  .normal_alc li>span:nth-child(2){
     padding: 0.3em;
     margin: 0 0.5em 0 0;
     font-size: 0.9em;
