@@ -182,7 +182,7 @@ function get_recipe(item, lng, type){
 	});
 }
 
-  function get_recipe2(data, lng, type){
+function get_recipe2(data, lng, type){
 	var step = '';
 	var find = '';
 	let recipe;
@@ -280,7 +280,7 @@ function find_material(searching_recipe, type, lng){
 		}
 		if (recipe_material != "<ul class='recipe_list'>"){
 		  recipe_material += "</ul>";
-		  document.getElementById("recipe_material").innerHTML = recipe_material;
+		  $("#recipe_material").eq(0).html(recipe_material);
   
 		  $('#recipe_material').show();
 		}
