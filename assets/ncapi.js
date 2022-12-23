@@ -230,7 +230,7 @@ function get_recipe(item, lng, type){
 	var step = '';
 	var find = '';
 	let recipe;
-  
+	find += '<h2 class="trade_category_name">';
 	if(type == 'normal'){
 		if(lng == "jp"){
 		  find += "ふつう錬金";
