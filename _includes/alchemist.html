@@ -86,9 +86,7 @@
 	$('#enchant_level').on('change', function() {
 		ncapi("price", this_item_id, this.value);
 	});
-	$('.view_recipe').click(function(){
-		$('#recipe').toggle();
-		var offset = $('#recipe').offset();
-		$('html').animate({scrollTop : offset.top}, 400);
+	$('#recipe_material').click(function(){
+		$('#recipe_material').toggle();
 	});
 </script>
