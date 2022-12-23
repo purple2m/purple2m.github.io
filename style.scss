@@ -227,6 +227,10 @@ img {
     width: 32px;
     height: 32px;
   }
+  @include mobile {
+    margin-left:0;
+    margin-top: 0.5em;
+  }
 }
 
 .site-info {
@@ -280,6 +284,7 @@ nav {
   height: 20em;
   overflow: auto;
   width: 20em;
+  margin-top: 0.3em;
   @include mobile {
     width: 90%;
     margin-left: 5%;
