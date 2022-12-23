@@ -23,7 +23,7 @@
 {% endif %}
 {% assign list=site.data[type] %}
 {% assign no=1 %}
-
+<script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <section class="list-wrapper">
   <header>
     <h1>アイテムリスト</h1>
@@ -50,8 +50,11 @@
               <a href="https://purple2m.github.io/{{ page[1] }}/alchemist/?item={{ item.id }}&type=2">上級</a>
               {% endif %}
               <a href="https://purple2m.github.io/{{ page[1] }}/alchemist/?item={{ item.id }}">
-                <img class="thumb" src="https://wstatic-cdn.plaync.com/powerbook/l2m/icon/Icon_128/Item/Icon_{{ item.icon }}" onerror="this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';">
+                <img class="thumb {{ item.id }}" src="" onerror="this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';">
                 {{ item.jp }}
+                <script>
+                  item_icon({{ item.id }}, 0);
+                </script>
               </a>
             </li>
             {% assign no = no | plus: 1 %}
