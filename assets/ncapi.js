@@ -67,7 +67,7 @@ function ncapi(get_url, item_id, enchant_level, target){
 					options[0].innerHTML += '<li>' + data.options[i].option_name + ' ' + data.options[i].display + '</li>';
 				}
 			}
-			get_item(data.item_id);
+				get_item(data.item_id);
 				console.log(data);
 		  }
 		};
