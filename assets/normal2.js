@@ -115,7 +115,7 @@ function get_recipe(data, lng, type){
   }
   find += "</ul>";
 
-  var my_list2=document.getElementById("searching_find");
+  var my_list2=document.getElementById("info");
   my_list2.innerHTML = find;
 }
 
@@ -145,15 +145,8 @@ function get_item(item, lng, type){
     type = "normal";
   }
 
-  console.log(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json");
   $.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
     const info = data.find(v => v.id == item);
-
-    if (lng == "jp"){
-      item_name.innerHTML = info.jp;
-    } else {
-      item_name.innerHTML = info.ko;
-    }
 
     get_recipe(info, lng, type);
   });

@@ -118,6 +118,7 @@ function ncapi(get_url, item_id, enchant_level, target){
 		  }
 		});
 	}
+	
 }
 
 function item_icon(item_id, enchant_level){
