@@ -10,7 +10,7 @@
 	</div>
 	<div class="menu">
 		<ul>
-			<li onclick="ncapi('items', this_item_id, 0);">
+			<li onclick="menu_info(this_item_id);">
 				정보
 			</li>
 			<li onclick="get_recipe(this_item_id, lng, 1);">
@@ -77,7 +77,12 @@
 	}
 
 	ncapi("items", this_item_id, 0);
+	function menu_info(this_item_id){
+		var my_list2= document.getElementsByClassName("info");
+		my_list2[0].innerHTML = '<h2 class="trade_category_name"></h2><ul class="options"></ul>';
 
+		ncapi('items', this_item_id, 0);
+	}
 	$('#enchant_level').on('change', function() {
 		ncapi("price", this_item_id, this.value);
 	});
