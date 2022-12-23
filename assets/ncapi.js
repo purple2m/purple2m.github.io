@@ -127,7 +127,7 @@ function get_recipe(data, lng, type){
 	let recipe;
   
 	if(type == 'normal'){
-	  find += "<ul class=\"normal_alc\">";
+	  find += "<ul class=\"alc_recipe\">";
 	  if(lng == "jp"){
 		find += "<h1>ふつう錬金</h1>";
 	  } else {
@@ -143,7 +143,7 @@ function get_recipe(data, lng, type){
 		}
 	  }
 	} else if(type == 'top'){
-	  find += "<ul class=\"top_alc\">";
+	  find += "<ul class=\"alc_recipe\">";
 	  if(lng == "jp"){
 		find += "<h1>上級錬金</h1>";
 	  } else {

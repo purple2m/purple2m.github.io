@@ -436,27 +436,10 @@ nav {
   display: none;
 }
 
-#searching_find{
-  min-height: 11em;
-  background: $white2;
-  border: 1px solid $white8;
-  .slot{
-    padding: 0.3em 0.5em;
-    border-radius: 14px;
-    box-sizing: border-box;
-    margin: 0 0.2em;
-    background: #282844;
-    color:white;
-    border: 2px solid rgba(255, 255, 255, 0.08);
-  }
-  ul{
-    list-style: none;
-    padding: 0.5em 1em 0.5em;
-    margin: 0;
-    @include mobile {
-      padding: 0.5em 0em 0.5em;
-    }
-  }
+.alc_recipe{
+  list-style: none;
+  padding: 0.5em 0 0.5em;
+  margin: 0;
   li{
     padding: 0.5em 0;
     border-bottom: 1px solid $white8;

@@ -11,6 +11,18 @@ function isitem(element, item)  {
     return true;
   }
 }
+function get_top(item, lng){
+  var txt = "";
+  if (lng == "jp"){
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=1\">ふつう錬金</a>";
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=2\">上級錬金</a>";
+  } else {
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=1\">일반 연금</a>";
+    txt += "<a href=\""+baseurl+"/"+lng+"/alchemist/?item="+item+"&type=2\">상급 연금</a>";
+  }
+  var my_list2=document.getElementById("searching_recipe");
+  my_list2.innerHTML = txt;
+}
 function find_material(searching_recipe, type, lng){
   var recipe_material = "<ul class='recipe_list'>";
     $.getJSON(baseurl+"/alchemist/"+type+".json?version=20220801", function(data) {
@@ -80,15 +92,13 @@ function get_recipe(data, lng, type){
   var find = '';
   let recipe;
 
-  find += '<h2 class="trade_category_name">';
   if(type == 'normal'){
+    find += "<ul class=\"normal_alc\">";
     if(lng == "jp"){
-      find += "ふつう錬金";
+      find += "<h1>ふつう錬金</h1>";
     } else {
-      find += "일반 연금";
+      find += "<h1>일반 연금</h1>";
     }
-    
-    find += "</h2><ul class=\"normal_alc\">";
     for (var i=0; i < data.normal.length;++i){
       step = data.normal[i].split(',');
       recipe = step[2].split('-');
@@ -99,12 +109,12 @@ function get_recipe(data, lng, type){
       }
     }
   } else if(type == 'top'){
+    find += "<ul class=\"top_alc\">";
     if(lng == "jp"){
-      find += "上級錬金";
+      find += "<h1>上級錬金</h1>";
     } else {
-      find += "상급 연금";
+      find += "<h1>상급 연금</h1>";
     }
-    find += "</h2><ul class=\"normal_alc\">";
     for (var i=0; i < data.top.length;++i){
       step = data.top[i].split(',');
       recipe = step[2].split('-');
@@ -117,11 +127,11 @@ function get_recipe(data, lng, type){
   }
   find += "</ul>";
 
-  var my_list2=document.getElementById("info");
+  var my_list2=document.getElementById("searching_find");
   my_list2.innerHTML = find;
 }
 
-function get_recipe(item, lng, type){
+function get_item(item, lng, type){
   let item_type;
   let item_type1 = item.substr(0, 2);
   let item_type2 = item.substr(2, 2);
@@ -147,8 +157,15 @@ function get_recipe(item, lng, type){
     type = "normal";
   }
 
+  console.log(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json");
   $.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
     const info = data.find(v => v.id == item);
+
+    if (lng == "jp"){
+      document.getElementById("searching_item").innerHTML = "<img class=\"thumb2\" src=\"https://wstatic-cdn.plaync.com/powerbook/l2m/icon/Icon_128/Item/Icon_"+info.icon+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">"+info.jp;
+    } else {
+      document.getElementById("searching_item").innerHTML = "<img class=\"thumb2\" src=\"https://wstatic-cdn.plaync.com/powerbook/l2m/icon/Icon_128/Item/Icon_"+info.icon+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">"+info.ko;
+    }
 
     get_recipe(info, lng, type);
   });
@@ -156,4 +173,5 @@ function get_recipe(item, lng, type){
 
 if(searching_item){
   get_item(searching_item, lng, searching_type);
+  get_top(searching_item, lng);
 }
