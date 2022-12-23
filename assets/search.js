@@ -86,7 +86,7 @@ $(document).ready(function() {
                   var lang = "jp";
                 }
                   $('#autoMaker').append(
-                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"&type="+type+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
+                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
                   );
               }
           });
@@ -122,7 +122,7 @@ $(document).ready(function() {
                     var lang = "jp";
                   }
                     $('#autoMaker').append(
-                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"&type="+type+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
+                      $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
                     );
                 }
             });
