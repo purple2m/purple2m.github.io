@@ -287,21 +287,19 @@ nav {
   }
 }
 #autoMaker div{
-  border-bottom:1px solid black;
-  padding:0.2em;
   cursor:pointer;
-  background: white;
-  color:black;
-  font-size:0.8em;
   @include mobile {
     width: 90%;
   }
 }
 #autoMaker a{
   display: block;
-  color: black;
-  padding: 0.1em 0.5em 0.1em 0.5em;
-  font-size: 1.2em;
+  color: white;
+  font-weight: bold;
+  padding: 0.3em;
+  font-size: 0.9em;
+  background: #282844;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .search{
   width: 100%;
