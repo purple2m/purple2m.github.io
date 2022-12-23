@@ -159,6 +159,9 @@ img {
 .wrapper-masthead .container{
   overflow: auto;
 }
+.wrapper-masthead .container:nth-child(2){
+  flex:1;
+}
 .wrapper-masthead .container:first-child{
   width:100%;
   min-height: 143px;
