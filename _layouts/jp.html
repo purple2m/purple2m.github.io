@@ -22,23 +22,18 @@
   <body>
 
     <div class="wrapper-masthead">
-
       <div class="container">
-        <div class="lang">
-          <a href="{{ site.url }}/ko"><span class="flag flag-kr"> </span>  한국어</a>
-          <a href="{{ site.url }}/jp"><span class="flag flag-jp"> </span>  日本語</a>
-          <span class="pull-left"  style="font-size:2em;float:right;">X</span>
-        </div>
         <header class="masthead clearfix">
           <div class="logo">
-            <a href="{{ site.baseurl }}/jp/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+            <a href="{{ site.baseurl }}/jp" class="site-avatar"><img src="{{ site.avatar }}" /></a>
           </div>
-
           <div class="site-info">
             <h1 class="site-name"><a href="{{ site.baseurl }}/jp">{{ site.name }}</a></h1>
-
           </div>
-
+          <div class="lang">
+            <a href="{{ site.url }}/ko"><span class="flag flag-kr"> </span>  한국어</a>
+            <a href="{{ site.url }}/jp"><span class="flag flag-jp"> </span>  日本語</a>
+          </div>
           <div class="search">
             <label><input type='radio' name='type' value='1' checked>ふつう</label>
             <label><input type='radio' name='type' value='2'>上級</label>
@@ -46,9 +41,16 @@
             <input type="text" id='search_area' placeholder="アイテムの検索">
             <div id='autoMaker'></div>
           </div>
+          <div class="menu">
+            <ul>
+              <li><a href="">アイテム</a></li>
+              <li><a href="">コレクション</a></li>
+              <li><a href="">魂吸収</a></li>
+            </ul>
+          </div>
+          <span class="pull-left" style="font-size:2em;position: fixed;right:0;">X</span>
         </header>
       </div>
-
       <div id="main" role="main" class="container">
         <span class="pull-left" style="font-size:2em;">+</span>
         {{ content }}
