@@ -632,6 +632,7 @@ footer {
   color:white;
   min-height: 90%;
   .menu{
+    border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9em;
     ul{
       list-style: none;
@@ -649,9 +650,6 @@ footer {
       display: block;
       padding: 0.3em;
       border-right: 1px solid rgba(255,255,255,0.1);
-    }
-    li:first-child{
-      border-left: 1px solid rgba(255,255,255,0.1);
     }
   }
   .top{
