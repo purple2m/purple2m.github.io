@@ -120,6 +120,7 @@ function ncapi(get_url, item_id, enchant_level, target){
 	}
 	
 }
+
   
 function item_icon(item_id, enchant_level){
 	this.token = "eyJraWQiOiI0OGEzNzliNS1mNGIxLTQ2Y2ItYTk4Zi0xOWNmM2VjOTEyYTYiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOiIxRjczMzQyNy05RUQ5LTQ5MjctQTEzRS1DMTJEMDU4ODRDOTAifQ.S8ZmQslV8xMQ_gT2dx7C0OGFV0rWFh-vsk5YHMTx32bVB5uvQSQrdSmbLKIiQycsnyCrw-ASkjeqtjBAzFkpbQBel-g3tQpbg8I8P3psOO_kJizvaJtwOsLQaHiF_zqhgQuDaCRZ40yHI49BWMGUukkx-SQhko0HCYy3uaz2D-ovYrg90E_6g38dz2t7UGdruWpkuTxNCHcjS7OYFEP41C0YjERsFM4o6CTGvKhtNXgs6qf--UbAKsFYHf-UPsQI9FRndhvxvO5pRLbnWDHQLGeWoEDh6Y1j396MGWl3vOCVJhBKaGE4pAUZFoCbV1DfB2Ls3Ns1MPd7u3l9QkMCXg"
@@ -186,7 +187,7 @@ function get_recipe(item, lng, type){
 	var step = '';
 	var find = '';
 	let recipe;
-	find += '<h2 class="trade_category_name">';
+  
 	if(type == 'normal'){
 	  find += "<ul class=\"alc_recipe\">";
 	  if(lng == "jp"){
@@ -238,7 +239,6 @@ function get_recipe(item, lng, type){
 	}
 	find += "</ul>";
   
-	var my_list2= document.getElementsByClassName("info");
-	
-	my_list2[0].innerHTML = find;
+	var my_list2=$(".info").eq(0);
+	my_list2.innerHTML = find;
 }
