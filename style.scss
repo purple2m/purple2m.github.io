@@ -155,7 +155,6 @@ img {
   display:flex;
   height:100%;
   flex-flow: column;
-  flex-wrap:wrap;
 }
 .wrapper-masthead .container{
   overflow: auto;
@@ -188,6 +187,7 @@ img {
 .masthead {
   display: flex;
   align-items: center;
+  flex-wrap:wrap;
 
   @include mobile {
     flex-direction: column;
