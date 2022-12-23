@@ -133,7 +133,7 @@ function get_recipe(data, lng, type){
 	  } else {
 		find += "<h1>일반 연금</h1>";
 	  }
-	  if (data.normal.length) {
+	  if (data.normal) {
 		for (var i=0; i < data.normal.length;++i){
 			step = data.normal[i].split(',');
 			recipe = step[2].split('-');
@@ -157,7 +157,7 @@ function get_recipe(data, lng, type){
 		} else {
 		find += "<h1>상급 연금</h1>";
 		}
-		if (data.top.length) {
+		if (data.top) {
 			for (var i=0; i < data.top.length;++i){
 				step = data.top[i].split(',');
 				recipe = step[2].split('-');
