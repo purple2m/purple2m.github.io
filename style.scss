@@ -155,6 +155,7 @@ img {
   display:flex;
   height:100%;
   flex-flow: column;
+  flex-wrap:wrap;
 }
 .wrapper-masthead .container{
   overflow: auto;
@@ -179,8 +180,6 @@ img {
   display:none;
   padding:0.2em;
   margin-right: 0.2em;
-  position: fixed;
-  left:0;
   @include mobile {
     display:block;
   }
@@ -280,8 +279,7 @@ nav {
   font-size: 1.2em;
 }
 .search{
-  flex: 1;
-  padding-right: 10px;
+  width: 100%;
   @include mobile {
     padding-right: 5%;
     padding-left: 5%;
