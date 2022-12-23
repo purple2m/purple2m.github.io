@@ -75,6 +75,7 @@ function ncapi(get_url, item_id, enchant_level, target){
 	}
 
 	function get_item(item){
+		item = String(item);
 		let step = $(location).attr('pathname').split('/');
 		let lng = step[1];
 
