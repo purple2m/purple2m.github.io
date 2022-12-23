@@ -179,7 +179,8 @@ img {
   display:none;
   padding:0.2em;
   margin-right: 0.2em;
-
+  position: fixed;
+  left:0;
   @include mobile {
     display:block;
   }
@@ -196,9 +197,8 @@ img {
 }
 
 .site-avatar {
-  display: block;
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   }
 
   img {
@@ -208,6 +208,9 @@ img {
 .site-info {
   display: block;
   padding: 0.5em;
+  h1 {
+    font-size:1em;
+  }
 }
 
 .site-name {
