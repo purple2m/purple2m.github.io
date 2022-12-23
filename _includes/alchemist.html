@@ -70,10 +70,10 @@
 	$(".menu").eq(1).children().children().eq(2).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=2');
 	$(".menu").eq(1).children().children().eq(3).children().attr("href", 'https://'+ url + '?item='+ item_id + '&type=3');
 
-	ncapi("price", getParameterByName('item'), 0);
-	ncapi("items", getParameterByName('item'), 0);
+	ncapi("price", item_id, 0);
+	ncapi("items", item_id, 0);
 
 	$('#enchant_level').on('change', function() {
-	ncapi("price", getParameterByName('item'), this.value);
+	ncapi("price", item_id, this.value);
 	});
 </script>
