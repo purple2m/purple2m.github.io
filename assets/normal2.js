@@ -115,7 +115,7 @@ function get_recipe(data, lng, type){
   }
   find += "</ul>";
 
-  var my_list2=document.getElementById("info");
+  var my_list2=$(".info").eq(0);
   my_list2.innerHTML = find;
 }
 
