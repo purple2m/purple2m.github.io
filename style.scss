@@ -286,6 +286,7 @@ nav {
   flex-direction: column;
   height: 20em;
   overflow: auto;
+  z-index: 1;
   width: 20em;
   margin-top: 0.3em;
   @include mobile {
