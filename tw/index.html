@@ -1,0 +1,37 @@
+---
+layout: tw
+title: 天堂2M煉金術搜索器
+excerpt: "在天堂 2M中搜索項目時, 可以查看與該項目所在的鍊金材料相關的項目集合。"
+tags: [天堂2M, 天堂2m, 煉金術, 煉金公式, 煉金材料]
+---
+↑ 如果不能使用搜索，請使用"物品"。<br>
+目前正在開發中，所以翻譯不完美。
+<section class="recent-wrapper">
+  <header>
+    <h1>天堂2M煉金術搜索器</h1>
+  </header>
+  <div class="recent" lang="jp">
+    {% assign posts = site.categories.tips | where:"lang", "jp" %}
+      {% for post in posts %}
+        <article class="post">
+          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        </article>
+      {% endfor %}
+  </div>
+</section>
+
+<section class="recent-wrapper">
+  <header>
+    <h1>天堂2M情報</h1>
+  </header>
+  <div class="recent" lang="jp">
+    {% assign posts = site.categories.info | where:"lang", "jp" %}
+      {% for post in posts %}
+        <article class="post">
+          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        </article>
+      {% endfor %}
+  </div>
+</section>
+
+<h1><a href="https://twitter.com/L2MDCSCAM">Twitter</a></h1>

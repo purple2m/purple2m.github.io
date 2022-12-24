@@ -12,8 +12,8 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <link rel="stylesheet" href="{{ site.baseurl }}/flags.css?ddasda=42342423">
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ page.url | replace: "jp", "ko" }}">
-    <link rel="alternate" hreflang="jp" href="{{ site.url }}{{ page.url | replace: "ko", "jp" }}">
+    <link rel="alternate" hreflang="ko" href="{{ site.url }}{{ page.url | replace: "jp", "ko", "zh-Hant" }}">
+    <link rel="alternate" hreflang="jp" href="{{ site.url }}{{ page.url | replace: "ko", "jp", "zh-Hant" }}">
     <link rel="alternate" hreflang="zh-Hant" href="{{ site.url }}{{ page.url | replace: "ko", "jp", "zh-Hant" }}">
     <script src="{{ base.url | prepend: site.url }}/assets/search.js?version=20221223"></script>
 <meta name="google-site-verification" content="CEG1EpI5wEnKjX0L5YuLaQY6yWkaggD0qWOZxXj3ApM" />
@@ -36,17 +36,17 @@
             <a href="{{ site.url }}/tw"><span class="flag flag-tw"> </span>  臺灣語</a>
           </div>
           <div class="search" role="search">
-            <label><input type='radio' name='type' value='1' checked>일반</label>
-            <label><input type='radio' name='type' value='2'>상급</label>
+            <label><input type='radio' name='type' value='1' checked>常規</label>
+            <label><input type='radio' name='type' value='2'>上級</label>
             <input type="hidden" id='insert_target' readonly style='background: #cacaca' name='item'>
-            <input type="text" id='search_area' placeholder="아이템 검색">
+            <input type="text" id='search_area' placeholder="物品項目">
             <div id='autoMaker'></div>
           </div>
           <div class="menu" role="navigation">
             <ul>
-              <li><a href="{{ site.baseurl }}/ko/list">아이템</a></li>
-              <li><a href="">컬렉션</a></li>
-              <li><a href="">집혼</a></li>
+              <li><a href="{{ site.baseurl }}/ko/list">物品</a></li>
+              <li><a href="">收藏品</a></li>
+              <li><a href="">搜魂</a></li>
             </ul>
           </div>
           <span class="pull-left" style="font-size:2em;position: fixed;right:0;">X</span>
