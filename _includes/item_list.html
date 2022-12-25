@@ -27,6 +27,13 @@
 <section class="list-wrapper">
   <header>
     <h1>아이템 목록</h1>
+    <ul class="class_list">
+      {% for class_list in site.data.class %}
+        <li>
+          <img src="{{ base.url | prepend: site.url }}/images/class/{{ class_list.img }}">
+        </li>
+      {% endfor %}
+    </ul>
     <ul class="menu">
       <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/weapon/{{ page[4] }}/1">무기</a></li>
       <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/armor/{{ page[4] }}/1">방어구</a></li>
