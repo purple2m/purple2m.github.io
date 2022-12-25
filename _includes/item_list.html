@@ -29,9 +29,7 @@
     <h1>아이템 목록</h1>
     <ul class="class_list">
       {% for class_list in site.data.class %}
-        <li>
-          <img src="{{ base.url | prepend: site.url }}/images/class/{{ class_list.img }}">
-        </li>
+        <li style="background-image: url("{{ base.url | prepend: site.url }}/images/class/{{ class_list.img }}");"></li>
       {% endfor %}
     </ul>
     <ul class="menu">
