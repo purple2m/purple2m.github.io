@@ -758,6 +758,18 @@ footer {
   }
 }
 
+.class_list{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  background: black;
+  li{
+    width: 48px;
+    height: 48px;
+  }
+}
 
 
 #collections{
