@@ -28,53 +28,53 @@
   <header>
     <h1>아이템 목록</h1>
     <ul class="item_type_list">
-      {% for item_type in site.data.item_list %}
+      {% for item_type in site.data.item_list.type %}
         <li>
           {% if page[1] == "jp" %}
-            {{ item_type.type.jp }}
+            {{ item_type.jp }}
           {% elsif page[1] == "tw" %}
-            {{ item_type.type.tw }}
+            {{ item_type.tw }}
           {% else %}
-            {{ item_type.type.ko }}
+            {{ item_type.ko }}
           {% endif %}
         </li>
       {% endfor %}
     </ul>
     <ul class="item_armor_list">
-      {% for item_armor in site.data.item_list %}
+      {% for item_armor in site.data.item_list.armor %}
         <li>
           {% if page[1] == "jp" %}
-            {{ item_armor.armor.jp }}
+            {{ item_armor.jp }}
           {% elsif page[1] == "tw" %}
-            {{ item_armor.armor.tw }}
+            {{ item_armor.tw }}
           {% else %}
-            {{ item_armor.armor.ko }}
+            {{ item_armor.ko }}
           {% endif %}
         </li>
       {% endfor %}
     </ul>
     <ul class="item_acc_list">
-      {% for item_acc in site.data.item_list %}
+      {% for item_acc in site.data.item_list.acc %}
         <li>
           {% if page[1] == "jp" %}
-            {{ item_acc.acc.jp }}
+            {{ item_acc.jp }}
           {% elsif page[1] == "tw" %}
-            {{ item_acc.acc.tw }}
+            {{ item_acc.tw }}
           {% else %}
-            {{ item_acc.acc.ko }}
+            {{ item_acc.ko }}
           {% endif %}
         </li>
       {% endfor %}
     </ul>
     <ul class="item_class_list">
-      {% for item_class in site.data.item_list %}
+      {% for item_class in site.data.item_list.class %}
         <li>
           {% if page[1] == "jp" %}
-            {{ item_class.class.jp }}
+            {{ item_class.jp }}
           {% elsif page[1] == "tw" %}
-            {{ item_class.class.tw }}
+            {{ item_class.tw }}
           {% else %}
-            {{ item_class.class.ko }}
+            {{ item_class.ko }}
           {% endif %}
         </li>
       {% endfor %}
