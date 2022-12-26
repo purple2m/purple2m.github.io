@@ -27,12 +27,55 @@
 <section class="list-wrapper">
   <header>
     <h1>아이템 목록</h1>
-    <ul class="class_list">
-      {% for class_list in site.data.class %}
+    <ul class="item_type_list">
+      {% for item_type in site.data.item_list %}
         <li>
-          {{ page[1] }}
-          {{ class_list.page[1] }}
-          <img src="{{ base.url | prepend: site.url }}/images/class/{{ class_list.img }}">
+          {{ if page[1] == "jp" }}
+            {{ item_type.type.jp }}
+          {{ if page[1] == "tw" }}
+            {{ item_type.type.tw }}
+          {% else %}
+            {{ item_type.type.ko }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <ul class="item_armor_list">
+      {% for item_armor in site.data.item_list %}
+        <li>
+          {{ if page[1] == "jp" }}
+            {{ item_armor.armor.jp }}
+          {{ if page[1] == "tw" }}
+            {{ item_armor.armor.tw }}
+          {% else %}
+            {{ item_armor.armor.ko }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <ul class="item_acc_list">
+      {% for item_acc in site.data.item_list %}
+        <li>
+          {{ if page[1] == "jp" }}
+            {{ item_acc.acc.jp }}
+          {{ if page[1] == "tw" }}
+            {{ item_acc.acc.tw }}
+          {% else %}
+            {{ item_acc.acc.ko }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <ul class="item_class_list">
+      {% for item_class in site.data.item_list %}
+        <li>
+          {{ if page[1] == "jp" }}
+            {{ item_class.class.jp }}
+          {{ if page[1] == "tw" }}
+            {{ item_class.class.tw }}
+          {% else %}
+            {{ item_class.class.ko }}
+          {% endif %}
         </li>
       {% endfor %}
     </ul>
