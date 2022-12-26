@@ -86,6 +86,7 @@
     click_type.click(function () {
       var indexno = $(this).index();
       if(indexno === 0){
+        $(this).css({color:'#fff',backgroundColor:'#111'});
         $('.item_class_list').show();
         $('.item_armor_list').hide();
         $('.item_acc_list').hide();
@@ -103,6 +104,7 @@
         $('.item_acc_list').hide();
       }
       $(this).css('color', 'rgba(255, 255, 255, 0.83)');
+      $('.item_type_list').children().not(this).css('color', '#757981');
       $('.item_type_view').eq(0).text(indexno);
     });
 
@@ -110,6 +112,7 @@
     click_type2.click(function () {
       var indexno = $(this).index();
       $(this).css('color', 'rgba(255, 255, 255, 0.83)');
+      $('.item_sub').children().not(this).css('color', '#757981');
       $('.item_type_view').eq(1).text(indexno);
     });
     
