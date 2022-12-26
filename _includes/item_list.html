@@ -30,9 +30,9 @@
     <ul class="item_type_list">
       {% for item_type in site.data.item_list %}
         <li>
-          {{ if page[1] == "jp" }}
+          {% if page[1] == "jp" %}
             {{ item_type.type.jp }}
-          {{ elsif page[1] == "tw" }}
+          {% elsif page[1] == "tw" %}
             {{ item_type.type.tw }}
           {% else %}
             {{ item_type.type.ko }}
@@ -43,9 +43,9 @@
     <ul class="item_armor_list">
       {% for item_armor in site.data.item_list %}
         <li>
-          {{ if page[1] == "jp" }}
+          {% if page[1] == "jp" %}
             {{ item_armor.armor.jp }}
-          {{ elsif page[1] == "tw" }}
+          {% elsif page[1] == "tw" %}
             {{ item_armor.armor.tw }}
           {% else %}
             {{ item_armor.armor.ko }}
@@ -56,9 +56,9 @@
     <ul class="item_acc_list">
       {% for item_acc in site.data.item_list %}
         <li>
-          {{ if page[1] == "jp" }}
+          {% if page[1] == "jp" %}
             {{ item_acc.acc.jp }}
-          {{ elsif page[1] == "tw" }}
+          {% elsif page[1] == "tw" %}
             {{ item_acc.acc.tw }}
           {% else %}
             {{ item_acc.acc.ko }}
@@ -69,9 +69,9 @@
     <ul class="item_class_list">
       {% for item_class in site.data.item_list %}
         <li>
-          {{ if page[1] == "jp" }}
+          {% if page[1] == "jp" %}
             {{ item_class.class.jp }}
-          {{ elsif page[1] == "tw" }}
+          {% elsif page[1] == "tw" %}
             {{ item_class.class.tw }}
           {% else %}
             {{ item_class.class.ko }}
