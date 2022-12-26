@@ -32,7 +32,7 @@
         <li>
           {{ if page[1] == "jp" }}
             {{ item_type.type.jp }}
-          {{ if page[1] == "tw" }}
+          {{ elsif page[1] == "tw" }}
             {{ item_type.type.tw }}
           {% else %}
             {{ item_type.type.ko }}
@@ -45,7 +45,7 @@
         <li>
           {{ if page[1] == "jp" }}
             {{ item_armor.armor.jp }}
-          {{ if page[1] == "tw" }}
+          {{ elsif page[1] == "tw" }}
             {{ item_armor.armor.tw }}
           {% else %}
             {{ item_armor.armor.ko }}
@@ -58,7 +58,7 @@
         <li>
           {{ if page[1] == "jp" }}
             {{ item_acc.acc.jp }}
-          {{ if page[1] == "tw" }}
+          {{ elsif page[1] == "tw" }}
             {{ item_acc.acc.tw }}
           {% else %}
             {{ item_acc.acc.ko }}
@@ -71,7 +71,7 @@
         <li>
           {{ if page[1] == "jp" }}
             {{ item_class.class.jp }}
-          {{ if page[1] == "tw" }}
+          {{ elsif page[1] == "tw" }}
             {{ item_class.class.tw }}
           {% else %}
             {{ item_class.class.ko }}
