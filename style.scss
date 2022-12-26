@@ -762,17 +762,21 @@ footer {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  background: black;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  justify-content: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.3em;
   width: fit-content;
   li{
-    width: 48px;
-    height: 48px;
+    padding: 0.3em;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: $gray;
+    text-decoration: none;
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    margin: 0.1em;
+    &:hover, &:active {
+      color: $white;
+    }
   }
 }
 
