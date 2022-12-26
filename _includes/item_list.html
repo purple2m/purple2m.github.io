@@ -102,12 +102,14 @@
         $('.item_armor_list').hide();
         $('.item_acc_list').hide();
       }
+      $(this).css('color', 'rgba(255, 255, 255, 0.83)');
       $('.item_type_view').eq(0).text(indexno);
     });
 
     var click_type2 = $('.item_sub').children();
     click_type2.click(function () {
       var indexno = $(this).index();
+      $(this).css('color', 'rgba(255, 255, 255, 0.83)');
       $('.item_type_view').eq(1).text(indexno);
     });
     
