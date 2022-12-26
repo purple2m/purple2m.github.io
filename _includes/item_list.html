@@ -27,6 +27,8 @@
 <section class="list-wrapper">
   <header>
     <h1>아이템 목록</h1>
+    <span class="item_type_view"></span>
+    <span class="item_type_view"></span>
     <ul class="item_type_list item_list">
       {% for item_type in site.data.item_list.type %}
         <li>
@@ -81,7 +83,7 @@
     </ul>
     <script>
     var click_type = $('.item_type_list').children();
-    var type_1 = click_type.click(function () {
+    click_type.click(function () {
       var indexno = $(this).index();
       if(indexno === 0){
         $('.item_class_list').show();
@@ -100,13 +102,13 @@
         $('.item_armor_list').hide();
         $('.item_acc_list').hide();
       }
-      return indexno;
+      $('.item_type_view').eq(0).txt(indexno);
     });
 
     var click_type2 = $('.item_sub').children();
-    var type_2 = click_type2.click(function () {
+    click_type2.click(function () {
       var indexno = $(this).index();
-      return indexno;
+      $('.item_type_view').eq(1).txt(indexno);
     });
     
     </script>
