@@ -150,24 +150,6 @@
   <div class="list" lang="{{ page[1] }}">
     <article class="items">
       <ul>
-        {% for item in list in array offset:paging %}
-          {% if no == 41 %}
-            {% break %}
-          {% else %}
-            <li>
-              {% if item.normal == 1 %}
-              <a href="https://purple2m.github.io/{{ page[1] }}/alchemist/?item={{ item.id }}&type=1">일반</a>
-              {% endif %}
-              {% if item.top == 1 %}
-              <a href="https://purple2m.github.io/{{ page[1] }}/alchemist/?item={{ item.id }}&type=2">상급</a>
-              {% endif %}
-                <img class="thumb {{ item.id }}" src="" onerror="this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';">
-
-                {{ item.ko }}
-            </li>
-            {% assign no = no | plus: 1 %}
-          {% endif %}
-        {% endfor %}
       </ul>
     </article>
   </div>
