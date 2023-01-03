@@ -15,7 +15,6 @@
 
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <section class="list-wrapper">
-  <header>
     <h1>아이템 목록</h1>
     <span class="item_type_view"></span>
     <span class="item_type_view"></span>
@@ -161,13 +160,6 @@
       });
     }
     </script>
-    <ul class="menu">
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/weapon/{{ page[4] }}/1">무기</a></li>
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/armor/{{ page[4] }}/1">방어구</a></li>
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/accessary/{{ page[4] }}/1">장신구</a></li>
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/skill/{{ page[4] }}/1">스킬북</a></li>
-    </ul>
-  </header>
   <div class="list" lang="{{ page[1] }}">
     <article class="items">
       <ul>
