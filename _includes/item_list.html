@@ -1,28 +1,3 @@
-{% assign page2 = page.url | split: "/" %}
-
-{% if page2.size == 3 %}
-  {% assign page = page.url | append: "weapon/page/1" %}
-  {% assign page = page | split: "/" %}
-{% elsif page2.size == 4 %}
-  {% assign page = page.url | append: "page/1" %}
-  {% assign page = page | split: "/" %}
-{% elsif page2.size == 5 %}
-  {% assign page = page.url | append: "1" %}
-  {% assign page = page | split: "/" %}
-{% else %}
-  {% assign page = page.url | split: "/" %}
-{% endif %}
-
-
-{% assign type = "item_" | append: page[3] %}
-{% assign paging = page[5] | minus: 1 %}
-{% if paging == 0 %}
-  {% assign paging = 0 %}
-{% else %}
-  {% assign paging = paging | times: 40 %}
-{% endif %}
-{% assign list=site.data[type] %}
-{% assign no=1 %}
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <section class="list-wrapper">
   <header>
@@ -118,14 +93,59 @@
       $('.item_type_view').eq(1).text(indexno);
     });
     
+
+    function item_list_view(){
+      var list1 = $('.item_type_view').eq(0).text();
+      if(list1 == 1){
+        list1 = "armor";
+      } else if(list1 == 2){
+        list1 = "accessary";
+      } else if(list1 == 3){
+        list1 = "skill";
+      } else {
+        list1 = "weapon";
+      }
+      
+      var list2 = $('.item_type_view').eq(1).text();
+
+      $.getJSON(baseurl+"/item/"+list1+"_"+list2+".json?version=20220801", function(data) {
+      var lng = $(location).attr('pathname');
+      lng = data[i]['recipe'].split('/');
+      lng = lang[1];
+      
+      var find = '';
+      for (var i=0; i < data.length;++i){
+          find += "<li>";
+          if(data[i]['normal'] == 1){
+            if(lng == "jp"){
+              find += "ふつう";
+            } else {
+              find += "일반";
+            }
+          }
+          if(data[i]['top'] == 1){
+            if(lng == "jp"){
+              find += "上級";
+            } else {
+              find += "상급";
+            }
+          }
+          find += "<a href=\"https://purple2m.github.io/"+lng+"/alchemist/?item="+data[i]['id']+"\"";
+          find += "<img class=\"thumb\" src=\"https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_"+data[i]['icon']+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">";
+          if(lng == "jp"){
+            find += data[i]['jp'];
+          } else {
+            find += data[i]['ko'];
+          }
+          find += "</li>";
+        }
+      }
+      if (find){
+        $('.items').eq(0).children().html(find);
+      }
+    });
+    }
     </script>
-    <ul class="menu">
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/weapon/{{ page[4] }}/1">무기</a></li>
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/armor/{{ page[4] }}/1">방어구</a></li>
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/accessary/{{ page[4] }}/1">장신구</a></li>
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/skill/{{ page[4] }}/1">스킬북</a></li>
-    </ul>
-    전체 : {{ paging }}/{{ list.size }}
   </header>
   <div class="list" lang="{{ page[1] }}">
     <article class="items">
@@ -151,14 +171,4 @@
       </ul>
     </article>
   </div>
-
-  <footer>
-    {% assign page_all = list.size | divided_by: 40.0 }}}
-    {% assgin page_all = page_all | ceil %}
-    <ul class="menu">
-      {% for i in (1..page_all) %}
-      <li><a href="{{ site.url }}{{ page[0] }}/{{ page[1] }}/{{ page[2] }}/{{ page[3] }}/{{ page[4] }}/{{ i }}">{{ i }}</a></li>
-      {% endfor %}
-    </ul>
-  </footer>
 </<section>
