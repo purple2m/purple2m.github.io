@@ -125,12 +125,12 @@
       var list2 = $('.item_type_view').eq(1).text();
 
       $.getJSON(baseurl+"/item/"+list1+"_"+list2+".json?version=20220801", function(data) {
-      var lng = $(location).attr('pathname');
-      lng = lng.split('/');
-      lng = lang[1];
-      
-      var find = '';
-      for (var i=0; i < data.length;++i){
+        var lng = $(location).attr('pathname');
+        lng = lng.split('/');
+        lng = lang[1];
+        
+        var find = '';
+        for (var i=0; i < data.length;++i){
           find += "<li>";
           if(data[i]['normal'] == 1){
             if(lng == "jp"){
@@ -155,11 +155,10 @@
           }
           find += "</li>";
         }
-      }
-      if (find){
-        $('.items').eq(0).children().html(find);
-      }
-    });
+        if (find){
+          $('.items').eq(0).children().html(find);
+        }
+      });
     }
     </script>
     <ul class="menu">
