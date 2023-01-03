@@ -126,7 +126,7 @@
       $.getJSON(baseurl+"/item/"+list1+"_"+list2+".json?version=20220801", function(data) {
         var lng = $(location).attr('pathname');
         lng = lng.split('/');
-        lng = lang[1];
+        lng = lng[1];
         
         var find = '';
         for (var i=0; i < data.length;++i){
