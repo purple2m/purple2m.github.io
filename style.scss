@@ -732,18 +732,37 @@ footer {
     }
   }
   .list {
-    border:1px solid $white8;
-    background: $white2;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: center;
+      padding:0;
+      margin:0;
+    }
+    li{
+      padding: 0.3em;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      width: fit-content;
+      min-width: 320px;
+      margin: 0.2em;
+    }
+    a{
+      display: block;
+      text-align: center;
+    }
+    span{
+      background: #282844;
+      font-size: 0.8em;
+      padding: 0.2em;
+    }
+    .thumb{
+      width:64px;
+      margin: 0 auto;
+      height:64px;
+    }
   }
-  .list article{
-    border-bottom: 1px solid $white8;
-    padding: 0;
-  }
-  .list ul{
-    list-style: none;
-    padding:0;
-    margin:0;
-  }
+  .list 
   .list li{
     padding: 0.5em;
     border-bottom: 1px solid $white8;
