@@ -106,6 +106,7 @@
       $(this).css('color', 'rgba(255, 255, 255, 0.83)');
       $('.item_sub').children().not(this).css('color', '#757981');
       $('.item_type_view').eq(1).text(indexno);
+      item_list_view();
     });
     
 
@@ -125,7 +126,7 @@
 
       $.getJSON(baseurl+"/item/"+list1+"_"+list2+".json?version=20220801", function(data) {
       var lng = $(location).attr('pathname');
-      lng = data[i]['recipe'].split('/');
+      lng = lng.split('/');
       lng = lang[1];
       
       var find = '';
