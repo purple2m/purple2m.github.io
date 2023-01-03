@@ -15,7 +15,15 @@
 
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <section class="list-wrapper">
-    <h1>아이템 목록</h1>
+    <h1>
+    {% if page[1] == "jp" %}
+      アイテムリスト
+    {% elsif page[1] == "tw" %}
+      物品的種類
+    {% else %}
+      아이템 목록
+    {% endif %}
+    </h1>
     <span class="item_type_view" style="display: none;"></span>
     <span class="item_type_view" style="display: none;"></span>
     <ul class="item_type_list item_list">
