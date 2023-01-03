@@ -16,8 +16,8 @@
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <section class="list-wrapper">
     <h1>아이템 목록</h1>
-    <span class="item_type_view"></span>
-    <span class="item_type_view"></span>
+    <span class="item_type_view" style="display: none;"></span>
+    <span class="item_type_view" style="display: none;"></span>
     <ul class="item_type_list item_list">
       {% for item_type in site.data.item_list.type %}
         <li>
@@ -131,24 +131,6 @@
         var find = '';
         for (var i=0; i < data.length;++i){
           find += "<li>";
-          if(data[i]['normal'] == 1){
-            find += "<span>";
-            if(lng == "jp"){
-              find += "ふつう";
-            } else {
-              find += "일반";
-            }
-            find += "</span>";
-          }
-          if(data[i]['top'] == 1){
-            find += "<span>";
-            if(lng == "jp"){
-              find += "上級";
-            } else {
-              find += "상급";
-            }
-            find += "</span>";
-          }
           find += "<a href=\"https://purple2m.github.io/"+lng+"/alchemist/?item="+data[i]['id']+"\">";
           find += "<img class=\"thumb\" src=\"https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_"+data[i]['icon']+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">";
           if(lng == "jp"){
