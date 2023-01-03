@@ -115,30 +115,29 @@
       
       var find = '';
       for (var i=0; i < data.length;++i){
-          find += "<li>";
-          if(data[i]['normal'] == 1){
-            if(lng == "jp"){
-              find += "ふつう";
-            } else {
-              find += "일반";
-            }
-          }
-          if(data[i]['top'] == 1){
-            if(lng == "jp"){
-              find += "上級";
-            } else {
-              find += "상급";
-            }
-          }
-          find += "<a href=\"https://purple2m.github.io/"+lng+"/alchemist/?item="+data[i]['id']+"\"";
-          find += "<img class=\"thumb\" src=\"https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_"+data[i]['icon']+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">";
+        find += "<li>";
+        if(data[i]['normal'] == 1){
           if(lng == "jp"){
-            find += data[i]['jp'];
+            find += "ふつう";
           } else {
-            find += data[i]['ko'];
+            find += "일반";
           }
-          find += "</li>";
         }
+        if(data[i]['top'] == 1){
+          if(lng == "jp"){
+            find += "上級";
+          } else {
+            find += "상급";
+          }
+        }
+        find += "<a href=\"https://purple2m.github.io/"+lng+"/alchemist/?item="+data[i]['id']+"\"";
+        find += "<img class=\"thumb\" src=\"https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_"+data[i]['icon']+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">";
+        if(lng == "jp"){
+          find += data[i]['jp'];
+        } else {
+          find += data[i]['ko'];
+        }
+        find += "</li>";
       }
       if (find){
         $('.items').eq(0).children().html(find);
