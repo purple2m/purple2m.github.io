@@ -344,7 +344,7 @@ function recipe_info(alc_type){
 						}
 					}
 					recipe_material += "</ul>";
-					$(".normal_alc").eq(0).children().eq(i).append(slot_material);
+					$(".normal_alc").eq(0).children().eq(i).children().eq(0).children().eq(1).append(slot_material);
 					$(".normal_alc").eq(0).children().eq(i).append(recipe_material);
 					break;
 				}
