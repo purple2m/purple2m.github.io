@@ -255,7 +255,7 @@ function get_recipe2(data, lng, type){
 		  }
 		  slot += "</ul>";
 
-		  find += "<li onclick=''><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
+		  find += "<li><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
 		  find += "<li>"+slot+"</li>";
 		  find += "</ul></li>";
 

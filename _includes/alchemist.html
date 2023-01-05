@@ -87,10 +87,7 @@
 	$('#enchant_level').on('change', function() {
 		ncapi("price", this_item_id, this.value);
 	});
-	function recipe_material(){
-		
-	}
-	$(".normal_alc").children('li').click(function() {
-   		$(this).children('ul').eq(1).toggle();
+	$('.normal_alc').children().click(function(){
+		$(this).children('ul').eq(1).toggle();
 	});
 </script>
