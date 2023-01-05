@@ -502,12 +502,6 @@ nav {
   display: flex;
   list-style: none;
   flex-direction: column;
-}
-.recipe_list li{
-  padding: 0.1em;
-  flex-direction: row;
-  justify-content: flex-start;
-  border: 0;
   ul{
     display:flex;
     li{
@@ -517,6 +511,13 @@ nav {
       background: #282844;
     }
   }
+}
+.recipe_list li{
+  padding: 0.1em;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 0;
+
 }
 
 .recipe_list span {
