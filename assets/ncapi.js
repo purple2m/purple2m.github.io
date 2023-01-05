@@ -415,6 +415,3 @@ function find_material(searching_recipe, type, lng, event){
   
 	  });
   }
-$('.normal_alc').children().click(function(){
-	$(this).children('ul').eq(1).toggle();
-});

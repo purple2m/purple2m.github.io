@@ -87,7 +87,10 @@
 	$('#enchant_level').on('change', function() {
 		ncapi("price", this_item_id, this.value);
 	});
-	$('.normal_alc').children().click(function(){
-		$(this).children('ul').eq(1).toggle();
+	$(window).onload(function(){
+		$('.normal_alc').children().click(function(){
+			$(this).children('ul').eq(1).toggle();
+		});
 	});
+
 </script>
