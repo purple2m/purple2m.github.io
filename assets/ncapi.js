@@ -245,12 +245,13 @@ function get_recipe2(data, lng, type){
 		  recipe = step[2].split('-');
 
 		  var slot = "<ul class='recipe_slot'>";
-		  for (var j=0; j < 5;++j){
-			  if(j == recipe[1]){
-				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span class='up'>+"+step[0]+"</span></li>";
-			  }else{
-				  slot += "<li></li>";
-			  }
+		  for (var j=0; j < 6;++j){
+			if(j == 0){
+			}else if(j == recipe[1]){
+				slot += "<li>" + $(".thumb-img").eq(0).html() + "<span class='up'>+"+step[0]+"</span></li>";
+			}else{
+				slot += "<li></li>";
+			}
 		  }
 		  slot += "</ul>";
 
@@ -271,12 +272,13 @@ function get_recipe2(data, lng, type){
 		  recipe = step[2].split('-');
 
 		  var slot = "<ul class='recipe_slot'>";
-		  for (var j=0; j < 5;++j){
-			  if(j == recipe[1]){
-				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span class='up'>+"+step[0]+"</span></li>";
-			  }else{
-				  slot += "<li></li>";
-			  }
+		  for (var j=0; j < 6;++j){
+			if(j == 0){
+			}else if(j == recipe[1]){
+				slot += "<li>" + $(".thumb-img").eq(0).html() + "<span class='up'>+"+step[0]+"</span></li>";
+			}else{
+				slot += "<li></li>";
+			}
 		  }
 		  slot += "</ul>";
 
@@ -303,8 +305,8 @@ function recipe_info(alc_type){
 		var icon_3 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_legendary_01.png.png">';
 		
 		for (var i=0; i < recipe_list;++i){
-			var recipe_no = $(".normal_alc").eq(0).children().eq(i).children().eq(0).text();
-			var slot = $(".normal_alc").eq(0).children().eq(i).children().eq(1).text();
+			var recipe_no = $(".normal_alc").eq(0).children().eq(i).children().eq(0).children().eq(0).children().eq(0).text();
+			var slot = $(".normal_alc").eq(0).children().eq(i).children().eq(0).children().eq(0).children().eq(1).text();
 			
 			for (var ii=0; ii < data.length;++ii){
 				if(data[ii]['no'] == recipe_no){
