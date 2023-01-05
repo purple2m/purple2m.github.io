@@ -303,7 +303,7 @@ function recipe_info(alc_type){
 		let recipe_list = $(".normal_alc").eq(0).children().length;
 		var icon_1 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">';
 		var icon_2 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_epic_01.png">';
-		var icon_3 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_legendary_01.png.png">';
+		var icon_3 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_legendary_01.png">';
 		
 		for (var i=0; i < recipe_list;++i){
 			var recipe_no = $(".normal_alc").eq(0).children().eq(i).children().eq(0).children().eq(0).children().eq(0).text();
