@@ -440,6 +440,32 @@ nav {
   display: none;
 }
 
+.recipe_slot{
+  display: flex;
+  padding: 0;
+  li{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border: 1px solid $white8;
+    border-radius: 50%;
+    background: $white8;
+    .up{
+      position: absolute;
+      font-size: 0.8em;
+      margin: 0;
+      padding: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .thumb2{
+    width: 32px;
+    height: 32px;
+    margin: 0;
+  }
+}
+
 .alc_wrap > .info{
   ul{
     list-style: none;
@@ -478,36 +504,16 @@ nav {
   padding: 0;
   display: flex;
 }
-
+.normal_alc > li > ul > li:nth-child(1){
+  span:nth-child(2){
+    display:none;
+  }
+}
 .normal_alc > li > ul > li:nth-child(2){
   display: flex;
   flex-direction: column;
 }
-.recipe_slot{
-  display: flex;
-  padding: 0;
-  li{
-    width: 32px;
-    height: 32px;
-    position: relative;
-    border: 1px solid $white8;
-    border-radius: 50%;
-    background: $white8;
-    .up{
-      position: absolute;
-      font-size: 0.8em;
-      margin: 0;
-      padding: 0;
-      right: 0;
-      bottom: 0;
-    }
-  }
-  .thumb2{
-    width: 32px;
-    height: 32px;
-    margin: 0;
-  }
-}
+
 
 
 #searching_recipe{

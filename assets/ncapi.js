@@ -254,7 +254,7 @@ function get_recipe2(data, lng, type){
 		  }
 		  slot += "</ul>";
 
-		  find += "<li><ul><li><span>"+recipe[0]+"</span><span class='up'>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
+		  find += "<li><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
 		  find += "<li>"+slot+"</li>";
 		  find += "<li></li></ul></li>";
 
@@ -273,7 +273,7 @@ function get_recipe2(data, lng, type){
 		  var slot = "<ul class='recipe_slot'>";
 		  for (var j=0; j < 5;++j){
 			  if(j == recipe[1]){
-				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span>+"+step[0]+"</span></li>";
+				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span class='up'>+"+step[0]+"</span></li>";
 			  }else{
 				  slot += "<li></li>";
 			  }
