@@ -243,11 +243,21 @@ function get_recipe2(data, lng, type){
 		for (var i=0; i < data.normal.length;++i){
 		  step = data.normal[i].split(',');
 		  recipe = step[2].split('-');
-		  if(lng == "jp"){
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
-		  } else {
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+
+		  var slot = "<ul class='recipe_slot'>";
+		  for (var i=0; i < 5;++i){
+			  if(i == recipe[1]){
+				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span>+"+step[0]+"</span></li>";
+			  }else{
+				  slot += "<li></li>";
+			  }
 		  }
+		  slot += "</ul>";
+
+		  find += "<li><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
+		  find += "<li>"+slot+"</li>";
+		  find += "<li></li></ul></li>";
+
 		}
 	  } else if(type == 'top'){
 		if(lng == "jp"){
@@ -259,11 +269,20 @@ function get_recipe2(data, lng, type){
 		for (var i=0; i < data.top.length;++i){
 		  step = data.top[i].split(',');
 		  recipe = step[2].split('-');
-		  if(lng == "jp"){
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.jp+" ("+step[1]+")</li>";
-		  } else {
-			find += "<li onclick=\"find_material('"+recipe[0]+"', '"+type+"', '"+lng+"', event);\"><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span> +"+step[0]+" "+data.ko+" ("+step[1]+")</li>";
+
+		  var slot = "<ul class='recipe_slot'>";
+		  for (var i=0; i < 5;++i){
+			  if(i == recipe[1]){
+				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span>+"+step[0]+"</span></li>";
+			  }else{
+				  slot += "<li></li>";
+			  }
 		  }
+		  slot += "</ul>";
+
+		  find += "<li><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
+		  find += "<li>"+slot+"</li>";
+		  find += "<li></li></ul></li>";
 		}
 	  }
 	find += "</ul>";
@@ -279,7 +298,7 @@ function recipe_info(alc_type){
         lng = lng[1];
 
 		let recipe_list = $(".normal_alc").eq(0).children().length;
-		var icon_1 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02">';
+		var icon_1 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">';
 		var icon_2 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_epic_01.png">';
 		var icon_3 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_legendary_01.png.png">';
 		
@@ -290,14 +309,13 @@ function recipe_info(alc_type){
 			for (var ii=0; ii < data.length;++ii){
 				if(data[ii]['no'] == recipe_no){
 					var recipe_material = "<ul class='recipe_list'>";
-					var slot_material = "<ul class='recipe_slot'>";
 					for (var j=0; j < data[ii]['recipe'].length;++j){
 						if (lng == "jp"){
 							var find_recipe = data[ii]['jp'][j].split(',');
 						} else {
 							var find_recipe = data[ii]['recipe'][j].split(',');
 						}
-						var slot_recipe = data[ii]['slot'][j].split(',');
+						var slot_recipe = data[ii]['slot'][0].split(',');
 
 						recipe_material += "<li>";
 						for (var jj=0; jj < 5;++jj){
@@ -310,12 +328,13 @@ function recipe_info(alc_type){
 						if(find_recipe[0] === undefined){
 							recipe_material += "</li>";
 						}
+						var slot_material = "<ul class='recipe_slot'>";
 						for (var jj=0; jj < 5;++jj){
-							if(slot_recipe[jj] === 1){
+							if(slot_recipe[jj] == 1){
 								slot_material += "<li>"+icon_1+"</li>";
-							} else if(slot_recipe[jj] === 2){
+							} else if(slot_recipe[jj] == 2){
 								slot_material += "<li>"+icon_2+"</li>";
-							} else if(slot_recipe[jj] === 3){
+							} else if(slot_recipe[jj] == 3){
 								slot_material += "<li>"+icon_3+"</li>";
 							} else {
 								slot_material += "<li></li>";
@@ -323,8 +342,8 @@ function recipe_info(alc_type){
 						}
 					}
 					recipe_material += "</ul>";
-					$(".normal_alc").eq(0).children().eq(i).append(recipe_material);
 					$(".normal_alc").eq(0).children().eq(i).append(slot_material);
+					$(".normal_alc").eq(0).children().eq(i).append(recipe_material);
 					break;
 				}
 			}
