@@ -324,7 +324,7 @@ function recipe_info(alc_type){
 							if(find_recipe[jj] === undefined){
 								find_recipe[jj] = '';
 							} else {
-								recipe_material += "<span>"+find_recipe[jj]+"</span>";
+								recipe_material += "<li>"+find_recipe[jj]+"</li>";
 							}
 						}
 						if(find_recipe[0] === undefined){
