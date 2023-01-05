@@ -256,7 +256,7 @@ function get_recipe2(data, lng, type){
 
 		  find += "<li><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
 		  find += "<li>"+slot+"</li>";
-		  find += "<li></li></ul></li>";
+		  find += "</ul></li>";
 
 		}
 	  } else if(type == 'top'){
@@ -282,7 +282,7 @@ function get_recipe2(data, lng, type){
 
 		  find += "<li><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
 		  find += "<li>"+slot+"</li>";
-		  find += "<li></li></ul></li>";
+		  find += "</ul></li>";
 		}
 	  }
 	find += "</ul>";
