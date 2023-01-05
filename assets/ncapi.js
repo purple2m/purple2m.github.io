@@ -272,7 +272,65 @@ function get_recipe2(data, lng, type){
 	
 	my_list2[0].innerHTML = find;
 }
+function recipe_info(alc_type){
+	$.getJSON(baseurl+"/alchemist/"+alc_type+".json?version=20220801", function(data) {
+		var lng = $(location).attr('pathname');
+        lng = lng.split('/');
+        lng = lng[1];
 
+		let recipe_list = $(".normal_alc").eq(0).children().length;
+		var icon_1 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02">';
+		var icon_2 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_epic_01.png">';
+		var icon_3 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_legendary_01.png.png">';
+		
+		for (var i=0; i < recipe_list;++i){
+			var recipe_no = $(".normal_alc").eq(0).children().eq(i).children().eq(0).text();
+			var slot = $(".normal_alc").eq(0).children().eq(i).children().eq(1).text();
+			
+			for (var ii=0; ii < data.length;++ii){
+				if(data[ii]['no'] == recipe_no){
+					var recipe_material = "<ul class='recipe_list'>";
+					var slot_material = "<ul class='recipe_slot'>";
+					for (var j=0; j < data[ii]['recipe'].length;++j){
+						if (lng == "jp"){
+							var find_recipe = data[ii]['jp'][j].split(',');
+						} else {
+							var find_recipe = data[ii]['recipe'][j].split(',');
+						}
+						var slot_recipe = data[ii]['slot'][j].split(',');
+
+						recipe_material += "<li>";
+						for (var jj=0; jj < 5;++jj){
+							if(find_recipe[jj] === undefined){
+								find_recipe[jj] = '';
+							} else {
+								recipe_material += "<span>"+find_recipe[jj]+"</span>";
+							}
+						}
+						if(find_recipe[0] === undefined){
+							recipe_material += "</li>";
+						}
+						for (var jj=0; jj < 5;++jj){
+							if(slot_recipe[jj] === 1){
+								slot_material += "<li>"+icon_1+"</li>";
+							} else if(slot_recipe[jj] === 2){
+								slot_material += "<li>"+icon_2+"</li>";
+							} else if(slot_recipe[jj] === 3){
+								slot_material += "<li>"+icon_3+"</li>";
+							} else {
+								slot_material += "<li></li>";
+							}
+						}
+					}
+					recipe_material += "</ul>";
+					$(".normal_alc").eq(0).children().eq(i).append(recipe_material);
+					$(".normal_alc").eq(0).children().eq(i).append(slot_material);
+					break;
+				}
+			}
+		}
+	});
+}
 function find_material(searching_recipe, type, lng, event){
 	var y1 = event.clientY;
 	$("#recipe_material").css("top",y1 + "px");
