@@ -245,8 +245,8 @@ function get_recipe2(data, lng, type){
 		  recipe = step[2].split('-');
 
 		  var slot = "<ul class='recipe_slot'>";
-		  for (var i=0; i < 5;++i){
-			  if(i == recipe[1]){
+		  for (var j=0; j < 5;++j){
+			  if(j == recipe[1]){
 				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span>+"+step[0]+"</span></li>";
 			  }else{
 				  slot += "<li></li>";
@@ -271,8 +271,8 @@ function get_recipe2(data, lng, type){
 		  recipe = step[2].split('-');
 
 		  var slot = "<ul class='recipe_slot'>";
-		  for (var i=0; i < 5;++i){
-			  if(i == recipe[1]){
+		  for (var j=0; j < 5;++j){
+			  if(j == recipe[1]){
 				  slot += "<li>" + $(".thumb-img").eq(0).html() + "<span>+"+step[0]+"</span></li>";
 			  }else{
 				  slot += "<li></li>";
