@@ -327,6 +327,7 @@ function recipe_info(alc_type){
 								recipe_material += "<li>"+find_recipe[jj]+"</li>";
 							}
 						}
+						recipe_material += "</ul>";
 						if(find_recipe[0] === undefined){
 							recipe_material += "</ul>";
 						}
