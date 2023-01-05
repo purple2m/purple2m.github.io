@@ -507,7 +507,18 @@ nav {
   padding: 0.1em;
   flex-direction: row;
   justify-content: flex-start;
+  border: 0;
+  ul{
+    display:flex;
+    li{
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.2em;
+      margin: 0.1em;
+      background: #282844;
+    }
+  }
 }
+
 .recipe_list span {
   display: inline-block;
   padding: 0.2em;

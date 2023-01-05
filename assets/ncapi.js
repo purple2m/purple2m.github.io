@@ -369,35 +369,35 @@ function find_material(searching_recipe, type, lng, event){
 			  if(find_recipe[0] === undefined){
 				find_recipe[0] = '';
 			  } else {
-				recipe_material += "<li>";
-				recipe_material += "<span>"+find_recipe[0]+"</span>";
+				recipe_material += "<li><ul>";
+				recipe_material += "<li>"+find_recipe[0]+"</li>";
 			  }
   
 			  if(find_recipe[1] === undefined){
 				find_recipe[1] = '';
 			  } else {
-				recipe_material += "<span>"+find_recipe[1]+"</span>";
+				recipe_material += "<li>"+find_recipe[1]+"</li>";
 			  }
   
 			  if(find_recipe[2] === undefined){
 				find_recipe[2] = '';
 			  } else {
-				recipe_material += "<span>"+find_recipe[2]+"</span>";
+				recipe_material += "<li>"+find_recipe[2]+"</li>";
 			  }
   
 			  if(find_recipe[3] === undefined){
 				find_recipe[3] = '';
 			  } else {
-				recipe_material += "<span>"+find_recipe[3]+"</span>";
+				recipe_material += "<li>"+find_recipe[3]+"</li>";
 			  }
   
 			  if(find_recipe[4] === undefined){
 				find_recipe[4] = '';
 			  } else {
-				recipe_material += "<span>"+find_recipe[4]+"</span>";
+				recipe_material += "<li>"+find_recipe[4]+"</li>";
 			  }
 			  if(find_recipe[0] === undefined){
-				recipe_material += "</li>";
+				recipe_material += "</ul></li>";
 			  }
 			}
   
