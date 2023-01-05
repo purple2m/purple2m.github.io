@@ -467,13 +467,17 @@ nav {
 }
 
 .alc_wrap > .info{
-  ul{
+  .options{
     list-style: none;
     padding: 0.5em 1em 0.5em;
     margin: 0;
     @include mobile {
       padding: 0.5em 0em 0.5em;
     }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
   }
   .normal_alc li{
     padding: 0.5em 0;
@@ -489,14 +493,6 @@ nav {
     background: rgba(255, 255, 255, 0.83);
     border: 1px solid;
     color: black;
-  }
-  .normal_alc li>span:nth-child(2){
-    padding: 0.3em;
-    margin: 0 0.5em 0 0;
-    font-size: 0.9em;
-  }
-  @include mobile {
-    font-size:0.8em;
   }
 }
 
