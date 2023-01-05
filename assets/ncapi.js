@@ -255,7 +255,7 @@ function get_recipe2(data, lng, type){
 		  }
 		  slot += "</ul>";
 
-		  find += "<li><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
+		  find += "<li onclick=''><ul><li><span>"+recipe[0]+"</span><span>"+recipe[1]+"</span><span>("+step[1]+")</span></li>";
 		  find += "<li>"+slot+"</li>";
 		  find += "</ul></li>";
 
@@ -311,7 +311,7 @@ function recipe_info(alc_type){
 			
 			for (var ii=0; ii < data.length;++ii){
 				if(data[ii]['no'] == recipe_no){
-					var recipe_material = "<ul class='recipe_list'>";
+					var recipe_material = "<ul class='recipe_list' style='display:none;'>";
 					for (var j=0; j < data[ii]['recipe'].length;++j){
 						if (lng == "jp"){
 							var find_recipe = data[ii]['jp'][j].split(',');
