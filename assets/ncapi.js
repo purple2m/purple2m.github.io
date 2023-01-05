@@ -319,7 +319,7 @@ function recipe_info(alc_type){
 						}
 						var slot_recipe = data[ii]['slot'][0].split(',');
 
-						recipe_material += "<li>";
+						recipe_material += "<ul>";
 						for (var jj=0; jj < 5;++jj){
 							if(find_recipe[jj] === undefined){
 								find_recipe[jj] = '';
@@ -328,19 +328,19 @@ function recipe_info(alc_type){
 							}
 						}
 						if(find_recipe[0] === undefined){
-							recipe_material += "</li>";
+							recipe_material += "</ul>";
 						}
-						var slot_material = "<ul class='recipe_slot'>";
-						for (var jj=0; jj < 5;++jj){
-							if(slot_recipe[jj] == 1){
-								slot_material += "<li>"+icon_1+"</li>";
-							} else if(slot_recipe[jj] == 2){
-								slot_material += "<li>"+icon_2+"</li>";
-							} else if(slot_recipe[jj] == 3){
-								slot_material += "<li>"+icon_3+"</li>";
-							} else {
-								slot_material += "<li></li>";
-							}
+					}
+					var slot_material = "<ul class='recipe_slot'>";
+					for (var jj=0; jj < 5;++jj){
+						if(slot_recipe[jj] == 1){
+							slot_material += "<li>"+icon_1+"</li>";
+						} else if(slot_recipe[jj] == 2){
+							slot_material += "<li>"+icon_2+"</li>";
+						} else if(slot_recipe[jj] == 3){
+							slot_material += "<li>"+icon_3+"</li>";
+						} else {
+							slot_material += "<li></li>";
 						}
 					}
 					recipe_material += "</ul>";
