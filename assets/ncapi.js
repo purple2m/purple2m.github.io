@@ -292,6 +292,7 @@ function get_recipe2(data, lng, type){
 	var my_list2= document.getElementsByClassName("info");
 	
 	my_list2[0].innerHTML = find;
+	recipe_info(type);
 }
 function recipe_info(alc_type){
 	$.getJSON(baseurl+"/alchemist/"+alc_type+".json?version=20220801", function(data) {
