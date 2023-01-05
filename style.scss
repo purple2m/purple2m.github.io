@@ -484,6 +484,8 @@ nav {
     border-bottom: 1px solid $white8;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
   }
   .normal_alc li>span:first-child{
