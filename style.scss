@@ -487,6 +487,8 @@ nav {
   display: flex;
   padding: 0;
   li{
+    width: 32px;
+    height: 32px;
     position: relative;
     border: 1px solid $white8;
     border-radius: 50%;
