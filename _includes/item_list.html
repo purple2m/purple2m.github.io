@@ -125,10 +125,63 @@
       } else if(list1 == 3){
         list1 = "skill";
       } else {
-        list1 = "weapon";
+        list1 = "weapone";
       }
       
       var list2 = $('.item_type_view').eq(1).text();
+      if(list1 == 3){
+        if(list2 == 0){
+          list = "01";
+        }else if(list2 == 1){
+          list = "02";
+        }else if(list2 == 2){
+          list = "03";
+        }else if(list2 == 3){
+          list = "04";
+        }else if(list2 == 4){
+          list = "05";
+        }else if(list2 == 5){
+          list = "06";
+        }else if(list2 == 6){
+          list = "07";
+        }else if(list2 == 7){
+          list = "08";
+        }else if(list2 == 8){
+          list = "09";
+        }else if(list2 == 9){
+          list = "10";
+        }else if(list2 == 10){
+          list = "11";
+        }else if(list2 == 11){
+          list = "12";
+        }
+      }else{
+        if(list2 == 0){
+          list = "031";
+        }else if(list2 == 1){
+          list = "032";
+        }else if(list2 == 2){
+          list = "033";
+        }else if(list2 == 3){
+          list = "034";
+        }else if(list2 == 4){
+          list = "035";
+        }else if(list2 == 5){
+          list = "036";
+        }else if(list2 == 6){
+          list = "037";
+        }else if(list2 == 7){
+          list = "038";
+        }else if(list2 == 8){
+          list = "039";
+        }else if(list2 == 9){
+          list = "320";
+        }else if(list2 == 10){
+          list = "321";
+        }else if(list2 == 11){
+          list = "329";
+        }
+      }
 
       $.getJSON(baseurl+"/item/"+list1+"_"+list2+".json?version=20220801", function(data) {
         var lng = $(location).attr('pathname');

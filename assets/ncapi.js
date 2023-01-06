@@ -95,18 +95,15 @@ function ncapi(get_url, item_id, enchant_level, target){
 		  item_type = "rune";
 		} else if(item_type1 == 50){ // 스킬
 		  item_type = "skill";
+		  item_type2 = item.substr(2, 3);
 		} else if(item_type1 == 60){ // 기타
 		  item_type = "etc";
 		} else if(item_type1 == 70){ // 마력석
 		  item_type = "stone";
 		}
-		if(type == 2){
-		  type = "top";
-		} else {
-		  type = "normal";
-		}
+
 	  
-		$.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
+		$.getJSON(baseurl+"/item/"+item_type+"_"+item_type2+".json", function(data) {
 		  const info = data.find(v => v.id == item);
 
 		  let item_name = document.getElementById("item_name");
@@ -142,18 +139,15 @@ function get_items(item){
 	  item_type = "rune";
 	} else if(item_type1 == 50){ // 스킬
 	  item_type = "skill";
+	  item_type2 = item.substr(2, 3);
 	} else if(item_type1 == 60){ // 기타
 	  item_type = "etc";
 	} else if(item_type1 == 70){ // 마력석
 	  item_type = "stone";
 	}
-	if(type == 2){
-	  type = "top";
-	} else {
-	  type = "normal";
-	}
+
   
-	$.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
+	$.getJSON(baseurl+"/item/"+item_type+"_"+item_type2+".json", function(data) {
 	  const info = data.find(v => v.id == item);
 
 	  let item_name = document.getElementById("item_name");
@@ -164,34 +158,6 @@ function get_items(item){
 		item_name.innerHTML = info.ko;
 	  }
 	});
-}
-
-function item_icon(item_id, enchant_level){
-	this.token = "eyJraWQiOiI0OGEzNzliNS1mNGIxLTQ2Y2ItYTk4Zi0xOWNmM2VjOTEyYTYiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOiIxRjczMzQyNy05RUQ5LTQ5MjctQTEzRS1DMTJEMDU4ODRDOTAifQ.S8ZmQslV8xMQ_gT2dx7C0OGFV0rWFh-vsk5YHMTx32bVB5uvQSQrdSmbLKIiQycsnyCrw-ASkjeqtjBAzFkpbQBel-g3tQpbg8I8P3psOO_kJizvaJtwOsLQaHiF_zqhgQuDaCRZ40yHI49BWMGUukkx-SQhko0HCYy3uaz2D-ovYrg90E_6g38dz2t7UGdruWpkuTxNCHcjS7OYFEP41C0YjERsFM4o6CTGvKhtNXgs6qf--UbAKsFYHf-UPsQI9FRndhvxvO5pRLbnWDHQLGeWoEDh6Y1j396MGWl3vOCVJhBKaGE4pAUZFoCbV1DfB2Ls3Ns1MPd7u3l9QkMCXg"
-	this.xhr = new XMLHttpRequest();
-	this.item_id = item_id;
-	this.enchant_level = enchant_level;
-	this.queryParams = '?';
-
-	this.url = 'https://dev-api.plaync.com/l2m/v1.0/market/items/'+ this.item_id;
-	this.queryParams += encodeURIComponent('enchant_level') + '='+encodeURIComponent(this.enchant_level);
-
-	item_icon();
-
-
-	function item_icon(responseText){
-		xhr.open('GET', url + queryParams);
-		xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-		xhr.onreadystatechange = function () {
-		  if (this.readyState == 4) {
-			let data = JSON.parse(this.responseText);
-
-			let image = document.getElementsByClassName(item_id);
-				image[0].src = data.image;
-		  }
-		};
-		xhr.send('');
-	}
 }
 
 function get_recipe(item, lng, type){
@@ -209,22 +175,16 @@ function get_recipe(item, lng, type){
 	  item_type = "rune";
 	} else if(item_type1 == 50){ // 스킬
 	  item_type = "skill";
+	  item_type2 = item.substr(2, 3);
 	} else if(item_type1 == 60){ // 기타
 	  item_type = "etc";
 	} else if(item_type1 == 70){ // 마력석
 	  item_type = "stone";
 	}
-
-	if(type == 2){
-	  type = "top";
-	} else {
-	  type = "normal";
-	}
+	$.getJSON(baseurl+"/item/"+item_type+"_"+item_type2+".json", function(data) {
+		const info = data.find(v => v.id == item);
   
-	$.getJSON(baseurl+"/item/"+type+"/"+item_type+"/"+item_type2+".json", function(data) {
-	  const info = data.find(v => v.id == item);
-  
-	  get_recipe2(info, lng, type);
+		get_recipe2(info, lng, type);
 	});
 }
 
