@@ -33,34 +33,6 @@ description: "You can search for items in Lineage 2M to find a collection of ite
 
 <section class="recent-wrapper">
   <header>
-    <h1>リネージュ2M錬金術情報</h1>
-  </header>
-  <div class="recent" lang="jp">
-    {% assign posts = site.categories.tips | where:"lang", "jp" %}
-      {% for post in posts %}
-        <article class="post">
-          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
-        </article>
-      {% endfor %}
-  </div>
-</section>
-
-<section class="recent-wrapper">
-  <header>
-    <h1>天堂2M煉金術搜索器</h1>
-  </header>
-  <div class="recent" lang="zh-TW">
-    {% assign posts = site.categories.tips | where:"lang", "tw" %}
-      {% for post in posts %}
-        <article class="post">
-          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
-        </article>
-      {% endfor %}
-  </div>
-</section>
-
-<section class="recent-wrapper">
-  <header>
     <h1>리니지2M 공략</h1>
   </header>
   <div class="recent" lang="ko">
@@ -77,10 +49,38 @@ description: "You can search for items in Lineage 2M to find a collection of ite
 
 <section class="recent-wrapper">
   <header>
+    <h1>リネージュ2M錬金術情報</h1>
+  </header>
+  <div class="recent" lang="jp">
+    {% assign posts = site.categories.tips | where:"lang", "jp" %}
+      {% for post in posts %}
+        <article class="post">
+          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        </article>
+      {% endfor %}
+  </div>
+</section>
+
+<section class="recent-wrapper">
+  <header>
     <h1>リネージュ2M情報</h1>
   </header>
   <div class="recent" lang="jp">
     {% assign posts = site.categories.info | where:"lang", "jp" %}
+      {% for post in posts %}
+        <article class="post">
+          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        </article>
+      {% endfor %}
+  </div>
+</section>
+
+<section class="recent-wrapper">
+  <header>
+    <h1>天堂2M煉金術搜索器</h1>
+  </header>
+  <div class="recent" lang="zh-TW">
+    {% assign posts = site.categories.tips | where:"lang", "tw" %}
       {% for post in posts %}
         <article class="post">
           <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
