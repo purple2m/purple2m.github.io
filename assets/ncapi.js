@@ -256,7 +256,7 @@ function get_recipe2(data, lng, type){
 	recipe_info(type);
 }
 function recipe_info(alc_type){
-	$.getJSON(baseurl+"/alchemist/"+alc_type+".json?version=20230105", function(data) {
+	$.getJSON(baseurl+"/alchemist/"+alc_type+".json?version=20230106", function(data) {
 		var lng = $(location).attr('pathname');
         lng = lng.split('/');
         lng = lng[1];
