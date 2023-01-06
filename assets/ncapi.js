@@ -197,10 +197,10 @@ function item_icon(item_id, enchant_level){
 function get_recipe(item, lng, type){
 	let item_type;
 	let item_type1 = item.substr(0, 2);
-	let item_type2 = item.substr(2, 2);
+	let item_type2 = item.substr(2, 3);
   
 	if(item_type1 == 10){ // 무기
-	  item_type = "weapone";
+	  item_type = "weapon";
 	} else if(item_type1 == 20){ // 방어구
 	  item_type = "armor";
 	} else if(item_type1 == 30){ // 장신구
@@ -214,6 +214,7 @@ function get_recipe(item, lng, type){
 	} else if(item_type1 == 70){ // 마력석
 	  item_type = "stone";
 	}
+
 	if(type == 2){
 	  type = "top";
 	} else {
@@ -304,6 +305,10 @@ function recipe_info(alc_type){
 		var icon_1 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">';
 		var icon_2 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_epic_01.png">';
 		var icon_3 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_legendary_01.png">';
+		var icon_11 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_smet_lune.png">';
+		var icon_22 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Misc_Gracia_Collection_B.png">';
+		var icon_33 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_enchant_pedant.png">';
+		var icon_44 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_smet_pendant.png">';
 		
 		for (var i=0; i < recipe_list;++i){
 			var recipe_no = $(".normal_alc").eq(0).children().eq(i).children().eq(0).children().eq(0).children().eq(0).text();
@@ -341,6 +346,12 @@ function recipe_info(alc_type){
 							slot_material += "<li>"+icon_2+"</li>";
 						} else if(slot_recipe[jj] == 3){
 							slot_material += "<li>"+icon_3+"</li>";
+						} else if(slot_recipe[jj] == 11){
+							slot_material += "<li>"+icon_11+"</li>";
+						} else if(slot_recipe[jj] == 22){
+							slot_material += "<li>"+icon_22+"</li>";
+						} else if(slot_recipe[jj] == 33){
+							slot_material += "<li>"+icon_33+"</li>";
 						} else {
 							slot_material += "<li></li>";
 						}
