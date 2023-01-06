@@ -183,7 +183,7 @@ function get_recipe(item, lng, type){
 	}
 	$.getJSON(baseurl+"/item/"+item_type+"_"+item_type2+".json", function(data) {
 		const info = data.find(v => v.id == item);
-  
+		console.log(info);
 		get_recipe2(info, lng, type);
 	});
 }
