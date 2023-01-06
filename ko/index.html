@@ -32,4 +32,19 @@ tags: [리니지2M, 리니지2m, 연금 검색기]
     {% endif %}
   </div>
 </section>
+<section class="recent-wrapper">
+  <header>
+    <h1>Info</h1>
+  </header>
+  <div class="recent" lang="ko">
+    {% assign posts=site.categories.info | where:"lang", "ko" | sort: 'lang-ref' %}
+    {% if posts.size > 1 %}
+      {% for post in posts %}
+        <article class="post">
+          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        </article>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
 <h1><a href="https://twitter.com/L2MDCSCAM">Twitter</a></h1>
