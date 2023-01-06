@@ -197,7 +197,7 @@ function item_icon(item_id, enchant_level){
 function get_recipe(item, lng, type){
 	let item_type;
 	let item_type1 = item.substr(0, 2);
-	let item_type2 = item.substr(2, 3);
+	let item_type2 = item.substr(2, 2);
   
 	if(item_type1 == 10){ // 무기
 	  item_type = "weapon";
