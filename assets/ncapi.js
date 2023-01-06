@@ -166,7 +166,7 @@ function get_recipe(item, lng, type){
 	let item_type2 = item.substr(2, 2);
   
 	if(item_type1 == 10){ // 무기
-	  item_type = "weapon";
+	  item_type = "weapone";
 	} else if(item_type1 == 20){ // 방어구
 	  item_type = "armor";
 	} else if(item_type1 == 30){ // 장신구
