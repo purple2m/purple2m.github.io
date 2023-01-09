@@ -28,13 +28,10 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           </ul>
           <ul>
           {% if skill_list.grade == "mythic" %}
-            {% assign skills_in = skill_list[0].ko.1 | split: "," %}
-              <li>{{ skills_in[i] | replace: '["', '' | replace: '"]', '' }}</li>
+            {{ skill_list.0.ko.1 }}
           {% endif %}
 
           {% if skill_list.grade == "legendary" %}
-            {% assign skills_in = skill_list[1].ko.1 | split: "," %}
-              <li>{{ skills_in[i] | replace: '["', '' | replace: '"]', '' }}</li>
           {% endif %}
 
           {% if skill_list.grade == "epic" %}
@@ -43,7 +40,7 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
               <li>{{ skills_in[i] | replace: '["', '' | replace: '"]', '' }}</li>
             </ul>
           {% endif %}
-
+          </ul>
         {% endif %}
       {% endfor %}
       {% break %}
