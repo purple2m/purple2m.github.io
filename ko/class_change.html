@@ -20,15 +20,27 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
 <ul>
     {% for skill_list in site.data.skill %}
       {% if skill_list.grade == "mythic" %}
+      <li>
         {% if page[1] == "jp" %}
         {% elsif page[1] == "tw" %}
+
         {% else %}
-          <li><h2>{{ skill_list.ko.1 | size }}</h2>{{ skill_list.ko.1 }}</li>
-          <li><h2>{{ skill_list.ko.2 | size }}</h2>{{ skill_list.ko.2 }}</li>
-          <li><h2>{{ skill_list.ko.3 | size }}</h2>{{ skill_list.ko.3 }}</li>
-          <li><h2>{{ skill_list.ko.4 | size }}</h2>{{ skill_list.ko.4 }}</li>
+          {% assign skills_in = skill_list.ko.1 | split: "," %}
+          <ul>
+            {% for skills in skills_in %}
+            <li>{{ skills }}</li>
+            {% endfor %}
+          </ul>
+          {% assign skills_in = skill_list.ko.2 | split: "," %}
+          <ul>
+            {% for skills in skills_in %}
+            <li>{{ skills }}</li>
+            {% endfor %}
+          </ul>
+
           <li><h2></h2>{{ skill_list.ko.5 }}</li>
         {% endif %}
+      </li>
       {% endif %}
       {% if skill_list.grade == "legendary" %}
         {% if page[1] == "jp" %}
@@ -50,7 +62,6 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           <li><h2>{{ skill_list.ko.2 | size }}</h2>{{ skill_list.ko.2 }}</li>
           <li><h2>{{ skill_list.ko.3 | size }}</h2>{{ skill_list.ko.3 }}</li>
           <li><h2>{{ skill_list.ko.4 | size }}</h2>{{ skill_list.ko.4 }}</li>
-          <li><h2>{{ skill_list.ko.5 | size }}</h2>{{ skill_list.ko.5[0] }}</li>
           {% for skill_5 in skill_list.ko.5 %}
           <li>{{ skill_5 }}dd</li>
           {% endfor %}
