@@ -19,6 +19,7 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
 </ul>
 <ul>
     {% for skill_list in site.data.skill %}
+
       {% for i in (0..12) %}
         {% if i == 12 %}
           {% break %}
@@ -29,25 +30,27 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           {% if skill_list.grade == "mythic" %}
             {% assign skills_in = skill_list.ko.1 | split: "," %}
             <ul>
-              <li>{{ skills[i] | replace: '["', '' | replace: '"]', '' }}</li>
+              <li>{{ skills.i | replace: '["', '' | replace: '"]', '' }}</li>
             </ul>
           {% endif %}
 
           {% if skill_list.grade == "legendary" %}
             {% assign skills_in = skill_list.ko.1 | split: "," %}
             <ul>
-              <li>{{ skills[i] | replace: '["', '' | replace: '"]', '' }}</li>
+              <li>{{ skills.i | replace: '["', '' | replace: '"]', '' }}</li>
             </ul>
           {% endif %}
 
           {% if skill_list.grade == "epic" %}
             {% assign skills_in = skill_list.ko.1 | split: "," %}
             <ul>
-              <li>{{ skills[i] | replace: '["', '' | replace: '"]', '' }}</li>
+              <li>{{ skills.i | replace: '["', '' | replace: '"]', '' }}</li>
             </ul>
           {% endif %}
+
         {% endif %}
       {% endfor %}
+
       {% if skill_list.grade == "mythic" %}
       <li>
         {% if page[1] == "jp" %}
