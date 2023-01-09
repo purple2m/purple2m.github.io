@@ -27,7 +27,8 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
             <li>{{ i }}</li>
           </ul>
           <ul>
-            {% assign skills = skill_list.mythic.ko.1 | split: "," %}
+            <li>skill_list.mythic.ko.1</li>
+            {% assign skills_1 = skill_list.mythic.ko.1 | split: "," %}
             <li>{{ skills[i] | remove: '["'  | remove: '"]'}}</li>
 
             {% assign skills = skill_list.legendary.ko.1 | split: "," %}
