@@ -1,5 +1,5 @@
-[
-	{
+{
+	"mythic":{
 		"grade":"mythic",
 		"ko":{
 			"title":"신화",
@@ -16,7 +16,7 @@
 			"title":"神話"
 		}
 	},
-	{
+	"legendary":{
 		"grade":"legendary",
 		"ko":{
 			"title":"전설",
@@ -37,7 +37,7 @@
 			"title":"神話"
 		}
 	},
-	{
+	"epic":{
 		"grade":"epic",
 		"ko":{
 			"title":"영웅",
@@ -59,4 +59,4 @@
 			"title":"神話"
 		}
 	}
-]
+}
