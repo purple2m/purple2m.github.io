@@ -29,15 +29,17 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           <ul>
           {% if skill_list.grade == "mythic" %}
             {% assign skills = skill_list.ko.1 | split: "," %}
-            <li>{{ skills[i] }}</li>
+            <li>{{ skills[i] | remove: '["'  | remove: '"]'}}</li>
           {% endif %}
 
           {% if skill_list.grade == "legendary" %}
-
+            {% assign skills = skill_list.ko.1 | split: "," %}
+            <li>{{ skills[i] | remove: '["'  | remove: '"]'}}</li>
           {% endif %}
 
           {% if skill_list.grade == "epic" %}
-
+            {% assign skills = skill_list.ko.1 | split: "," %}
+            <li>{{ skills[i] | remove: '["'  | remove: '"]'}}</li>
           {% endif %}
           </ul>
         {% endif %}
