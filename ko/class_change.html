@@ -25,12 +25,12 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
         {% elsif page[1] == "tw" %}
 
         {% else %}
-          {{ skill_list.ko.1 | replace: "["", "" }}
-          {{ skill_list.ko.1 | replace: ""]", "" }}
           {% assign skills_in = skill_list.ko.1 | split: "," %}
           <ul>
             {% for skills in skills_in %}
-            <li>{{ skills }}</li>
+            {{ skills | replace: "["", "" }}
+            {{ skills | replace: ""]", "" }}
+            <li>{{  }}</li>
             {% endfor %}
           </ul>
           {% assign skills_in = skill_list.ko.2 | split: "," %}
