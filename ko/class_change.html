@@ -28,8 +28,10 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           {% assign skills_in = skill_list.ko.1 | split: "," %}
           <ul>
             {% for skills in skills_in %}
+            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
             {% endfor %}
           </ul>
+
           {% assign skills_in = skill_list.ko.2 | split: "," %}
           <ul>
             {% for skills in skills_in %}
@@ -37,7 +39,26 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
             {% endfor %}
           </ul>
 
-          <li><h2></h2>{{ skill_list.ko.5 }}</li>
+          {% assign skills_in = skill_list.ko.3 | split: "," %}
+          <ul>
+            {% for skills in skills_in %}
+            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
+            {% endfor %}
+          </ul>
+
+          {% assign skills_in = skill_list.ko.4 | split: "," %}
+          <ul>
+            {% for skills in skills_in %}
+            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
+            {% endfor %}
+          </ul>
+
+          {% assign skills_in = skill_list.ko.5 | split: "," %}
+          <ul>
+            {% for skills in skills_in %}
+            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
+            {% endfor %}
+          </ul>
         {% endif %}
       </li>
       {% endif %}
