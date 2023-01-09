@@ -27,13 +27,7 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           <li><h2>{{ skill_list.ko.2 | size }}</h2>{{ skill_list.ko.2 }}</li>
           <li><h2>{{ skill_list.ko.3 | size }}</h2>{{ skill_list.ko.3 }}</li>
           <li><h2>{{ skill_list.ko.4 | size }}</h2>{{ skill_list.ko.4 }}</li>
-          {% if {{ skill_list.ko.5 | size }} > 1 %}
-            {% for skill_5 in skill_list.ko.5 %}
-            <li>{{ skill_5 }}</li>
-            {% endfor %}
-          {% else %}
           <li><h2></h2>{{ skill_list.ko.5 }}</li>
-          {% endif %}
         {% endif %}
       {% endif %}
       {% if skill_list.grade == "legendary" %}
@@ -44,13 +38,7 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           <li><h2>{{ skill_list.ko.2 | size }}</h2>{{ skill_list.ko.2 }}</li>
           <li><h2>{{ skill_list.ko.3 | size }}</h2>{{ skill_list.ko.3 }}</li>
           <li><h2>{{ skill_list.ko.4 | size }}</h2>{{ skill_list.ko.4 }}</li>
-          {% if {{ skill_list.ko.5 | size }} > 1 %}
-            {% for skill_5 in skill_list.ko.5 %}
-            <li>{{ skill_5 }}</li>
-            {% endfor %}
-          {% else %}
           <li><h2></h2>{{ skill_list.ko.5 }}</li>
-          {% endif %}
         {% endif %}
       {% endif %}
 
@@ -63,8 +51,9 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           <li><h2>{{ skill_list.ko.3 | size }}</h2>{{ skill_list.ko.3 }}</li>
           <li><h2>{{ skill_list.ko.4 | size }}</h2>{{ skill_list.ko.4 }}</li>
           <li><h2>{{ skill_list.ko.5 | size }}</h2>{{ skill_list.ko.5[0] }}</li>
-          {% if {{ skill_list.ko.5 | size }} > 1 %}
-            {% for skill_5 in skill_list.ko.5 %}
+          {% assgin skill_list_5 = skill_list.ko.5 %}
+          {% if {{ skill_5 | size }} > 1 %}
+            {% for skill_5 in skill_list_5 %}
             <li>{{ skill_5 }}</li>
             {% endfor %}
           {% else %}
