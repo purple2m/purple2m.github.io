@@ -44,80 +44,11 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           {% if skill_list.grade == "epic" %}
             {% assign skills_in = skill_list.ko.1 | split: "," %}
             <ul>
-              <li>{{ skills_in.i | replace: '["', '' | replace: '"]', '' }}</li>
+              <li>{{ skills_in[i] | replace: '["', '' | replace: '"]', '' }}</li>
             </ul>
           {% endif %}
 
         {% endif %}
       {% endfor %}
-
-      {% if skill_list.grade == "mythic" %}
-      <li>
-        {% if page[1] == "jp" %}
-        {% elsif page[1] == "tw" %}
-
-        {% else %}
-          {% assign skills_in = skill_list.ko.1 | split: "," %}
-          <ul>
-            {% for skills in skills_in %}
-            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
-            {% endfor %}
-          </ul>
-
-          {% assign skills_in = skill_list.ko.2 | split: "," %}
-          <ul>
-            {% for skills in skills_in %}
-            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
-            {% endfor %}
-          </ul>
-
-          {% assign skills_in = skill_list.ko.3 | split: "," %}
-          <ul>
-            {% for skills in skills_in %}
-            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
-            {% endfor %}
-          </ul>
-
-          {% assign skills_in = skill_list.ko.4 | split: "," %}
-          <ul>
-            {% for skills in skills_in %}
-            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
-            {% endfor %}
-          </ul>
-
-          {% assign skills_in = skill_list.ko.5 | split: "," %}
-          <ul>
-            {% for skills in skills_in %}
-            <li>{{ skills | replace: '["', '' | replace: '"]', '' }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-      {% endif %}
-      {% if skill_list.grade == "legendary" %}
-        {% if page[1] == "jp" %}
-        {% elsif page[1] == "tw" %}
-        {% else %}
-          <li><h2>{{ skill_list.ko.1 | size }}</h2>{{ skill_list.ko.1 }}</li>
-          <li><h2>{{ skill_list.ko.2 | size }}</h2>{{ skill_list.ko.2 }}</li>
-          <li><h2>{{ skill_list.ko.3 | size }}</h2>{{ skill_list.ko.3 }}</li>
-          <li><h2>{{ skill_list.ko.4 | size }}</h2>{{ skill_list.ko.4 }}</li>
-          <li><h2></h2>{{ skill_list.ko.5 }}</li>
-        {% endif %}
-      {% endif %}
-
-      {% if skill_list.grade == "epic" %}
-        {% if page[1] == "jp" %}
-        {% elsif page[1] == "tw" %}
-        {% else %}
-          <li><h2>{{ skill_list.ko.1 | size }}</h2>{{ skill_list.ko.1 }}</li>
-          <li><h2>{{ skill_list.ko.2 | size }}</h2>{{ skill_list.ko.2 }}</li>
-          <li><h2>{{ skill_list.ko.3 | size }}</h2>{{ skill_list.ko.3 }}</li>
-          <li><h2>{{ skill_list.ko.4 | size }}</h2>{{ skill_list.ko.4 }}</li>
-          {% for skill_5 in skill_list.ko.5 %}
-          <li>{{ skill_5 }}dd</li>
-          {% endfor %}
-        {% endif %}
-      {% endif %}
     {% endfor %}
 </ul>
