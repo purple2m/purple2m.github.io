@@ -20,6 +20,7 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
 <ul>
     {% for skill_list in site.data.skill %}
       {% for i in (0..12) %}
+      <li>
         {% if i == 12 %}
           {% break %}
         {% else %}
@@ -43,6 +44,9 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           {% endif %}
         </ul>
         {% endif %}
+      </li>
       {% endfor %}
+      <li>{{ i }}</li>
+      
     {% endfor %}
 </ul>
