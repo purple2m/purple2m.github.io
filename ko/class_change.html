@@ -21,25 +21,13 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
     {% for skill_list in site.data.skill %}
       {% if skill_list.grade == "mythic" %}
         {% if page[1] == "jp" %}
-          {{ item_type.jp }}
         {% elsif page[1] == "tw" %}
-          {{ item_type.tw }}
         {% else %}
-        <li>
-          {{ skill_list.ko.1 }}
-        </li>
-        <li>
-          {{ skill_list.ko.2 }}
-        </li>
-        <li>
-          {{ skill_list.ko.3 }}
-        </li>
-        <li>
-          {{ skill_list.ko.4 }}
-        </li>
-        <li>
-          {{ skill_list.ko.5 }}
-        </li>
+          {{ skill_list.mythic.ko.1 }}
+          {{ skill_list.mythic.ko.2 }}
+          {{ skill_list.mythic.ko.3 }}
+          {{ skill_list.mythic.ko.4 }}
+          {{ skill_list.mythic.ko.5 }}
         {% endif %}
       {% endif % }
     {% endfor %}
