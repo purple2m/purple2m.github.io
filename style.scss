@@ -803,9 +803,15 @@ footer {
     align-items: center;
     border: 1px solid $white8;
     padding: 0.3em;
+    flex:1;
   }
 }
 .class_change .list{
+  h4{
+    margin: 0.2em;
+    text-align: center;
+    border: 1px solid $white8;
+  }
   ul {
     flex-wrap: nowrap;
     width: max-content;
