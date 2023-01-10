@@ -37,13 +37,30 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
     $(this).css('opacity', '1');
     $('.class_list').children().eq(1).children().not(this).css('opacity', '0.2');
     var select = $('.class_change').eq(indexno+1).children();
-    $('.class_select').children().eq(0).append(select.eq(0).text());
-    $('.class_select').children().eq(0).children().eq(1).children().eq(2).append(select.eq(0).text());
-    
-    //신화1 select.eq(1).children().eq(0).children().eq(1).children().eq(2).text()
-    //신화2 select.eq(1).children().eq(0).children().eq(2).children().eq(2).text()
-    //신화3 select.eq(1).children().eq(0).children().eq(3).children().eq(2).text()
-    //신화4 select.eq(1).children().eq(0).children().eq(4).children().eq(2).text()
+    $('.class_select').children().eq(0).append(" >> "+select.eq(0).text());
+
+    $('.class_select').children().eq(1).children().eq(0).children().eq(1).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(0).children().eq(1).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(0).children().eq(2).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(0).children().eq(2).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(0).children().eq(3).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(0).children().eq(3).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(0).children().eq(4).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(0).children().eq(4).children().eq(2).text()+"</li>");
+
+    $('.class_select').children().eq(1).children().eq(1).children().eq(1).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(1).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(1).children().eq(2).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(2).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(1).children().eq(3).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(3).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(1).children().eq(4).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(4).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(1).children().eq(5).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(5).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(1).children().eq(6).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(6).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(1).children().eq(7).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(7).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(1).children().eq(8).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(1).children().eq(8).children().eq(2).text()+"</li>");
+
+    $('.class_select').children().eq(1).children().eq(2).children().eq(1).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(1).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(2).children().eq(2).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(2).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(2).children().eq(3).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(3).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(2).children().eq(4).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(4).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(2).children().eq(5).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(5).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(2).children().eq(6).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(6).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(2).children().eq(7).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(7).children().eq(2).text()+"</li>");
+    $('.class_select').children().eq(1).children().eq(2).children().eq(8).children().eq(2).after("<li>>></li><li>"+select.eq(1).children().eq(2).children().eq(8).children().eq(2).text()+"</li>");
   });
 </script>
 {% for item in site.data.skill %}
