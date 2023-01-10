@@ -18,7 +18,50 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
     {% endfor %}
   </li>
 </ul>
+<div class="class_select">
+선택된 클래스가 없습니다.
+</div>
+<script>
+  var click_type = $('.class_list').children().eq(0).children();
+  click_type.click(function () {
+    var indexno = $(this).index();
+    $('.class_list').children().eq(1).show();
+    $(this).css('opacity', '1');
+    $('.class_list').children().eq(0).children().not(this).css('opacity', '0.2');
+  });
 
+  var click_type2 = $('.class_list').children().eq(1).children();
+  click_type2.click(function () {
+    var indexno = $(this).index();
+    $(this).css('opacity', '1');
+    $('.class_list').children().eq(1).children().not(this).css('opacity', '0.2');
+  });
+
+  click_type.click(function () {
+    var indexno = $(this).index();
+    if(indexno === 0){
+      $('.item_class_list').show();
+      $('.item_armor_list').hide();
+      $('.item_acc_list').hide();
+    } else if(indexno === 1){
+      $('.item_class_list').hide();
+      $('.item_armor_list').show();
+      $('.item_acc_list').hide();
+    } else if(indexno === 2){
+      $('.item_class_list').hide();
+      $('.item_armor_list').hide();
+      $('.item_acc_list').show();
+    } else if(indexno === 3){
+      $('.item_class_list').show();
+      $('.item_armor_list').hide();
+      $('.item_acc_list').hide();
+    }
+    $(this).css('color', 'rgba(255, 255, 255, 0.83)');
+    $('.item_type_list').children().not(this).css('color', '#757981');
+    $('.item_type_view').eq(0).text(indexno);
+    $('.item_type_view').eq(1).text('');
+  });
+</script>
 {% for item in site.data.skill %}
   <article class="class_change">
     <h3>{{ item.name }}</h3>
