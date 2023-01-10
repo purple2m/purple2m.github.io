@@ -803,25 +803,23 @@ footer {
     align-items: center;
     border: 1px solid $white8;
     padding: 0.3em;
-    ul {
-      flex-wrap: nowrap;
-      width: max-content;
-      align-items: center;
-    }
-    li{
-      padding: 0.2em;
-    }
-    li:nth-child(2){
-      font-size:0.8em;
-      background: #282844;
-      color: white;
-    }
-  }
-  .list ul li{
-    padding: 0.2em;
   }
 }
-
+.class_change .list{
+  ul {
+    flex-wrap: nowrap;
+    width: max-content;
+    align-items: center;
+  }
+  li{
+    padding: 0.2em;
+  }
+  li:nth-child(2){
+    font-size:0.8em;
+    background: #282844;
+    color: white;
+  }
+}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
