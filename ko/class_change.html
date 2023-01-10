@@ -6,12 +6,17 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
 ---
 {% assign page = page.url | split: "/" %}
 <h3>클래스 선택</h3>
-<ul class="item_class_list item_list item_sub">
+<ul class="class_list">
+  <li>
   {% for item in site.data.skill %}
-    <li>
-      <img src="{{ site.url }}/images/class/{{ item.icon }}">
-    </li>
+    <button><img src="{{ site.url }}/images/class/{{ item.icon }}"></button>
   {% endfor %}
+  </li>
+  <li>
+    {% for item in site.data.skill %}
+      <button><img src="{{ site.url }}/images/class/{{ item.icon }}"></button>
+    {% endfor %}
+  </li>
 </ul>
 
 {% for item in site.data.skill %}
