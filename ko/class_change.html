@@ -17,6 +17,7 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
       <button><img src="{{ site.url }}/images/class/{{ item.icon }}"></button>
     {% endfor %}
   </li>
+  <li style="display: none;"></li>
 </ul>
 <div class="class_select class_change">
 선택된 클래스가 없습니다.
@@ -28,12 +29,16 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
     $('.class_list').children().eq(1).show();
     $(this).css('opacity', '1');
     $('.class_list').children().eq(0).children().not(this).css('opacity', '0.2');
+    $('.class_list').children().eq(1).children().css('opacity', '1');
+    $('.class_list').children().eq(2).text(indexno+1);
     $('.class_select').html($('.class_change').eq(indexno+1).html());
   });
 
   var click_type2 = $('.class_list').children().eq(1).children();
   click_type2.click(function () {
     var indexno = $(this).index();
+    $('.class_select').html($('.class_change').eq( $('.class_list').children().eq(2).text() ).html());
+
     $(this).css('opacity', '1');
     $('.class_list').children().eq(1).children().not(this).css('opacity', '0.2');
     var select = $('.class_change').eq(indexno+1).children();
