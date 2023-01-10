@@ -787,6 +787,8 @@ footer {
   ul{
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
