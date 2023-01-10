@@ -790,6 +790,19 @@ footer {
     display: flex;
     flex-wrap: wrap;
   }
+  .type{
+    display: flex;
+    align-items: center;
+    padding: 0.3em;
+  }
+  .list{
+    align-items: center;
+    border: 1px solid $white8;
+    padding: 0.3em;
+    li:nth-childe(2){
+      font-size: 0.8em;
+    }
+  }
 }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
