@@ -803,8 +803,18 @@ footer {
     align-items: center;
     border: 1px solid $white8;
     padding: 0.3em;
-    ul > li:nth-childe(2){
-      font-size: 0.8em;
+    ul {
+      flex-wrap: nowrap;
+      width: max-content;
+      align-items: center;
+    }
+    li{
+      padding: 0.2em;
+    }
+    ul li:nth-child(2){
+      font-size:0.8em;
+      background: #282844;
+      color: white;
     }
   }
 }
