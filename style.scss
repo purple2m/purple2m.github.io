@@ -850,10 +850,7 @@ footer {
     color: white;
   }
 }
-.class_change .list:nth-child(1){
-  li{
-    font-size: 0.8em;
-  }
+.class_change:nth-child(1) .list{
   li:nth-child(2){
     font-size:0.5em;
   }
