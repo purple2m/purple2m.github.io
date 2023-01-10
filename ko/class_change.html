@@ -22,6 +22,7 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
   <article>
     <h3>{{ item.name }}</h3>
       <ul>
+
         <li>
           <ul>
             <li>신화</li>
@@ -37,9 +38,39 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
             </li>
           </ul>
         </li>
-        {% for skill in item.legendary %}
-          <li>{{ skill }}</li>
-        {% endfor %}
+
+        <li>
+          <ul>
+            <li>전설</li>
+            <li>
+              {% for skill in item.legendary %}
+                {% assign skills = skill | split: "," %}
+              <ul>
+                <li>{{ skills[0] }}</li>
+                <li>{{ skills[1] }}</li>
+                <li>{{ skills[2] }}</li>
+              </ul>
+              {% endfor %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <ul>
+            <li>영웅</li>
+            <li>
+              {% for skill in item.epic %}
+                {% assign skills = skill | split: "," %}
+              <ul>
+                <li>{{ skills[0] }}</li>
+                <li>{{ skills[1] }}</li>
+                <li>{{ skills[2] }}</li>
+              </ul>
+              {% endfor %}
+            </li>
+          </ul>
+        </li>
+
       </ul>
   </article>
 {% endfor %}
