@@ -17,14 +17,24 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
         <li>영웅</li>
     {% endif %}
 </ul>
+
 {% for item in site.data.skill %}
-  <h3>{{ item.name }}</h3>
-    <ul>
-      {% for skill in item.mythic %}
-        <li>{{ skill }}</li>
-      {% endfor %}
-      {% for skill in item.legendary %}
-        <li>{{ skill }}</li>
-      {% endfor %}
-    </ul>
+  <article>
+    <h3>{{ item.name }}</h3>
+      <ul>
+        <li>
+          <ul>
+        {% for skill in item.mythic %}
+          {% assign skills = skill | split: "," %}
+          <li>{{ skill[0] }}</li>
+          <li>{{ skill[1] }}</li>
+          <li>{{ skill[2] }}</li>
+        {% endfor %}
+          </ul>
+        </li>
+        {% for skill in item.legendary %}
+          <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+  </article>
 {% endfor %}
