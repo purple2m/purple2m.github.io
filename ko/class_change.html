@@ -5,17 +5,19 @@ excerpt: "리니지2M의 클래스 체인지시 상호 교체 스킬 목록을 �
 tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
 ---
 {% assign page = page.url | split: "/" %}
-
-<ul>
-    {% if page[1] == "jp" %}
-
-    {% elsif page[1] == "tw" %}
-
-    {% else %}
-        <li>신화</li>
-        <li>전설</li>
-        <li>영웅</li>
-    {% endif %}
+<h3>클래스 선택</h3>
+<ul class="item_class_list item_list item_sub">
+  {% for item_class in site.data.item_list.class %}
+    <li>
+      {% if page[1] == "jp" %}
+        {{ item_class.jp }}
+      {% elsif page[1] == "tw" %}
+        {{ item_class.tw }}
+      {% else %}
+        {{ item_class.ko }}
+      {% endif %}
+    </li>
+  {% endfor %}
 </ul>
 
 {% for item in site.data.skill %}
