@@ -26,14 +26,14 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
           <ul>
             <li>신화</li>
             <li>
-              <ul>
               {% for skill in item.mythic %}
                 {% assign skills = skill | split: "," %}
+              <ul>
                 <li>{{ skills[0] }}</li>
                 <li>{{ skills[1] }}</li>
                 <li>{{ skills[2] }}</li>
-              {% endfor %}
               </ul>
+              {% endfor %}
             </li>
           </ul>
         </li>
