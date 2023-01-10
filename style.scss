@@ -850,6 +850,17 @@ footer {
     color: white;
   }
 }
+.class_change .list:nth-child(1){
+  li{
+    font-size: 0.8em;
+  }
+  li:nth-child(2){
+    font-size:0.5em;
+  }
+  li:nth-child(4){
+    font-size:0.5em;
+  }
+}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
