@@ -783,40 +783,10 @@ footer {
 }
 
 
-#collections{
-  .thumb{
-    width: 48px;
-    height: 48px;
-  }
-  div{
-    padding:0.5em;
-  }
-  h4 > span{
-    display: block;
-  }
-  h4 > span:last-child{
-    margin: 0;
-  }
-  h4{
-    margin:0;
-  }
+.class_change{
   ul{
-    list-style-type: none;
-    display: flex;
-    margin:0;
-    padding:0;
-  }
-  ul > li > a{
-    display: block;
-    border: 1px solid $white8;
-    position: relative;
-    padding: 0.2em;
-    margin: 0.1em;
-  }
-  ul > li > a > span{
-    position: absolute;
-    right: 5px;
-    bottom: 0;
+    list-style: none;
+    padding: 0;
   }
 }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
