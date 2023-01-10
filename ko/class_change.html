@@ -18,16 +18,17 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
     {% endfor %}
   </li>
 </ul>
-<div class="class_select">
+<div class="class_select class_change">
 선택된 클래스가 없습니다.
 </div>
 <script>
-  var click_type = $('.class_list').children().eq(0).children();
+ var click_type = $('.class_list').children().eq(0).children();
   click_type.click(function () {
     var indexno = $(this).index();
     $('.class_list').children().eq(1).show();
     $(this).css('opacity', '1');
     $('.class_list').children().eq(0).children().not(this).css('opacity', '0.2');
+    $('.class_select').html($('.class_change').eq(indexno+1).html());
   });
 
   var click_type2 = $('.class_list').children().eq(1).children();
@@ -35,6 +36,10 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
     var indexno = $(this).index();
     $(this).css('opacity', '1');
     $('.class_list').children().eq(1).children().not(this).css('opacity', '0.2');
+    $('.class_change').eq(indexno+1).html()
+    var select = $('.class_change').eq(1).children()
+    $('.class_select').children().eq(0).append(select.eq(0).text())
+    $('.class_select').children().eq(0).children().eq(1).children().eq(2).append(select.eq(0).text())
   });
 </script>
 {% for item in site.data.skill %}
