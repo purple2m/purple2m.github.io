@@ -7,15 +7,9 @@ tags: [리니지2M, 리니지2m, 연금 검색기, 클레스체인지, 클체]
 {% assign page = page.url | split: "/" %}
 <h3>클래스 선택</h3>
 <ul class="item_class_list item_list item_sub">
-  {% for item_class in site.data.item_list.class %}
+  {% for item in site.data.skill %}
     <li>
-      {% if page[1] == "jp" %}
-        {{ item_class.jp }}
-      {% elsif page[1] == "tw" %}
-        {{ item_class.tw }}
-      {% else %}
-        {{ item_class.ko }}
-      {% endif %}
+      <img src="{{ site.url }}/images/class/{{ item.icon }}">
     </li>
   {% endfor %}
 </ul>
