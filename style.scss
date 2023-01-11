@@ -157,6 +157,7 @@ img {
 .wrapper-masthead .container:nth-child(2){
   flex:1;
 	background: $black;
+  overflow-x: auto;
 }
 .wrapper-masthead .container:first-child{
   width:100%;
