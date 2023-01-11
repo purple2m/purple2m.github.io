@@ -274,24 +274,11 @@ nav {
 }
 #autoMaker{
   display:flex;
-  position: absolute;
   flex-direction: column;
-  height: 20em;
-  overflow: auto;
-  z-index: 1;
-  width: 20em;
   margin-top: 0.3em;
-  @include mobile {
-    width: 90%;
-    margin-left: 5%;
-    height: 70%;
-  }
 }
 #autoMaker div{
   cursor:pointer;
-  @include mobile {
-    width: 90%;
-  }
 }
 #autoMaker a{
   display: block;
