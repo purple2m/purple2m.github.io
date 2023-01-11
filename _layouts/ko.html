@@ -18,8 +18,9 @@
   </head>
 
   <body>
-    {{ site.data.site.search.General.ko }} // 
-    {{ site.data.site.search.General.page[1] }}
+    {% assign layout = site.data.site[page[1]] %}
+    {{ layout.head.Genearal }}
+    {{ page[1] }}
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">

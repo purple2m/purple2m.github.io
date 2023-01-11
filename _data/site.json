@@ -1,48 +1,46 @@
 {
-    "search":{
-        "General":{
-            "ko":"일반",
-            "jp":"ふつう",
-            "tw":"常規",
-            "en":"General"
-        },
-        "Advanced":{
-            "ko":"상급",
-            "jp":"上級",
-            "tw":"上級",
-            "en":"Advanced"
-        },
-        "Input":{
-            "ko":"아이템 검색",
-            "jp":"アイテムの検索",
-            "tw":"物品項目",
-            "en":"Search for Item"
+    "ko":{
+        "head":{
+            "Genearal":"일반",
+            "Advanced":"상급",
+            "Input":"아이템 검색",
+            "Items":"아이템",
+            "Class":"클래스",
+            "Collections":"컬렉션",
+            "Souls":"집혼"
         }
     },
-    "menu":{
-        "Items":{
-            "ko":"아이템",
-            "jp":"アイテム",
-            "tw":"物品",
-            "en":"General"
-        },
-        "Class":{
-            "ko":"클래스",
-            "jp":"クラス",
-            "tw":"職業",
-            "en":"Class"
-        },
-        "Collections":{
-            "ko":"컬렉션",
-            "jp":"コレクション",
-            "tw":"收藏品",
-            "en":"Codex"
-        },
-        "Souls":{
-            "ko":"집혼",
-            "jp":"魂吸収",
-            "tw":"搜魂",
-            "en":"Souls"
+    "jp":{
+        "head":{
+            "Genearal":"ふつう",
+            "Advanced":"上級",
+            "Input":"アイテムの検索",
+            "Items":"アイテム",
+            "Class":"クラス",
+            "Collections":"コレクション",
+            "Souls":"魂吸収"
+        }
+    },
+    "tw":{
+        "head":{
+            "Genearal":"常規",
+            "Advanced":"上級",
+            "Input":"物品項目",
+            "Items":"物品",
+            "Class":"職業",
+            "Collections":"收藏品",
+            "Souls":"搜魂"
+        }
+    },
+    "en":{
+        "head":{
+            "Genearal":"Genearal",
+            "Advanced":"Advanced",
+            "Input":"Search for Item",
+            "Items":"Items",
+            "Class":"Class",
+            "Collections":"Collections",
+            "Souls":"Souls"
         }
     }
 }
