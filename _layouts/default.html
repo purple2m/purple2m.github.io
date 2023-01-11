@@ -9,22 +9,26 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css?version=20230110" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css?version=20230111" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <link rel="stylesheet" href="{{ site.baseurl }}/flags.css?ddasda=42342423">
-    {% assign lang = page.dir | split: '/' %}
-    {% assign url_slush = "" %}
-    {% if lang[1].size > 0 %}
-    {% assign url_slush = "/" %}
-    {% endif %}
-    {% assign page = page.url | split: "/" %}
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-    <script src="{{ base.url | prepend: site.url }}/assets/search.js?version=20221224"></script>
+    <script src="{{ base.url | prepend: site.url }}/assets/search.js?version=20230111"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <meta name="google-site-verification" content="CEG1EpI5wEnKjX0L5YuLaQY6yWkaggD0qWOZxXj3ApM" />
   </head>
   <body>
-    {{ page[1] }}
+    {% assign page = page.url | split: "/" %}
+    {% if page[1] == "jp" %}
+      {% assign layout = site.data.site.jp %}
+    {% elsif page[1] == "tw" %}
+      {% assign layout = site.data.site.tw %}
+    {% elsif page[1] == "ko" %}
+      {% assign layout = site.data.site.ko %}
+    {% else %}
+      {% assign layout = site.data.site.en %}
+      {% assgin page[1] = "ko" %}
+    {% endif %}
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -40,18 +44,18 @@
             <a href="{{ site.url }}/tw"><span class="flag flag-tw"> </span></a>
           </div>
           <div class="search" role="search">
-            <label><input type='radio' name='type' value='1' checked>General</label>
-            <label><input type='radio' name='type' value='2'>Advanced</label>
+            <label><input type='radio' name='type' value='1' checked>{{ layout.head.Genearal }}</label>
+            <label><input type='radio' name='type' value='2'>{{ layout.head.Advanced }}</label>
             <input type="hidden" id='insert_target' readonly style='background: #cacaca' name='item'>
-            <input type="text" id='search_area' placeholder="Search for item (kor&jp)">
+            <input type="text" id='search_area' placeholder="{{ layout.head.Input }}">
             <div id='autoMaker'></div>
           </div>
           <div class="menu" role="navigation">
             <ul>
-              <li><a href="{{ site.baseurl }}/ko/list">Items</a></li>
-              <li><a href="{{ site.baseurl }}/ko/class_change">Class</a></li>
-              <li><a href="">Collections</a></li>
-              <li><a href="">Souls</a></li>
+              <li><a href="{{ site.baseurl }}/{{ page[1] }}/list">{{ layout.head.Items }}</a></li>
+              <li><a href="{{ site.baseurl }}/{{ page[1] }}/class_change">{{ layout.head.Class }}</a></li>
+              <li><a href="">{{ layout.head.Collections }}</a></li>
+              <li><a href="">{{ layout.head.Souls }}</a></li>
             </ul>
           </div>
         </header>
