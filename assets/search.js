@@ -11,8 +11,9 @@ function getParameterByName( name ){
 $(document).ready(function() {
   $('#autoMaker').hide();
   $('.pull-left').click(function(){
-    $('.wrapper-masthead').children(":first").toggle();
-    $('.wrapper-masthead').children(":last").toggle();
+    $('.wrapper-masthead').children().eq(0).slideToggle(600 );
+    $('.wrapper-masthead').children().eq(1).toggle();
+    $('.wrapper-masthead').children().eq(2).toggle();
   });
 	//저장
 	let normal = localStorage.getItem('normal');
