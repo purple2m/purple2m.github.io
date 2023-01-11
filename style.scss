@@ -19,7 +19,7 @@ html {
 }
 
 body {
-	background: $black;
+  background: #282844;
   font: 18px/1.4 $helvetica;
   color: $white;
 }
@@ -156,6 +156,7 @@ img {
 }
 .wrapper-masthead .container:nth-child(2){
   flex:1;
+	background: $black;
 }
 .wrapper-masthead .container:first-child{
   width:100%;
