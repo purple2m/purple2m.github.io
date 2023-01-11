@@ -26,8 +26,9 @@
     {% elsif page[1] == "ko" %}
       {% assign layout = site.data.site.ko %}
     {% else %}
+      {% assign page = page.url | append: "/ko" %}
+      {% assign page = page.url | split: "/" %}
       {% assign layout = site.data.site.en %}
-      {% page[1] | append: "ko" %}
     {% endif %}
     <div class="wrapper-masthead">
       <div class="container">
