@@ -17,6 +17,7 @@
     {% if lang[1].size > 0 %}
     {% assign url_slush = "/" %}
     {% endif %}
+    {% assign page = page.url | split: "/" %}
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
     <script src="{{ base.url | prepend: site.url }}/assets/search.js?version=20221224"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -24,6 +25,7 @@
   </head>
 
   <body>
+    {{ page }}
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
