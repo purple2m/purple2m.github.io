@@ -14,10 +14,11 @@
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
     <script src="{{ base.url | prepend: site.url }}/assets/search.js?version=20221224"></script>
 <meta name="google-site-verification" content="CEG1EpI5wEnKjX0L5YuLaQY6yWkaggD0qWOZxXj3ApM" />
+{% assign page = page.url | split: "/" %}
   </head>
 
   <body>
-
+    {{ page[1] }}
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
