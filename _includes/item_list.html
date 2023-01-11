@@ -1,17 +1,4 @@
-{% assign page2 = page.url | split: "/" %}
-
-{% if page2.size == 3 %}
-  {% assign page = page.url | append: "weapon/page/1" %}
-  {% assign page = page | split: "/" %}
-{% elsif page2.size == 4 %}
-  {% assign page = page.url | append: "page/1" %}
-  {% assign page = page | split: "/" %}
-{% elsif page2.size == 5 %}
-  {% assign page = page.url | append: "1" %}
-  {% assign page = page | split: "/" %}
-{% else %}
-  {% assign page = page.url | split: "/" %}
-{% endif %}
+{% assign page = page.url | split: "/" %}
 
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20221130"></script>
 <section class="list-wrapper">
