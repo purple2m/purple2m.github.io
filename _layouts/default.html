@@ -26,8 +26,7 @@
     {% elsif page[1] == "ko" %}
       {% assign layout = site.data.site.ko %}
     {% else %}
-      {% assign page = page.url | append: "/ko" %}
-      {% assign page = page.url | split: "/" %}
+      {% assign page2 = "ko" %}
       {% assign layout = site.data.site.en %}
     {% endif %}
     <div class="wrapper-masthead">
@@ -53,8 +52,8 @@
           </div>
           <div class="menu" role="navigation">
             <ul>
-              <li><a href="{{ site.url }}/{{ page[1] }}/list">{{ layout.head.Items }}</a></li>
-              <li><a href="{{ site.url }}/{{ page[1] }}/class_change">{{ layout.head.Class }}</a></li>
+              <li><a href="{{ site.url }}/{{ page[1] }}{{ page2 }}/list">{{ layout.head.Items }}</a></li>
+              <li><a href="{{ site.url }}/{{ page[1] }}{{ page2 }}/class_change">{{ layout.head.Class }}</a></li>
               <li><a href="">{{ layout.head.Collections }}</a></li>
               <li><a href="">{{ layout.head.Souls }}</a></li>
             </ul>
