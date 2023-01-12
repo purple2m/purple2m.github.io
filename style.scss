@@ -173,14 +173,6 @@ img {
 }.wrapper-masthead .container:first-child a{
   color:white;
 }
-.pull-left{
-  display:none;
-  padding:0.2em;
-  margin-right: 0.2em;
-  @include mobile {
-    display:block;
-  }
-}
 
 .masthead {
   display: flex;
@@ -303,7 +295,7 @@ nav {
   }
 }
 .search input[type="text"] {
-    width: 20em;
+    width: 100%;
     padding: 0.1em 0.1em;
     box-sizing: border-box;
     font-size: 1em;
