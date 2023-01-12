@@ -16,26 +16,17 @@ $(document).ready(function() {
     $('.wrapper-masthead').children().eq(2).toggle();
   });
 	//저장
-	let normal = localStorage.getItem('normal');
-	let normal_update = localStorage.getItem('normal_update');
-
-	let advanced = localStorage.getItem('advanced');
-	let advanced_update = localStorage.getItem('advanced_update');
-
 	let search = localStorage.getItem('search');
 	let search_update = localStorage.getItem('search_update');
 
-  const update = 20221130;
+  const update = 20230112;
 
-	normal = JSON.parse(normal);
-  advanced = JSON.parse(advanced);
   search = JSON.parse(search);
 
-  if(typeof normal === 'undefined' || normal === null || normal_update != update){
+  if(typeof search === 'undefined' || search === null || search_update != update){
     $.getJSON("https://purple2m.github.io/item/search/search.json?version=20230112", function(data) {
       localStorage.setItem('search', JSON.stringify(data));
-      localStorage.setItem('search_version', 20221130);
-      console.log("전체 연금 선택");
+      localStorage.setItem('search_update', 20230112);
       auto_come(data, 1);
     });
   }else{
