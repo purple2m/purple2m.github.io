@@ -56,6 +56,20 @@
               <li><a href="">{{ layout.head.Souls }}</a></li>
             </ul>
           </div>
+          <div class="menu">
+            <ul>
+              {% for notice in site.data.notice %}
+              <li>
+                <ul>
+                  <li>{{ notice.en }}</li>
+                  <li style="display:none;">{{ notice.ko }}</li>
+                  <li style="display:none;">{{ notice.jp }}</li>
+                  <li style="display:none;">{{ notice.tw }}</li>
+                </ul>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
         </header>
       </div>
       <div id="main" role="main" class="container">
