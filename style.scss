@@ -703,12 +703,6 @@ footer {
       margin-left: 0;
     }
   }
-  .menu:nth-child(2){
-    width:100%;
-    background: #CF631F;
-    padding: 0.2em 10px 0.2em 10px;
-    font-size: 0.8em;
-  }
   .list {
     ul{
       display: flex;
@@ -735,6 +729,12 @@ footer {
       display: block;
     }
   }
+}
+.list-wrapper .menu:nth-child(2){
+  width:100%;
+  background: #CF631F;
+  padding: 0.2em 10px 0.2em 10px;
+  font-size: 0.8em;
 }
 
 .item_list{
