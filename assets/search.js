@@ -22,48 +22,25 @@ $(document).ready(function() {
 	let advanced = localStorage.getItem('advanced');
 	let advanced_update = localStorage.getItem('advanced_update');
 
+	let search = localStorage.getItem('search');
+	let search_update = localStorage.getItem('search_update');
+
   const update = 20221130;
 
 	normal = JSON.parse(normal);
   advanced = JSON.parse(advanced);
+  search = JSON.parse(search);
 
   if(typeof normal === 'undefined' || normal === null || normal_update != update){
-    $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
-      localStorage.setItem('noraml', JSON.stringify(data));
-      localStorage.setItem('noraml_version', 20221130);
-      console.log("일반 연금 선택");
+    $.getJSON("https://purple2m.github.io/item/search/search.json?version=20230112", function(data) {
+      localStorage.setItem('search', JSON.stringify(data));
+      localStorage.setItem('search_version', 20221130);
+      console.log("전체 연금 선택");
       auto_come(data, 1);
     });
   }else{
-    auto_come(normal, 1);
+    auto_come(search, 1);
   }
-
-  $('input:radio[name=type]').change(function(){
-    let type = $("input:radio[name='type']:checked").val();
-    if(type == 1){
-      if(typeof normal === 'undefined' || normal === null || normal_update != update){
-        $.getJSON("https://purple2m.github.io/item/search/normal.json?version=20220809", function(data) {
-    			localStorage.setItem('noraml', JSON.stringify(data));
-          localStorage.setItem('noraml_version', 20221130);
-          console.log("일반 연금 선택");
-          auto_come(data, type);
-    		});
-    	}else{
-        auto_come(normal, type);
-    	}
-    } else if(type == 2){
-        if(typeof advanced === 'undefined' || advanced === null || advanced_update != update){
-          $.getJSON("https://purple2m.github.io/item/search/top.json?version=20220809", function(data) {
-      			localStorage.setItem('advanced', JSON.stringify(data));
-            localStorage.setItem('advanced_update', 20221130);
-            console.log("상급 연금 선택");
-            auto_come(data, type);
-      		});
-        }else{
-          auto_come(advanced, type);
-        }
-    }
-  });
 
   function auto_come(data, type){
     var ref = data;
@@ -77,7 +54,6 @@ $(document).ready(function() {
           $('#autoMaker').children().remove();
 
           ref.forEach(function(arg){
-
               if(arg.ko.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1){
                 if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.ko;
