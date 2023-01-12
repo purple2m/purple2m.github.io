@@ -56,15 +56,18 @@
               <li><a href="">{{ layout.head.Souls }}</a></li>
             </ul>
           </div>
-          <div class="menu">
+          <div class="menu" style="width:100%;
+          background: #CF631F;
+          padding: 0.2em 10px 0.2em 10px;
+          font-size: 0.8em;">
             <ul>
               {% for notice in site.data.notice %}
               <li>
                 <ul>
-                  <li>{{ notice.en }}</li>
-                  <li style="display:none;">{{ notice.ko }}</li>
-                  <li style="display:none;">{{ notice.jp }}</li>
-                  <li style="display:none;">{{ notice.tw }}</li>
+                  <li class="en">{{ notice.en }}</li>
+                  <li class="ko" style="display:none;">{{ notice.ko }}</li>
+                  <li class="jp" style="display:none;">{{ notice.jp }}</li>
+                  <li class="tw" style="display:none;">{{ notice.tw }}</li>
                 </ul>
               </li>
               {% endfor %}
@@ -90,14 +93,14 @@
     $(document).ready(function() {
       lang = getLang();
       if (lang.includes('ko')){
-        $('.site-description').text("연금 검색기");
-        $('.jp').hide();
+        $('.menu').eq(1).children().children().children().children('li.en').hide();
+        $('.menu').eq(1).children().children().children().children('li.ko').show();
       } else if (lang.includes('jp')){
-        $('.site-description').text("錬金検査機");
-        $('.ko').hide();
-      } else {
-        $('.site-description').text("연금 검색기");
-        $('.jp').hide();
+        $('.menu').eq(1).children().children().children().children('li.en').hide();
+        $('.menu').eq(1).children().children().children().children('li.jp').show();
+      } else if (lang.includes('tw')){
+        $('.menu').eq(1).children().children().children().children('li.en').hide();
+        $('.menu').eq(1).children().children().children().children('li.tw').show();
       }
     });
     </script>
