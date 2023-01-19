@@ -288,6 +288,10 @@ function recipe_info(alc_type){
 					for (var j=0; j < data[ii]['recipe'].length;++j){
 						if (lng == "jp"){
 							var find_recipe = data[ii]['jp'][j].split(',');
+						}else if (lng == "tw"){
+							var find_recipe = data[ii]['tw'][j].split(',');
+						}else if (lng == "ru"){
+							var find_recipe = data[ii]['ru'][j].split(',');
 						} else {
 							var find_recipe = data[ii]['recipe'][j].split(',');
 						}
