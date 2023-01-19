@@ -341,45 +341,49 @@ function find_material(searching_recipe, type, lng, event){
 		for (var i=0; i < data.length;++i){
 		  if(data[i]['no'] == searching_recipe){
 			for (var j=0; j < data[i]['recipe'].length;++j){
-			  if (lng == "jp"){
-				find_recipe = data[i]['jp'][j].split(',');
-			  } else {
-				find_recipe = data[i]['recipe'][j].split(',');
-			  }
+				if (lng == "jp"){
+					find_recipe = data[i]['jp'][j].split(',');
+				}else if (lng == "tw"){
+					find_recipe = data[i]['tw'][j].split(',');
+				}else if (lng == "ru"){
+					find_recipe = data[i]['ru'][j].split(',');
+				} else {
+					find_recipe = data[i]['recipe'][j].split(',');
+				}
   
-			  if(find_recipe[0] === undefined){
-				find_recipe[0] = '';
-			  } else {
-				recipe_material += "<li><ul>";
-				recipe_material += "<li>"+find_recipe[0]+"</li>";
-			  }
-  
-			  if(find_recipe[1] === undefined){
-				find_recipe[1] = '';
-			  } else {
-				recipe_material += "<li>"+find_recipe[1]+"</li>";
-			  }
-  
-			  if(find_recipe[2] === undefined){
-				find_recipe[2] = '';
-			  } else {
-				recipe_material += "<li>"+find_recipe[2]+"</li>";
-			  }
-  
-			  if(find_recipe[3] === undefined){
-				find_recipe[3] = '';
-			  } else {
-				recipe_material += "<li>"+find_recipe[3]+"</li>";
-			  }
-  
-			  if(find_recipe[4] === undefined){
-				find_recipe[4] = '';
-			  } else {
-				recipe_material += "<li>"+find_recipe[4]+"</li>";
-			  }
-			  if(find_recipe[0] === undefined){
-				recipe_material += "</ul></li>";
-			  }
+				if(find_recipe[0] === undefined){
+					find_recipe[0] = '';
+				} else {
+					recipe_material += "<li><ul>";
+					recipe_material += "<li>"+find_recipe[0]+"</li>";
+				}
+
+				if(find_recipe[1] === undefined){
+					find_recipe[1] = '';
+				} else {
+					recipe_material += "<li>"+find_recipe[1]+"</li>";
+				}
+
+				if(find_recipe[2] === undefined){
+					find_recipe[2] = '';
+				} else {
+					recipe_material += "<li>"+find_recipe[2]+"</li>";
+				}
+
+				if(find_recipe[3] === undefined){
+					find_recipe[3] = '';
+				} else {
+					recipe_material += "<li>"+find_recipe[3]+"</li>";
+				}
+
+				if(find_recipe[4] === undefined){
+					find_recipe[4] = '';
+				} else {
+					recipe_material += "<li>"+find_recipe[4]+"</li>";
+				}
+				if(find_recipe[0] === undefined){
+					recipe_material += "</ul></li>";
+				}
 			}
   
 			break;
