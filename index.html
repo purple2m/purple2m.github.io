@@ -90,4 +90,32 @@ description: "You can search for items in Lineage 2M to find a collection of ite
   </div>
 </section>
 
+<section class="recent-wrapper">
+  <header>
+    <h1>Алхимическая поисковая машина Lineage 2M</h1>
+  </header>
+  <div class="recent" lang="ru">
+    {% assign posts = site.categories.tips | where:"lang", "ru" %}
+      {% for post in posts %}
+        <article class="post">
+          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        </article>
+      {% endfor %}
+  </div>
+</section>
+
+<section class="recent-wrapper">
+  <header>
+    <h1>Информация о Lineage 2M</h1>
+  </header>
+  <div class="recent" lang="ru">
+    {% assign posts = site.categories.info | where:"lang", "ru" %}
+      {% for post in posts %}
+        <article class="post">
+          <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        </article>
+      {% endfor %}
+  </div>
+</section>
+
 <h1><a href="https://twitter.com/L2MDCSCAM">Twitter</a></h1>
