@@ -25,6 +25,8 @@
       {% assign layout = site.data.site.tw %}
     {% elsif page[1] == "ko" %}
       {% assign layout = site.data.site.ko %}
+    {% elsif page[1] == "ru" %}
+      {% assign layout = site.data.site.ru %}
     {% else %}
       {% assign page2 = "ko" %}
       {% assign layout = site.data.site.en %}
@@ -33,7 +35,7 @@
       <div class="container">
         <header class="masthead clearfix">
           <div class="logo">
-            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+            <a href="{{ site.baseurl }}/{{ page[1] }}" class="site-avatar"><img src="{{ site.avatar }}" /></a>
           </div>
           <div class="site-info">
             <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
@@ -42,6 +44,7 @@
             <a href="{{ site.url }}/ko"><span class="flag flag-kr"> </span></a>
             <a href="{{ site.url }}/jp"><span class="flag flag-jp"> </span></a>
             <a href="{{ site.url }}/tw"><span class="flag flag-tw"> </span></a>
+            <a href="{{ site.url }}/ru"><span class="flag flag-ru"> </span></a>
           </div>
           <div class="search" role="search">
             <input type="hidden" id='insert_target' readonly style='background: #cacaca' name='item'>
@@ -68,6 +71,7 @@
                   <li class="ko" style="display:none;">{{ notice.ko }}</li>
                   <li class="jp" style="display:none;">{{ notice.jp }}</li>
                   <li class="tw" style="display:none;">{{ notice.tw }}</li>
+                  <li class="ru" style="display:none;">{{ notice.ru }}</li>
                 </ul>
               </li>
               {% endfor %}

@@ -32,6 +32,17 @@
             "Souls":"搜魂"
         }
     },
+    "ru":{
+        "head":{
+            "Genearal":"常規",
+            "Advanced":"上級",
+            "Input":"Предметы поиск",
+            "Items":"Предметы",
+            "Class":"Классы",
+            "Collections":"Коллекции",
+            "Souls":"Души"
+        }
+    },
     "en":{
         "head":{
             "Genearal":"Genearal",

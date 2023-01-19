@@ -196,6 +196,10 @@ function get_recipe2(data, lng, type){
 	if(type == 'normal'){
 		if(lng == "jp"){
 		  find += "ふつう錬金";
+		}else if(lng == "tw"){
+			find += "普通鍊金";
+		}else if(lng == "ru"){
+			find += "Обычная пенсия";
 		} else {
 		  find += "일반 연금";
 		}
@@ -224,6 +228,10 @@ function get_recipe2(data, lng, type){
 	  } else if(type == 'top'){
 		if(lng == "jp"){
 		  find += "上級錬金";
+		}else if(lng == "tw"){
+			find += "高級鍊金";
+		}else if(lng == "ru"){
+			find += "Вышестоящая пенсия";
 		} else {
 		  find += "상급 연금";
 		}
