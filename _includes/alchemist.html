@@ -69,6 +69,16 @@
 		$(".menu").eq(1).children().children().eq(1).text('ふつう錬金');
 		$(".menu").eq(1).children().children().eq(2).text('上級錬金');
 		$(".menu").eq(1).children().children().eq(3).html('コレクション(<span class="collection_count"></span>)');
+	}else if(lng == 'tw'){
+		$(".menu").eq(1).children().children().eq(0).text('信息');
+		$(".menu").eq(1).children().children().eq(1).text('常規鍊金術');
+		$(".menu").eq(1).children().children().eq(2).text('上級鍊金術');
+		$(".menu").eq(1).children().children().eq(3).html('收藏品(<span class="collection_count"></span>)');
+	}else if(lng == 'ru'){
+		$(".menu").eq(1).children().children().eq(0).text('Сведения');
+		$(".menu").eq(1).children().children().eq(1).text('Традиционная алхимия');
+		$(".menu").eq(1).children().children().eq(2).text('Высшая алхимия');
+		$(".menu").eq(1).children().children().eq(3).html('Коллекции(<span class="collection_count"></span>)');
 	}
 
 	if(this_type > 0){
