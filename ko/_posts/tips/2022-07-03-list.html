@@ -13,14 +13,3 @@ lang-ref: list
 또한 연금술의 재료는 최소 희귀 등급 2개이상과 고급 등급 1개로 구성되어야 합니다.<br>
 아래에서 일반 연금술 1번부터 22번까지의 모양과 재료를 확인해보세요.
 <hr>
-{% for item_type in site.data.normal %}
-<li>
-  {% if page[1] == "jp" %}
-    {{ item_type.jp }}
-  {% elsif page[1] == "tw" %}
-    {{ item_type.tw }}
-  {% else %}
-    {{ item_type.ko }}
-  {% endif %}
-</li>
-{% endfor %}
