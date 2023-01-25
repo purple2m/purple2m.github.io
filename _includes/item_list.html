@@ -22,6 +22,8 @@
             {{ item_type.jp }}
           {% elsif page[1] == "tw" %}
             {{ item_type.tw }}
+          {% elsif page[1] == "ru" %}
+            {{ item_type.ru }}
           {% else %}
             {{ item_type.ko }}
           {% endif %}
@@ -35,6 +37,8 @@
             {{ item_armor.jp }}
           {% elsif page[1] == "tw" %}
             {{ item_armor.tw }}
+          {% elsif page[1] == "ru" %}
+            {{ item_armor.ru }}
           {% else %}
             {{ item_armor.ko }}
           {% endif %}
@@ -49,6 +53,8 @@
             {{ item_acc.jp }}
           {% elsif page[1] == "tw" %}
             {{ item_acc.tw }}
+          {% elsif page[1] == "ru" %}
+            {{ item_acc.ru }}
           {% else %}
             {{ item_acc.ko }}
           {% endif %}
@@ -62,6 +68,8 @@
             {{ item_class.jp }}
           {% elsif page[1] == "tw" %}
             {{ item_class.tw }}
+          {% elsif page[1] == "ru" %}
+            {{ item_class.ru }}
           {% else %}
             {{ item_class.ko }}
           {% endif %}
@@ -184,6 +192,10 @@
           find += "<img class=\"thumb\" src=\"https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_"+data[i]['icon']+"\" onerror=\"this.src='https://wstatic-cdn.plaync.com/plaync/gameinfo/img/thumb-lineage2m.png';\">";
           if(lng == "jp"){
             find += data[i]['jp'];
+          }else if(lng == "tw"){
+            find += data[i]['tw'];
+          }else if(lng == "ru"){
+            find += data[i]['ru'];
           } else {
             find += data[i]['ko'];
           }
@@ -216,6 +228,8 @@
             アイテム分類を選択してください。
           {% elsif page[1] == "tw" %}
             請選擇單品分類。
+          {% elsif page[1] == "ru" %}
+            Выберите категорию элементов
           {% else %}
             아이템 분류를 선택해주세요
           {% endif %}
