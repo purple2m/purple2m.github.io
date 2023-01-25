@@ -49,13 +49,16 @@ $(document).ready(function() {
                 if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.ko;
                   var lang = "ko";
-                } else if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
+                }
+                if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.jp;
                   var lang = "jp";
-                } else if(arg.tw.replace(/ /g, '').indexOf(txt) > -1){
+                }
+                if(arg.tw.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.tw;
                   var lang = "tw";
-                } else if(arg.ru.replace(/ /g, '').indexOf(txt) > -1){
+                }
+                if(arg.ru.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.ru;
                   var lang = "ru";
                 }
@@ -91,13 +94,16 @@ $(document).ready(function() {
                 if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.ko;
                   var lang = "ko";
-                } else if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
+                }
+                if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.jp;
                   var lang = "jp";
-                } else if(arg.tw.replace(/ /g, '').indexOf(txt) > -1){
+                }
+                if(arg.tw.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.tw;
                   var lang = "tw";
-                } else if(arg.ru.replace(/ /g, '').indexOf(txt) > -1){
+                }
+                if(arg.ru.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.ru;
                   var lang = "ru";
                 }
