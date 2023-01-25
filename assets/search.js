@@ -45,13 +45,19 @@ $(document).ready(function() {
           $('#autoMaker').children().remove();
 
           ref.forEach(function(arg){
-              if(arg.ko.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1){
+              if(arg.ko.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1 || arg.tw.replace(/ /g, '').indexOf(txt) > -1 || arg.ru.replace(/ /g, '').indexOf(txt) > -1){
                 if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.ko;
                   var lang = "ko";
                 } else if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
                   var item_name = arg.jp;
                   var lang = "jp";
+                } else if(arg.tw.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.tw;
+                  var lang = "tw";
+                } else if(arg.ru.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.ru;
+                  var lang = "ru";
                 }
                   $('#autoMaker').append(
                       $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
@@ -81,14 +87,20 @@ $(document).ready(function() {
 
             ref.forEach(function(arg){
 
-                if(arg.ko.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1){
-                  if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
-                    var item_name = arg.ko;
-                    var lang = "ko";
-                  } else if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
-                    var item_name = arg.jp;
-                    var lang = "jp";
-                  }
+              if(arg.ko.replace(/ /g, '').indexOf(txt) > -1 || arg.jp.replace(/ /g, '').indexOf(txt) > -1 || arg.tw.replace(/ /g, '').indexOf(txt) > -1 || arg.ru.replace(/ /g, '').indexOf(txt) > -1){
+                if(arg.ko.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.ko;
+                  var lang = "ko";
+                } else if(arg.jp.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.jp;
+                  var lang = "jp";
+                } else if(arg.tw.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.tw;
+                  var lang = "tw";
+                } else if(arg.ru.replace(/ /g, '').indexOf(txt) > -1){
+                  var item_name = arg.ru;
+                  var lang = "ru";
+                }
                     $('#autoMaker').append(
                       $('<div>').html("<a href='https://purple2m.github.io/"+lang+"/alchemist/?item="+arg.id+"'>"+item_name+"</a>").attr({'recipe':arg.recipe})
                     );
