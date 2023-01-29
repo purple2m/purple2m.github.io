@@ -324,6 +324,8 @@ function recipe_info(alc_type){
 							slot_material += "<li>"+icon_22+"</li>";
 						} else if(slot_recipe[jj] == 33){
 							slot_material += "<li>"+icon_33+"</li>";
+						} else if(slot_recipe[jj] == 44){
+							slot_material += "<li>"+icon_44+"</li>";
 						} else {
 							slot_material += "<li></li>";
 						}
