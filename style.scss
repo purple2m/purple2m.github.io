@@ -859,10 +859,9 @@ footer {
   }
 }
 .view_wrap > .view > .view_header{
-  display: flex;
-  list-style-type: none;
-  margin: 0;
+  padding: 10px;
   ul{
+    list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
@@ -870,16 +869,19 @@ footer {
     li{
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     li:last-child{
       margin-left: auto;
       height: 2em;
       width: 2em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
+}
+.recipe_item_list{
+  height: calc(100% - 100px);
+  overflow: auto;
+  padding: 10px;
 }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
