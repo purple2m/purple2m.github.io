@@ -7,7 +7,8 @@
             "Items":"아이템",
             "Class":"클래스",
             "Collections":"컬렉션",
-            "Souls":"집혼"
+            "Souls":"집혼",
+            "Alc":"연금술"
         },
         "alc":{
             "title":"연금술 & 상급 연금술 확률",
@@ -23,7 +24,13 @@
             "Items":"アイテム",
             "Class":"クラス",
             "Collections":"コレクション",
-            "Souls":"魂吸収"
+            "Souls":"魂吸収",
+            "Alc":"錬金術"
+        },
+        "alc":{
+            "title":"錬金術 & 上級錬金術の確率",
+            "normal":"ふつう 錬金術",
+            "advanced":"上級 錬金術"
         }
     },
     "tw":{
@@ -34,7 +41,13 @@
             "Items":"物品",
             "Class":"職業",
             "Collections":"收藏品",
-            "Souls":"搜魂"
+            "Souls":"搜魂",
+            "Alc":"鍊金術"
+        },
+        "alc":{
+            "title":"鍊金術 & 高級鍊金術概率",
+            "normal":"常規 鍊金術",
+            "advanced":"上級 鍊金術"
         }
     },
     "ru":{
@@ -45,7 +58,13 @@
             "Items":"Предметы",
             "Class":"Классы",
             "Collections":"Коллекции",
-            "Souls":"Души"
+            "Souls":"Души",
+            "Alc":"алхимия"
+        },
+        "alc":{
+            "title":"Алхимия и высокая вероятность алхимии.",
+            "normal":"Санг Гю Алхимия",
+            "advanced":"Высшее Алхимия"
         }
     },
     "en":{
@@ -56,7 +75,13 @@
             "Items":"Items",
             "Class":"Class",
             "Collections":"Collections",
-            "Souls":"Souls"
+            "Souls":"Souls",
+            "Alc":"Alchemy"
+        },
+        "alc":{
+            "title":"Alchemy & Advanced Alchemy Probability",
+            "normal":"Genearal Alchemy",
+            "advanced":"Advanced Alchemy"
         }
     }
 }

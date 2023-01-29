@@ -37,8 +37,9 @@
 	(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 	<div class="info">
+        <h2 class="trade_category_name">{{ layout.alc.advanced }}</h2>
 		<ul class="normal_alc">
-            {% for list in site.data.normal %}
+            {% for list in site.data.top %}
                 {% if page[1] == "jp" %}
                     {% assign normal = list.jp %}
                 {% elsif page[1] == "tw" %}

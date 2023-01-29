@@ -1,0 +1,97 @@
+{% assign page = page.url | split: "/" %}
+{% if page[1] == "jp" %}
+  {% assign layout = site.data.site.jp %}
+{% elsif page[1] == "tw" %}
+  {% assign layout = site.data.site.tw %}
+{% elsif page[1] == "ko" %}
+  {% assign layout = site.data.site.ko %}
+{% elsif page[1] == "ru" %}
+  {% assign layout = site.data.site.ru %}
+{% else %}
+  {% assign page2 = "ko" %}
+  {% assign layout = site.data.site.en %}
+{% endif %}
+<div class="alc_wrap">
+	<div class="top">
+        <h1>{{ layout.alc.title }}</h1>
+	</div>
+	<div class="menu">
+		<ul>
+			<li onclick="get_recipe(this_item_id, lng, 'normal');">
+				{{ layout.alc.normal }}
+			</li>
+			<li onclick="get_recipe(this_item_id, lng, 'top');">
+				{{ layout.alc.advanced }}
+			</li>
+		</ul>
+	</div>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351244032029642"
+	crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-format="fluid"
+	data-ad-layout-key="-gu-18+5g-2f-83"
+	data-ad-client="ca-pub-3351244032029642"
+	data-ad-slot="6724709963"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	<div class="info">
+        <h2 class="trade_category_name">{{ layout.alc.normal }}</h2>
+		<ul class="normal_alc">
+            {% for list in site.data.normal %}
+                {% if page[1] == "jp" %}
+                    {% assign normal = list.jp %}
+                {% elsif page[1] == "tw" %}
+                    {% assign normal = list.tw %}
+                {% elsif page[1] == "ru" %}
+                    {% assign normal = list.ru %}
+                {% else %}
+                    {% assign normal = list.ko %}
+                {% endif %}
+
+                <li>
+                    <ul>
+                        <li>
+                            <span>{{ list.no }}</span>
+                        </li>
+                        <li>
+                            <ul class="recipe_slot">
+                                {% assign slot_split = list.slot | remove: ']' | remove: '[' | remove: '"' %}
+                                {% assign slot_split = slot_split | split: "," %}
+                                {% for slot in slot_split %}
+                                    <li>
+                                        {% if slot == "1" %}
+                                        <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">
+                                        {% elsif slot == "2" %}
+                                        <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_epic_01.png">
+                                        {% elsif slot == "3" %}
+                                        <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_misc_craft_prob_add_legendary_01.png">
+                                        {% elsif slot == "11" %}
+                                        <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_smet_lune.png">
+                                        {% elsif slot == "22" %}
+                                        <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Misc_Gracia_Collection_B.png">
+                                        {% elsif slot == "33" %}
+                                        <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_enchant_pedant.png">
+                                        {% elsif slot == "44" %}
+                                        <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_smet_pendant.png">
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="recipe_list" style="display: flex;">
+                    {% for list2 in normal %}
+                        <li>{{ list2 }}</li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            <li>
+
+            </li>
+          {% endfor %}
+		</ul>
+	</div>
+</div>
+<script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20230106"></script>
