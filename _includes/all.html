@@ -51,9 +51,11 @@
 
                 <li>
                     <ul>
-                        <li>{{ list.no }}</li>
                         <li>
-                            <ul class="recipe_slot">
+                            <span>{{ list.no }}</span>
+                        </li>
+                        <li>
+                            <ul class="normal_alc">
                                 {% assign slot_split = list.slot | remove: ']' | remove: '[' | remove: '"' %}
                                 {% assign slot_split = slot_split | split: "," %}
                                 {% for slot in slot_split %}
