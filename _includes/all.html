@@ -49,7 +49,6 @@
                     {% assign normal = list.ko %}
                 {% endif %}
 
-                {% assign beatles = "John, Paul, George, Ringo" | split: ", " %}
                 <li>
                     <ul>
                         <li>{{ list.no }}</li>
@@ -65,7 +64,7 @@
                     </ul>
                     <ul class="recipe_list" style="display: flex;">
                     {% for list2 in normal %}
-                        <li>{{} list2 }}</li>
+                        <li>{{ list2 }}</li>
                     {% endfor %}
                     </ul>
                 </li>
