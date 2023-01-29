@@ -1,0 +1,49 @@
+{% assign page = page.url | split: "/" %}
+{% if page[1] == "jp" %}
+  {% assign layout = site.data.site.jp %}
+{% elsif page[1] == "tw" %}
+  {% assign layout = site.data.site.tw %}
+{% elsif page[1] == "ko" %}
+  {% assign layout = site.data.site.ko %}
+{% elsif page[1] == "ru" %}
+  {% assign layout = site.data.site.ru %}
+{% else %}
+  {% assign page2 = "ko" %}
+  {% assign layout = site.data.site.en %}
+{% endif %}
+<div class="alc_wrap">
+	<div class="top">
+        <h1>{{ layout.alc.title }}</h1>
+	</div>
+	<div class="menu">
+		<ul>
+			<li onclick="get_recipe(this_item_id, lng, 'normal');">
+				{{ layout.alc.normal }}
+			</li>
+			<li onclick="get_recipe(this_item_id, lng, 'top');">
+				{{ layout.alc.advanced }}
+			</li>
+		</ul>
+	</div>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3351244032029642"
+	crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+	style="display:block"
+	data-ad-format="fluid"
+	data-ad-layout-key="-gu-18+5g-2f-83"
+	data-ad-client="ca-pub-3351244032029642"
+	data-ad-slot="6724709963"></ins>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	<div class="info">
+		<ul class="options">
+            {% for list in site.data.normal %}
+            <li>
+                {{ list.page[1] }}
+            </li>
+          {% endfor %}
+		</ul>
+	</div>
+</div>
+<script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20230106"></script>

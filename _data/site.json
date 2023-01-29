@@ -8,6 +8,11 @@
             "Class":"클래스",
             "Collections":"컬렉션",
             "Souls":"집혼"
+        },
+        "alc":{
+            "title":"연금술 & 상급 연금술 확률",
+            "normal":"일반 연금",
+            "advanced":"상급 연금"
         }
     },
     "jp":{
