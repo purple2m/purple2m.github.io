@@ -189,6 +189,7 @@ img {
     display: flex;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
   }
   li{
     display: flex;
@@ -201,6 +202,7 @@ img {
     li:first-child{
       a{
         border-left: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
       }
     }
   }
