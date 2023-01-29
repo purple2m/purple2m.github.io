@@ -58,6 +58,7 @@
                                 {% assign slot_split = slot_split | split: "," %}
                                 {% for slot in slot_split %}
                                     <li>
+                                        {{ slot }}
                                         {% if slot == "1" %}
                                         <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">
                                         {% elsif slot == "2" %}
