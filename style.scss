@@ -840,6 +840,47 @@ footer {
     font-size:0.5em;
   }
 }
+.view_wrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+  padding:10px;
+  z-index: 1;
+  .view{
+    background: #111216;
+    max-width: 995px;
+    max-height: 100%;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    padding: 10px;
+  }
+}
+.view_wrap > .view > .view_header{
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid $white8;
+    li{
+      display: flex;
+      align-items: center;
+    }
+    li:last-child{
+      margin-left: auto;
+      height: 2em;
+      width: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
