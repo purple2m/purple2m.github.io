@@ -37,7 +37,7 @@
 	(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 	<div class="info">
-		<ul class="options">
+		<ul class="normal_alc">
             {% for list in site.data.normal %}
                 {% if page[1] == "jp" %}
                     {% assign normal = list.jp %}
@@ -55,7 +55,7 @@
                             <span>{{ list.no }}</span>
                         </li>
                         <li>
-                            <ul class="normal_alc">
+                            <ul class="recipe_slot">
                                 {% assign slot_split = list.slot | remove: ']' | remove: '[' | remove: '"' %}
                                 {% assign slot_split = slot_split | split: "," %}
                                 {% for slot in slot_split %}
