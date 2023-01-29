@@ -54,7 +54,7 @@
                         <li>{{ list.no }}</li>
                         <li>
                             <ul class="recipe_slot">
-                                {% assign slot_split = list.slot | split: "," %}
+                                {% assign slot_split = list.slot | remove: "\"" | split: "," %}
                                 {% for slot in slot_split %}
                                     <li>
                                         {% if slot == "1" %}
