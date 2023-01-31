@@ -22,13 +22,11 @@
                 <li>X</li>
             </ul>
             <ul class="recipe_slot">            
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li>
-                    <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">
-                </li>
+                <li class="1"></li>
+                <li class="2"></li>
+                <li class="3"></li>
+                <li class="4"></li>
+                <li class="5"></li>
             </ul>
             <ul class="recipe_item_list">
             </ul>
@@ -128,11 +126,13 @@ $(function() {
         recipe_type = recipe_type[2];
         recipe_type = recipe_type.split('_');
         recipe_type = recipe_type[0];
-
-        var recipe_click_slot = $(this).children().children().eq(1).children().html();
-        $('.view .recipe_slot').html(recipe_click_slot);
+        
         $('.view .view_header').children().eq(0).html(recipe_click);
-        $(".view .recipe_slot").children().eq(0).css('border', '3px solid red');
+        $(".view .recipe_slot").children().eq(0).html( $(this).children().children().eq(1).children().children().eq(0).html() );
+        $(".view .recipe_slot").children().eq(1).html( $(this).children().children().eq(1).children().children().eq(1).html() );
+        $(".view .recipe_slot").children().eq(2).html( $(this).children().children().eq(1).children().children().eq(2).html() );
+        $(".view .recipe_slot").children().eq(3).html( $(this).children().children().eq(1).children().children().eq(3).html() );
+        $(".view .recipe_slot").children().eq(4).html( $(this).children().children().eq(1).children().children().eq(4).html() );
         alc_item(recipe_click, 1, recipe_type);
         $(".view_wrap").show();
     });
