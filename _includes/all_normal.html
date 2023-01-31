@@ -12,6 +12,25 @@
   {% assign layout = site.data.site.en %}
 {% endif %}
 <div class="alc_wrap">
+    <div class="view_wrap">
+        <div class="view">
+            <ul class="view_header">
+                <li>상세보기</li>
+                <li>X</li>
+            </ul>
+            <ul class="recipe_slot">            
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">
+                </li>
+            </ul>
+            <ul class="recipe_item_list">
+            </ul>
+        </div>
+    </div>
 	<div class="top">
         <h1>{{ layout.alc.title }}</h1>
 	</div>
@@ -94,4 +113,18 @@
 		</ul>
 	</div>
 </div>
-<script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20230106"></script>
+<script src="{{ base.url | prepend: site.url }}/assets/alc_info.js?version=20230106"></script>
+<script>
+$(function() {
+    $(".normal_alc").children().on("click",  function() {
+        var recipe_click = $(this).children().children().eq(0).children().text();
+        var recipe_type = $(location).attr('pathname');
+        recipe_type = recipe_type.split('/');
+        recipe_type = recipe_type[2];
+        recipe_type = recipe_type.split('_');
+        recipe_type = recipe_type[0];
+        alc_item(recipe_click, 1, recipe_type);
+        $(".view_wrap").fadeIn(1000);
+    });
+});
+</script>
