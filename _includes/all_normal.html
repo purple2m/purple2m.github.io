@@ -118,7 +118,7 @@
 </div>
 <script src="{{ base.url | prepend: site.url }}/assets/alc_info.js?version=20230131"></script>
 <script>
-$(function() {
+window.onload = function(){
     $(".normal_alc").children().on("click",  function() {
         var recipe_click = $(this).children().children().eq(0).children().text();
         var recipe_type = $(location).attr('pathname');
@@ -153,11 +153,5 @@ $(function() {
         $('.view .recipe_slot').children()..css('border', '0');
         $(".view_wrap").fadeOut("slow");
     });
-});
-
-</script>
-<script>
-window.onload = function(){
-
 };
 </script>
