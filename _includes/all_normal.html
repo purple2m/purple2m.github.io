@@ -132,6 +132,7 @@ $(function() {
         var recipe_click_slot = $(this).children().children().eq(1).children().html();
         $('.view .recipe_slot').html(recipe_click_slot);
         $('.view .view_header').children().eq(0).html(recipe_click);
+        $(".view .recipe_slot").children().eq(0).css('border', '3px solid red');
         alc_item(recipe_click, 1, recipe_type);
         $(".view_wrap").show();
     });
