@@ -135,9 +135,18 @@ $(function() {
         recipe_type = recipe_type.split('_');
         recipe_type = recipe_type[0];
 
+        var recipe_click_slot = $(this).children().children().eq(1).children().html();
+        $('.view .recipe_slot').html(recipe_click_slot);
+        $('.view .view_header').prepend("<li>"+recipe_click+"</li>");
         alc_item(recipe_click, 1, recipe_type);
         $(".view_wrap").show();
     });
+    
+    $(".view .recipe_slot").children().on("click",  function() {
+        var recipe_click = $(this).querySelector();
+        console.log(recipe_click);
+    });
+
     $(".view_header").children().eq(1).on("click",  function() {
         $(".view_wrap").fadeOut("slow");
     });
