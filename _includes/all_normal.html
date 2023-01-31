@@ -136,7 +136,17 @@ $(function() {
         $(".view_wrap").show();
     });
     
-    $(".view .recipe_slot").children().on("click",  function() {
+
+
+    $(".view_header").children().eq(1).on("click",  function() {
+        $(".view_wrap").fadeOut("slow");
+    });
+});
+
+</script>
+<script>
+$(function() {
+        $(".view .recipe_slot").children().on("click",  function() {
         var recipe_click = $(".view .view_header").children().eq(0).text();
         var recipe_slot = $(this).attr("class");
         $('.view .recipe_slot').children().not(this).css('border', '0');
@@ -148,10 +158,5 @@ $(function() {
         recipe_type = recipe_type[0];
         alc_item(recipe_click, recipe_slot, recipe_type);
     });
-
-    $(".view_header").children().eq(1).on("click",  function() {
-        $(".view_wrap").fadeOut("slow");
-    });
 });
-
 </script>
