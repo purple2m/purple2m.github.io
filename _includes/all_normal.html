@@ -15,6 +15,7 @@
     <div class="view_wrap" style="display:none;">
         <div class="view">
             <ul class="view_header">
+                <li></li>
                 <li>
                     {{ layout.alc.info }}
                 </li>
@@ -130,7 +131,7 @@ $(function() {
 
         var recipe_click_slot = $(this).children().children().eq(1).children().html();
         $('.view .recipe_slot').html(recipe_click_slot);
-        $('.view .view_header').prepend("<li>"+recipe_click+"</li>");
+        $('.view .view_header').children().eq(0).html(recipe_click);
         alc_item(recipe_click, 1, recipe_type);
         $(".view_wrap").show();
     });
