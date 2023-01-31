@@ -137,11 +137,6 @@ $(function() {
         alc_item(recipe_click, 1, recipe_type);
         $(".view_wrap").show();
     });
-});
-
-</script>
-<script>
-window.onload = function(){
     $(".view .recipe_slot").children().on("click",  function() {
         var recipe_click = $(".view .view_header").children().eq(0).text();
         var recipe_slot = $(this).attr("class");
@@ -158,5 +153,11 @@ window.onload = function(){
         $('.view .recipe_slot').children()..css('border', '0');
         $(".view_wrap").fadeOut("slow");
     });
+});
+
+</script>
+<script>
+window.onload = function(){
+
 };
 </script>
