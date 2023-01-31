@@ -139,6 +139,8 @@ $(function() {
     $(".view .recipe_slot").children().on("click",  function() {
         var recipe_click = $(".view .view_header").children().eq(0).text();
         var recipe_slot = $(this).attr("class");
+        $('.view .recipe_slot').children().not(this).css('border', '0');
+        $(this).css('border', '3px solid red');
         var recipe_type = $(location).attr('pathname');
         recipe_type = recipe_type.split('/');
         recipe_type = recipe_type[2];
