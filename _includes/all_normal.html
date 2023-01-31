@@ -12,7 +12,7 @@
   {% assign layout = site.data.site.en %}
 {% endif %}
 <div class="alc_wrap">
-    <div class="view_wrap">
+    <div class="view_wrap" style="display:none;">
         <div class="view">
             <ul class="view_header">
                 <li>상세보기</li>
@@ -124,7 +124,7 @@ $(function() {
         recipe_type = recipe_type.split('_');
         recipe_type = recipe_type[0];
         alc_item(recipe_click, 1, recipe_type);
-        $(".view_wrap").fadeIn(1000);
+        $(".view_wrap").fadeIn(slow);
     });
 });
 </script>
