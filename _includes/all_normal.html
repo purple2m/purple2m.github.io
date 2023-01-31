@@ -145,7 +145,7 @@ $(function() {
 
 </script>
 <script>
-$(function() {
+window.onload = function(){
         $(".view .recipe_slot").children().on("click",  function() {
         var recipe_click = $(".view .view_header").children().eq(0).text();
         var recipe_slot = $(this).attr("class");
@@ -158,5 +158,5 @@ $(function() {
         recipe_type = recipe_type[0];
         alc_item(recipe_click, recipe_slot, recipe_type);
     });
-});
+};
 </script>
