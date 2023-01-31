@@ -1,8 +1,5 @@
 const baseurl = "https://purple2m.github.io";
 function alc_item(recipe, slots, type){
-    if(type == "advanced"){
-        type = "top";
-    }
     $.getJSON(baseurl+"/alchemist/"+type+"/"+recipe+".json?version=20230129", function(data) {
         var lng = $(location).attr('pathname');
         lng = lng.split('/');
@@ -14,6 +11,38 @@ function alc_item(recipe, slots, type){
         var items_3 = new Array();
         var items_4 = new Array();
         var items_5 = new Array();
+        if(type == "advanced"){
+            for (var i=0; i < data.length;++i){
+                var item_up = new Array();
+                for (var v=0; v < data[i].top.length;++v){
+                    var item = data[i].top[v].split(',');
+                    var slot = item[2].split('-');
+                    var info = {
+                        id: data[i].id,
+                        icon: data[i].icon,
+                        rand: item[1],
+                        ko: data[i].ko,
+                        jp: data[i].jp,
+                        tw: data[i].tw,
+                        ru: data[i].ru,
+                        up: item[0]
+                    };
+                    if(slot[1] == 1){
+                        items_1.push(info);
+                    }else if(slot[1] == 2){
+                        items_2.push(info);
+                    }else if(slot[1] == 3){
+                        items_3.push(info);
+                    }else if(slot[1] == 4){
+                        items_4.push(info);
+                    }else if(slot[1] == 5){
+                        items_5.push(info);
+                    }
+
+                }
+            }
+        }
+
         if(type == "normal"){
             for (var i=0; i < data.length;++i){
                 var item_up = new Array();
