@@ -73,7 +73,7 @@ function alc_item(recipe, slots, type){
           } else {
             find += view[i]['ko'];
           }
-          find += " ("+items_1[i]['rand']+")";
+          find += " ("+view[i]['rand']+")";
           find += "</a></li>";
         }
         if (find){

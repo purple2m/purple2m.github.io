@@ -116,7 +116,7 @@
 		</ul>
 	</div>
 </div>
-<script src="{{ base.url | prepend: site.url }}/assets/alc_info.js?version=20230106"></script>
+<script src="{{ base.url | prepend: site.url }}/assets/alc_info.js?version=20230131"></script>
 <script>
 $(function() {
     $(".normal_alc").children().on("click",  function() {
@@ -133,6 +133,7 @@ $(function() {
         $(".view .recipe_slot").children().eq(2).html( $(this).children().children().eq(1).children().children().eq(2).html() );
         $(".view .recipe_slot").children().eq(3).html( $(this).children().children().eq(1).children().children().eq(3).html() );
         $(".view .recipe_slot").children().eq(4).html( $(this).children().children().eq(1).children().children().eq(4).html() );
+        $('.view .recipe_slot').children().eq(0).css('border', '3px solid red');
         alc_item(recipe_click, 1, recipe_type);
         $(".view_wrap").show();
     });
@@ -154,6 +155,7 @@ window.onload = function(){
         alc_item(recipe_click, recipe_slot, recipe_type);
     });
     $(".view_header").children().eq(2).on("click",  function() {
+        $('.view .recipe_slot').children()..css('border', '0');
         $(".view_wrap").fadeOut("slow");
     });
 };
