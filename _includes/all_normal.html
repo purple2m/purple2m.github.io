@@ -16,16 +16,7 @@
         <div class="view">
             <ul class="view_header">
                 <li>
-                    {% for list in site.data.normal %}
-                    {% if page[1] == "jp" %}
-                        {% assign normal = list.jp %}
-                    {% elsif page[1] == "tw" %}
-                        {% assign normal = list.tw %}
-                    {% elsif page[1] == "ru" %}
-                        {% assign normal = list.ru %}
-                    {% else %}
-                        {% assign normal = list.ko %}
-                    {% endif %}
+                    {{ layout.alc.info }}
                 </li>
                 <li>X</li>
             </ul>
