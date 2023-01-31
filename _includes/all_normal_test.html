@@ -118,3 +118,17 @@
 	</div>
 </div>
 <script src="{{ base.url | prepend: site.url }}/assets/alc_info.js?version=20230106"></script>
+<script>
+$(function() {
+    $(".normal_alc").children().on("click",  function() {
+        var recipe_click = $(this).children().children().eq(0).children().text();
+        var recipe_type = $(location).attr('pathname');
+        recipe_type = recipe_type.split('/');
+        recipe_type = recipe_type[2];
+        recipe_type = recipe_type.split('_');
+        recipe_type = recipe_type[0];
+        alc_item(recipe_click, 1, recipe_type);
+        $(".view_wrap").fadeIn(1000);
+    });
+});
+</script>
