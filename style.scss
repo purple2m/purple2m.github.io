@@ -877,6 +877,9 @@ footer {
     align-items: center;
     justify-content: center;
   }
+  li:first-child{
+    display: none;
+  }
   li:last-child{
     margin-left: auto;
     height: 2em;
