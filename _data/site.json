@@ -13,7 +13,8 @@
         "alc":{
             "title":"연금술 & 상급 연금술 확률",
             "normal":"일반 연금",
-            "advanced":"상급 연금"
+            "advanced":"상급 연금",
+            "info":"상세보기"
         }
     },
     "jp":{
@@ -30,7 +31,8 @@
         "alc":{
             "title":"錬金術 & 上級錬金術の確率",
             "normal":"ふつう 錬金術",
-            "advanced":"上級 錬金術"
+            "advanced":"上級 錬金術",
+            "info":"詳細を見る"
         }
     },
     "tw":{
@@ -47,7 +49,8 @@
         "alc":{
             "title":"鍊金術 & 高級鍊金術概率",
             "normal":"常規 鍊金術",
-            "advanced":"上級 鍊金術"
+            "advanced":"上級 鍊金術",
+            "info":"詳細視圖"
         }
     },
     "ru":{
@@ -64,7 +67,8 @@
         "alc":{
             "title":"Алхимия и высокая вероятность алхимии.",
             "normal":"Санг Гю Алхимия",
-            "advanced":"Высшее Алхимия"
+            "advanced":"Высшее Алхимия",
+            "info":"Подробности"
         }
     },
     "en":{
@@ -81,7 +85,8 @@
         "alc":{
             "title":"Alchemy & Advanced Alchemy Probability",
             "normal":"Genearal Alchemy",
-            "advanced":"Advanced Alchemy"
+            "advanced":"Advanced Alchemy",
+            "info":"View details"
         }
     }
 }

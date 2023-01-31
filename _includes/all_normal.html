@@ -15,7 +15,18 @@
     <div class="view_wrap" style="display:none;">
         <div class="view">
             <ul class="view_header">
-                <li>상세보기</li>
+                <li>
+                    {% for list in site.data.normal %}
+                    {% if page[1] == "jp" %}
+                        {% assign normal = list.jp %}
+                    {% elsif page[1] == "tw" %}
+                        {% assign normal = list.tw %}
+                    {% elsif page[1] == "ru" %}
+                        {% assign normal = list.ru %}
+                    {% else %}
+                        {% assign normal = list.ko %}
+                    {% endif %}
+                </li>
                 <li>X</li>
             </ul>
             <ul class="recipe_slot">            
@@ -123,8 +134,13 @@ $(function() {
         recipe_type = recipe_type[2];
         recipe_type = recipe_type.split('_');
         recipe_type = recipe_type[0];
+
         alc_item(recipe_click, 1, recipe_type);
-        $(".view_wrap").fadeIn("slow");
+        $(".view_wrap").show();
+    });
+    $(".view_header").children().eq(1).on("click",  function() {
+        $(".view_wrap").fadeOut("slow");
     });
 });
+
 </script>
