@@ -264,7 +264,7 @@ function get_recipe2(data, lng, type){
 	recipe_info(type);
 }
 function recipe_info(alc_type){
-	$.getJSON(baseurl+"/alchemist/"+alc_type+".json?version=20230106", function(data) {
+	$.getJSON(baseurl+"/alchemist/"+alc_type+".json?version=20230202", function(data) {
 		var lng = $(location).attr('pathname');
         lng = lng.split('/');
         lng = lng[1];
@@ -343,7 +343,7 @@ function find_material(searching_recipe, type, lng, event){
 	var y1 = event.clientY;
 	$("#recipe_material").css("top",y1 + "px");
 	var recipe_material = "<ul class='recipe_list'>";
-	  $.getJSON(baseurl+"/alchemist/"+type+".json?version=20230105", function(data) {
+	  $.getJSON(baseurl+"/alchemist/"+type+".json?version=20230202", function(data) {
 		for (var i=0; i < data.length;++i){
 		  if(data[i]['no'] == searching_recipe){
 			for (var j=0; j < data[i]['recipe'].length;++j){

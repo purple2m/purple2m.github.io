@@ -19,14 +19,14 @@ $(document).ready(function() {
 	let search = localStorage.getItem('search');
 	let search_update = localStorage.getItem('search_update');
 
-  const update = 20230125;
+  const update = 20230202;
 
   search = JSON.parse(search);
 
   if(typeof search === 'undefined' || search === null || search_update != update){
-    $.getJSON("https://purple2m.github.io/item/search/search.json?version=20230125", function(data) {
+    $.getJSON("https://purple2m.github.io/item/search/search.json?version=20230202", function(data) {
       localStorage.setItem('search', JSON.stringify(data));
-      localStorage.setItem('search_update', 20230125);
+      localStorage.setItem('search_update', 20230202);
       auto_come(data, 1);
     });
   }else{
