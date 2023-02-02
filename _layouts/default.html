@@ -66,15 +66,31 @@
           font-size: 0.8em;">
             <ul>
               {% for notice in site.data.notice %}
-              <li>
-                <ul>
-                  <li class="en">{{ notice.en }}</li>
-                  <li class="ko" style="display:none;">{{ notice.ko }}</li>
-                  <li class="jp" style="display:none;">{{ notice.jp }}</li>
-                  <li class="tw" style="display:none;">{{ notice.tw }}</li>
-                  <li class="ru" style="display:none;">{{ notice.ru }}</li>
-                </ul>
-              </li>
+                {% if page2 == "ko" %}
+                  {% if notice.target == "main" %}
+                  <li>
+                    <ul>
+                      <li class="en">{{ notice.en }}</li>
+                      <li class="ko" style="display:none;">{{ notice.ko }}</li>
+                      <li class="jp" style="display:none;">{{ notice.jp }}</li>
+                      <li class="tw" style="display:none;">{{ notice.tw }}</li>
+                      <li class="ru" style="display:none;">{{ notice.ru }}</li>
+                    </ul>
+                  </li>
+                  {% endif %}
+                {% else %}
+                  {% if page2 != "ko" %}
+                  <li>
+                    <ul>
+                      <li class="en">{{ notice.en }}</li>
+                      <li class="ko" style="display:none;">{{ notice.ko }}</li>
+                      <li class="jp" style="display:none;">{{ notice.jp }}</li>
+                      <li class="tw" style="display:none;">{{ notice.tw }}</li>
+                      <li class="ru" style="display:none;">{{ notice.ru }}</li>
+                    </ul>
+                  </li>
+                  {% endif %}
+                {% endif %}
               {% endfor %}
             </ul>
             <ul>
