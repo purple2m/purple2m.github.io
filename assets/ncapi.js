@@ -110,6 +110,8 @@ function ncapi(get_url, item_id, enchant_level, target){
 
 		  if (lng == "jp"){
 			item_name.innerHTML = info.jp;
+		  } else if (lng == "ru"){
+				item_name.innerHTML = info.ru;
 		  } else {
 			item_name.innerHTML = info.ko;
 		  }
