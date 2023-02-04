@@ -1,0 +1,91 @@
+[
+    {
+       "ko":"STR"
+    },
+    {
+       "ko":"DEX"
+    },
+    {
+       "ko":"INT"
+    },
+    {
+       "ko":"CON"
+    },
+    {
+       "ko":"AGI"
+    },
+    {
+       "ko":"WIS"
+    },
+    {
+       "ko":"모든 대미지",
+       "jp":
+    },
+    {
+       "ko":"명중"
+    },
+    {
+       "id":"critical",
+       "ko":"치명타"
+    },
+    {
+       "id":"short_distance_damage",
+       "ko":"근거리 대미지"
+    },
+    {
+       "id":"short_distance_accuracy",
+       "ko":"근거리 명중"
+    },
+    {
+       "id":"short_distance_critical",
+       "ko":"근거리 치명타"
+    },
+    {
+       "id":"long_distance_damage",
+       "ko":"원거리 대미지"
+    },
+    {
+       "id":"long_distance_accuracy",
+       "ko":"원거리 명중"
+    },
+    {
+       "id":"long_distance_critical",
+       "ko":"원거리 치명타"
+    },
+    {
+       "id":"magic_damage",
+       "ko":"마법 대미지"
+    },
+    {
+       "id":"magic_accuracy",
+       "ko":"마법 명중"
+    },
+    {
+       "id":"magic_critical",
+       "ko":"마법 치명타"
+    },
+    {
+       "id":"weapon_damage",
+       "ko":"무기 대미지"
+    },
+    {
+       "id":"critical_add_damage",
+       "ko":"치명타 시 추가 대미지"
+    },
+    {
+       "id":"double_weapon_damage",
+       "ko":"더블 확률"
+    },
+    {
+       "id":"armor_class",
+       "ko":"방어력"
+    },
+    {
+       "id":"damage_reduction",
+       "ko":"대미지 리덕션"
+    },
+    {
+        "ko":"최대 소지 무게",
+        "jp":"最大所持重量"
+    }
+ ]
