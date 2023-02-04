@@ -68,12 +68,32 @@ function ncapi(get_url, item_id, enchant_level, target){
 				}
 			}
 				get_item(data.item_id);
-				console.log(data);
+
+				let step = $(location).attr('pathname').split('/');
+				let lng = step[1];
+				if(lng != "ko"){
+					replace_option();
+				}
 		  }
 		};
 		xhr.send('');
 	}
-
+	function replace_option(){
+		let options = $('.options').html();
+		let category = $('.trade_category_name').html();
+		let step = $(location).attr('pathname').split('/');
+		let lng = step[1];
+		$.getJSON(baseurl+"/alchemist/option.json", function(data) {
+			for (var i=0; i < data.kor.length;++i){
+				if(lng == "jp"){
+					options = options.replace(data.kor[i], data.jp[i]);
+					category = category.replace(data.kor[i], data.jp[i]);
+				}
+			}
+			$('.options').html(options);
+			$('.trade_category_name').html(category);
+		});
+	}
 	function get_item(item){
 		item = String(item);
 		let type = getParameterByName('type');
