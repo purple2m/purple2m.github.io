@@ -67,8 +67,8 @@ function ncapi(get_url, item_id, enchant_level, target){
 					options[0].innerHTML += '<li>' + data.options[i].option_name + ' ' + data.options[i].display + '</li>';
 				}
 			}
-				get_item(data.options);
-				console.log(data);
+				get_item(data.item_id);
+				console.log(data.options);
 				let step = $(location).attr('pathname').split('/');
 				let lng = step[1];
 				if(lng != "ko"){
