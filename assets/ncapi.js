@@ -86,8 +86,8 @@ function ncapi(get_url, item_id, enchant_level, target){
 		$.getJSON(baseurl+"/alchemist/option.json", function(data) {
 			for (var i=0; i < data.kor.length;++i){
 				if(lng == "jp"){
-					options = options.replace(data.kor[i], data.jp[i]);
-					category = category.replace(data.kor[i], data.jp[i]);
+					options = options.replace(data[i].ko, data[i].jp);
+					category = category.replace(data[i].ko, data[i].jp);
 				}
 			}
 			$('.options').html(options);
