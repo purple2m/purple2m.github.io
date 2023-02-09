@@ -583,6 +583,9 @@ footer {
     flex-wrap: wrap;
   }
 }
+.list-wrap ul{
+  margin:0;
+}
 .list-wrap .list-select{
   display: flex;
   padding: 0.5em;
@@ -774,7 +777,6 @@ footer {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   background: #171717;
   text-align: center;
   padding: 0.3em;
