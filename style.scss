@@ -577,8 +577,11 @@ footer {
 .header_wrap{
   display: flex;
   flex-flow: row;
-  flex-wrap: wrap;
+
   align-items: center;
+  @include mobile {
+    flex-wrap: wrap;
+  }
 }
 .list-wrap .list-select{
   display: flex;
