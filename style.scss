@@ -578,7 +578,7 @@ footer {
   display: flex;
   flex-flow: row;
 
-  align-items: center;
+  align-items: baseline;
   @include mobile {
     flex-wrap: wrap;
   }
@@ -593,7 +593,7 @@ footer {
   background: rgba(255, 255, 255, 0.02);
   width: 10em;
   justify-content: center;
-  margin-right: 0.5em;
+  margin: 15px 0.5em 15px 0;
 }
 
 .recipe_object span {
