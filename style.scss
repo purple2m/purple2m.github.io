@@ -576,7 +576,9 @@ footer {
 }
 .header_wrap{
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .list-wrap .list-select{
   display: flex;
