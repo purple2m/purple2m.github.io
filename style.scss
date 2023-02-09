@@ -571,7 +571,8 @@ nav {
 footer {
   padding: 0.3em 0;
   text-align: center;
-  background: #282844;
+  border-top: 1px solid $white8;
+  margin-top:10px;
 }
 
 .recipe_object span {
