@@ -635,34 +635,44 @@ footer {
 }
 .alc_wrap{
   display:flex;
-  background-color:rgb(17,18,22);
   flex-direction: column;
   color:white;
   min-height: 90%;
   .menu{
-    border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9em;
+    border-radius: 0.5em;
+    background: #282844;
+    margin: 0.5em 0;
     ul{
       list-style: none;
       display: flex;
       margin: 0;
       padding: 0;
+      width: 100%;
+      text-align: center;
     }
     li{
-      color: $gray;
+      color: $white;
       text-decoration: none;
       cursor: pointer;
+      display: flex;
+      padding: 0.5em;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      flex: 1;
+      font-size: 0.9em;
+      justify-content: center;
       &:hover, &:active {
-        color: $white;
+        color: $gray;
       }
-      display: block;
-      padding: 0.3em;
-      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    li:last-child{
+      border:0;
     }
   }
   .top{
     display:flex;
-    background-color:rgb(24,29,35);
+    background-color:#282844;
+    border-radius: 0.5em;
     h1{
       font-size:1.2em;
     }
@@ -689,12 +699,15 @@ footer {
   }
 
   .price{
-		display: flex;
-		padding: 0.5em;
-   	flex-direction: column;
+    display: flex;
+    padding: 0.5em;
+    flex-direction: column;
+    background-color: #282844;
+    margin: 0.5em 0;
+    border-radius: 0.5em;
 
     .price_info{
-	    background-color:rgb(24,29,35);
+	    background-color:#282844;
 	    padding:0 0.5em 0 0.5em;
     }
     .price_select{
@@ -704,7 +717,6 @@ footer {
   }
 
   .info{
-    padding:0 0.5em 0 0.5em;
     h2{
       color:rgb(153,134,119);
       margin:0.2em;
