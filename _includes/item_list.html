@@ -18,7 +18,7 @@
       <span class="item_type_view" style="display: none;"></span>
       <div class="list-wrap">
         <span class="list-select">Select</span>
-        <ul class="item_type_list item_list">
+        <ul class="item_type_list item_list" style="display:none;">
           {% for item_type in site.data.item_list.type %}
             <li>
               {% if page[1] == "jp" %}
@@ -83,6 +83,10 @@
       </ul>
     </div>
     <script>
+   $('.list-select').click(function () {
+      $('.item_type_list').toggle();
+    });
+
     var click_type = $('.item_type_list').children();
     click_type.click(function () {
       var indexno = $(this).index();
