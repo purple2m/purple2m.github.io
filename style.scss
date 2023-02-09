@@ -576,6 +576,7 @@ footer {
 }
 .header_wrap{
   display: flex;
+  flex-flow: column;
 }
 
 .recipe_object span {
