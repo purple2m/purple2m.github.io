@@ -34,53 +34,55 @@
           {% endfor %}
         </ul>
       </div>
-
-      <ul class="item_armor_list item_list item_sub" style="display:none;">
-        {% for item_armor in site.data.item_list.armor %}
-          <li>
-            {% if page[1] == "jp" %}
-              {{ item_armor.jp }}
-            {% elsif page[1] == "tw" %}
-              {{ item_armor.tw }}
-            {% elsif page[1] == "ru" %}
-              {{ item_armor.ru }}
-            {% else %}
-              {{ item_armor.ko }}
-            {% endif %}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-      <ul class="item_acc_list item_list item_sub" style="display:none;">
-        {% for item_acc in site.data.item_list.acc %}
-          <li>
-            {% if page[1] == "jp" %}
-              {{ item_acc.jp }}
-            {% elsif page[1] == "tw" %}
-              {{ item_acc.tw }}
-            {% elsif page[1] == "ru" %}
-              {{ item_acc.ru }}
-            {% else %}
-              {{ item_acc.ko }}
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-      <ul class="item_class_list item_list item_sub" style="display:none;">
-        {% for item_class in site.data.item_list.class %}
-          <li>
-            {% if page[1] == "jp" %}
-              {{ item_class.jp }}
-            {% elsif page[1] == "tw" %}
-              {{ item_class.tw }}
-            {% elsif page[1] == "ru" %}
-              {{ item_class.ru }}
-            {% else %}
-              {{ item_class.ko }}
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="list-wrap">
+        <span class="list-select">Select</span>
+        <ul class="item_armor_list item_list item_sub" style="display:none;">
+          {% for item_armor in site.data.item_list.armor %}
+            <li>
+              {% if page[1] == "jp" %}
+                {{ item_armor.jp }}
+              {% elsif page[1] == "tw" %}
+                {{ item_armor.tw }}
+              {% elsif page[1] == "ru" %}
+                {{ item_armor.ru }}
+              {% else %}
+                {{ item_armor.ko }}
+              {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class="item_acc_list item_list item_sub" style="display:none;">
+          {% for item_acc in site.data.item_list.acc %}
+            <li>
+              {% if page[1] == "jp" %}
+                {{ item_acc.jp }}
+              {% elsif page[1] == "tw" %}
+                {{ item_acc.tw }}
+              {% elsif page[1] == "ru" %}
+                {{ item_acc.ru }}
+              {% else %}
+                {{ item_acc.ko }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class="item_class_list item_list item_sub" style="display:none;">
+          {% for item_class in site.data.item_list.class %}
+            <li>
+              {% if page[1] == "jp" %}
+                {{ item_class.jp }}
+              {% elsif page[1] == "tw" %}
+                {{ item_class.tw }}
+              {% elsif page[1] == "ru" %}
+                {{ item_class.ru }}
+              {% else %}
+                {{ item_class.ko }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
     <script>
    $('.list-select').click(function () {
