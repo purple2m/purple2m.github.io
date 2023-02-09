@@ -15,21 +15,25 @@
     </h1>
     <span class="item_type_view" style="display: none;"></span>
     <span class="item_type_view" style="display: none;"></span>
-    <ul class="item_type_list item_list">
-      {% for item_type in site.data.item_list.type %}
-        <li>
-          {% if page[1] == "jp" %}
-            {{ item_type.jp }}
-          {% elsif page[1] == "tw" %}
-            {{ item_type.tw }}
-          {% elsif page[1] == "ru" %}
-            {{ item_type.ru }}
-          {% else %}
-            {{ item_type.ko }}
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+    <div class="list-wrap">
+      <span class="list-select">Select</span>
+      <ul class="item_type_list item_list">
+        {% for item_type in site.data.item_list.type %}
+          <li>
+            {% if page[1] == "jp" %}
+              {{ item_type.jp }}
+            {% elsif page[1] == "tw" %}
+              {{ item_type.tw }}
+            {% elsif page[1] == "ru" %}
+              {{ item_type.ru }}
+            {% else %}
+              {{ item_type.ko }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
     <ul class="item_armor_list item_list item_sub" style="display:none;">
       {% for item_armor in site.data.item_list.armor %}
         <li>
