@@ -159,6 +159,13 @@ img {
 	background: $black;
   overflow-x: auto;
 }
+.wrapper-masthead #main{
+  width: 1080px;
+  margin:0 auto;
+  @media(max-width:1080px){ 
+    width: 100%;
+  }
+}
 .wrapper-masthead .container:first-child{
   width:100%;
   min-height: 143px;
@@ -651,7 +658,7 @@ footer {
       color:rgba(0,135,11,0.93);
     }
     .common{
-      color:rgba(0,0,0,0.68);
+      color:#bbbbbb;
     }
   }
 
