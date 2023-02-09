@@ -594,7 +594,7 @@ footer {
   text-decoration: none;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.02);
-  width: 10em;
+  min-width: 10em;
   justify-content: center;
   margin: 15px 0.5em 15px 0;
 }
