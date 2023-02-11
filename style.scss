@@ -292,7 +292,7 @@ nav {
 .search{
   width: 100%;
   padding: 5px;
-  display: flex
+  display: flex;
   flex-flow: column;
 }
 .search input[type="text"] {
@@ -661,6 +661,9 @@ footer {
       }
     }
     li:last-child{
+      border:0;
+    }
+    a{
       border:0;
     }
   }
