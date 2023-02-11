@@ -205,10 +205,10 @@ img {
     border-bottom: 3px solid rgba(255,255,255, 0);
     color: rgba(255,255,255, 0.5);
   }
-  a:hover{
-    color: rgba(255,255,255, 1);
-    border-bottom: 3px solid rgba(255,255,255, 0);
-  }
+}
+.menu a:hover{
+  color: rgba(255,255,255, 1);
+  border-bottom: 3px solid rgba(255,255,255, 0);
 }
 
 .site-avatar {
@@ -273,7 +273,11 @@ nav {
 #autoMaker{
   display:flex;
   flex-direction: column;
-  margin-top: 0.3em;
+  width: 1080px;
+  margin: 0 auto;
+  @media(max-width:1080px){ 
+    width: 100%;
+  }
 }
 #autoMaker div{
   cursor:pointer;
