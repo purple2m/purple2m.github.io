@@ -177,8 +177,6 @@ img {
   @include mobile {
     width:100%;
   }
-}.wrapper-masthead .container:first-child a{
-  color:white;
 }
 
 .masthead {
@@ -297,7 +295,7 @@ nav {
 }
 .search input[type="text"] {
     width: 1080px;
-    padding: 0.1em 0.1em;
+    margin:0 auto;
     box-sizing: border-box;
     font-size: 1em;
     background-color: rgb(28, 28, 31);
