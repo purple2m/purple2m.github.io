@@ -1,5 +1,19 @@
-{% for item_categories in site.data.categories %}
-<li>
-    {{ item_categories.id }}
-</li>
-{% endfor %}
+<nav>
+    <ul>
+        {% for item_categories in site.data.categories %}
+        <li>
+            <span>{{ item_categories.ko }}</span>
+            <span>{{ item_categories.jp }}</span>
+            <span>{{ item_categories.tw }}</span>
+            <span>{{ item_categories.ru }}</span>
+            <ul>
+                {% for child in item_categories.child %}
+                    <li>
+                       {{ child.ko }} 
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
