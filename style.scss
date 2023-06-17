@@ -939,10 +939,10 @@ footer {
   overflow: auto;
   padding: 10px;
 }
-.categories > ul{
+.categories ul{
   display:flex;
 }
-.categories > ul > li > ul{
+.categories-child{
   display:none;
 }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

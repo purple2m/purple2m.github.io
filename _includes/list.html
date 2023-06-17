@@ -11,7 +11,7 @@
             {% else %}
                 {{ item_categories.ko }}
             {% endif %}
-            <ul>
+            <ul class="categories-child">
                 {% for child in item_categories.child %}
                     <li>
                        {{ child.ko }} 
