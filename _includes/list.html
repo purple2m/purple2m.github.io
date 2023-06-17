@@ -16,7 +16,7 @@
     </ul>
     
     {% for item_categories in site.data.categories %}
-    <ul class="categories-child">
+    <ul class="categories-child" style="display: none;">
         {% for child in item_categories.child %}
             <li>
                 {{ child.ko }} 
