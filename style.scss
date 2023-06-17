@@ -940,6 +940,9 @@ footer {
   padding: 10px;
 }
 .categories ul{
+  list-style: none;
+}
+.categories-top{
   display:flex;
 }
 .categories-child{

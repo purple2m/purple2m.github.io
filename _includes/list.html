@@ -1,5 +1,5 @@
 <nav class="categories">
-    <ul>
+    <ul class="categories-top">
         {% for item_categories in site.data.categories %}
         <li>
             {% if page[1] == "jp" %}
@@ -11,14 +11,16 @@
             {% else %}
                 {{ item_categories.ko }}
             {% endif %}
-            <ul class="categories-child">
-                {% for child in item_categories.child %}
-                    <li>
-                       {{ child.ko }} 
-                    </li>
-                {% endfor %}
-            </ul>
         </li>
+        {% endfor %}
+    </ul>
+    <ul class="categories-child">
+        {% for item_categories in site.data.categories %}
+            {% for child in item_categories.child %}
+                <li>
+                    {{ child.ko }} 
+                </li>
+            {% endfor %}
         {% endfor %}
     </ul>
 </nav>
