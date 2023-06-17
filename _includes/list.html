@@ -14,13 +14,14 @@
         </li>
         {% endfor %}
     </ul>
+    
+    {% for item_categories in site.data.categories %}
     <ul class="categories-child">
-        {% for item_categories in site.data.categories %}
-            {% for child in item_categories.child %}
-                <li>
-                    {{ child.ko }} 
-                </li>
-            {% endfor %}
+        {% for child in item_categories.child %}
+            <li>
+                {{ child.ko }} 
+            </li>
         {% endfor %}
     </ul>
+    {% endfor %}
 </nav>
