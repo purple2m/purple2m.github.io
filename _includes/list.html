@@ -1,8 +1,16 @@
-<nav>
+<nav class="categories">
     <ul>
         {% for item_categories in site.data.categories %}
         <li>
-            <span>{{ item_categories.page[1] }}</span>
+            {% if page[1] == "jp" %}
+                {{ item_categories.jp }}
+            {% elsif page[1] == "tw" %}
+                {{ item_categories.tw }}
+            {% elsif page[1] == "ru" %}
+                {{ item_categories.ru }}
+            {% else %}
+                {{ item_categories.ko }}
+            {% endif %}
             <ul>
                 {% for child in item_categories.child %}
                     <li>
