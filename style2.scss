@@ -1,0 +1,960 @@
+---
+---
+
+//
+// IMPORTS
+//
+
+@import "reset";
+@import "variables";
+// Syntax highlighting @import is at the bottom of this file
+
+/**************/
+/* BASE RULES */
+/**************/
+
+html {
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  background: #171717;
+  font: 18px/1.4 $helvetica;
+  color: $white;
+}
+
+.container {
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $helveticaNeue;
+  color: $white;
+  font-weight: bold;
+
+  line-height: 1.7;
+  margin: 1em 0 15px;
+  padding: 0;
+
+  @include mobile {
+    line-height: 1.4;
+  }
+}
+
+h1 {
+  font-size: 30px;
+  a {
+    color: inherit;
+  }
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+  color: $white;
+}
+
+p {
+  margin: 15px 0;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+	cursor: pointer;
+  &:hover, &:active {
+    color: $white;
+  }
+}
+
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0;
+}
+
+ul ul, ol ul {
+  list-style-type: circle;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
+}
+
+.date {
+  font-style: italic;
+  color: $gray;
+}
+
+// Specify the color of the selection
+::-moz-selection {
+  color: $black;
+  background: $lightGray;
+}
+::selection {
+  color: $black;
+  background: $lightGray;
+}
+
+// Nicolas Gallagher's micro clearfix hack
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
+
+//
+// .masthead
+//
+
+.wrapper-masthead {
+  display:flex;
+  flex-flow: column;
+}
+.wrapper-masthead .container:nth-child(2){
+  flex:1;
+	background: $black;
+  overflow-x: auto;
+}
+.wrapper-masthead #main{
+  width: 1080px;
+  margin:0 auto;
+  @media(max-width:1080px){ 
+    width: 100%;
+  }
+}
+.wrapper-masthead .container:first-child{
+  width:100%;
+  min-height: 143px;
+  padding:0;
+  background: #282844;
+  color:white;
+  overflow: hidden;
+
+  @include mobile {
+    width:100%;
+  }
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.lang{
+  margin-left: auto;
+  margin-right: 0.5em;
+}
+.menu{
+  margin: 0 auto;
+  ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  li{
+    display: flex;
+    margin: 0 auto;
+  }
+  a{
+    padding: 0.5em;
+    border-bottom: 3px solid rgba(255,255,255, 0);
+    color: rgba(255,255,255, 0.5);
+  }
+}
+.menu a:hover{
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+.site-avatar {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 0.5em;
+  img {
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+  }
+  @include mobile {
+    margin-top: 0.5em;
+  }
+}
+
+.site-info {
+  display: block;
+  padding: 0.5em;
+  h1 {
+    font-size:1em;
+  }
+}
+
+.site-name {
+  margin: 0;
+  color: white;
+  cursor: pointer;
+  font-family: $helveticaNeue;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.site-description {
+  margin: -5px 0 0 0;
+  color: white;
+  font-size: 16px;
+}
+
+nav {
+  display:flex;
+  flex-direction: column;
+  margin-top: 23px; // @TODO: Vertically middle align
+  font-family: $helveticaNeue;
+  font-size: 18px;
+
+  a {
+    margin-left: 20px;
+    color: $white;
+    text-align: right;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    @include mobile {
+      margin: 0 10px;
+      color: $blue;
+    }
+  }
+}
+#autoMaker{
+  display:flex;
+  flex-direction: column;
+  width: 1080px;
+  margin: 0 auto;
+  @media(max-width:1080px){ 
+    width: 100%;
+  }
+}
+#autoMaker div{
+  cursor:pointer;
+}
+#autoMaker a{
+  display: block;
+  color: white;
+  font-weight: bold;
+  padding: 0.3em;
+  font-size: 0.9em;
+  background: #282844;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.search{
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+}
+.search input[type="text"] {
+    width: 1080px;
+    margin:0 auto;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: rgb(28, 28, 31);
+    border: 0;
+    padding: 0.5em;
+    color: white;
+    border-radius: 0.5em;
+    @media(max-width:1080px){ 
+      width: 100%;
+    }
+}
+
+.search_button{
+  width:100%;
+  border: 0;
+  background: white;
+  border-radius: 0;
+  padding: 0.5em;
+}
+//
+// .main
+//
+.posts > .post {
+  padding-bottom: 2em;
+  border-bottom: 1px solid $lightGray;
+}
+.post > h1:first-child{
+  margin:0;
+}
+.post > .entry {
+  margin-top: 1em;
+  border-top: 1px solid #8c919a;
+}
+.posts > .post:last-child {
+  padding-bottom: 1em;
+  border-bottom: none;
+}
+
+.post {
+  blockquote {
+    border-left: 2px solid $gray;
+    padding: 0.1em 1em;
+    color: $gray;
+    font-size: 0.9em;
+  }
+
+  .comments {
+    margin-top: 10px;
+  }
+
+  .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+}
+
+.notice{
+  background: #282844;
+}
+.notice h1{
+  margin: 0.5em .5em;
+  color:white;
+  font-size: 1.2em;
+}
+
+.wrapper-footer {
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: $lightGray;
+}
+#recipe{
+  display:flex;
+  flex-wrap: wrap;
+}
+#recipe div{
+  flex: 1;
+  font-size: 0.8em;
+  min-width: 230px;
+}
+#recipe h3{
+  background: #282844;
+  color:white;
+  font-size: 1.2em;
+}
+#recipe li{
+  list-style: none;
+}
+
+.recipe_slot{
+  display: flex;
+  padding: 0;
+  li{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border: 1px solid $white8;
+    border-radius: 50%;
+    background: $white8;
+    .up{
+      position: absolute;
+      font-size: 0.8em;
+      margin: 0;
+      padding: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .thumb2{
+    width: 32px;
+    height: 32px;
+    margin: 0;
+  }
+}
+
+.alc_wrap > .info{
+  .options{
+    list-style: none;
+    padding: 0.5em 1em 0.5em;
+    margin: 0;
+    @include mobile {
+      padding: 0.5em 0em 0.5em;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  .normal_alc li{
+    padding: 0.5em 0;
+    border-bottom: 1px solid $white8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .normal_alc li>span:first-child{
+    padding: 0.3em;
+    font-weight: bold;
+    border-radius: 1em;
+    background: rgba(255, 255, 255, 0.83);
+    border: 1px solid;
+    color: black;
+    text-align: center;
+  }
+}
+
+.normal_alc > li > ul{
+  padding: 0;
+  display: flex;
+}
+.normal_alc > li > ul > li:nth-child(1){
+  span:nth-child(2){
+    display:none;
+  }
+}
+.normal_alc > li > ul > li:nth-child(2){
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe_list{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  ul{
+    display:flex;
+    li{
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.2em;
+      margin: 0.1em;
+      background: #282844;
+    }
+  }
+}
+.recipe_list li{
+  padding: 0.1em;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 0;
+}
+
+.recipe_list span {
+  display: inline-block;
+  padding: 0.2em;
+  margin: 0 0.1em 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.2em;
+}
+
+#searching_recipe{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5em 0 0.5em;
+  max-width: 960px;
+}
+#searching_recipe a{
+  text-decoration: none;
+  padding: 0.2em;
+  margin: 0.2em;
+  background: #282844;
+  color:white;
+  white-space:nowrap;
+  display: inline-block;
+}
+#searching_recipe label{
+  padding: 0.3em 0.5em;
+  border-radius: 14px;
+  box-sizing: border-box;
+  margin: 0.1em 0.2em;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8em;
+}
+#searching_recipe label:hover{
+  background: $white8;
+}
+#searching_recipe input[type="radio"]{
+  display:none;
+}
+#searching_recipe input[type="radio"]:checked + label {
+  background: #282844;
+  color:white;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+.recent-wrapper{
+  padding: 1em 1em 0;
+}
+.recent-wrapper > header > h1{
+  margin:0;
+  font-size: 1.4em;
+}
+.recent-wrapper > .recent {
+  border:1px solid $white8;
+  background: $white2;
+}
+.recent-wrapper > .recent article{
+  border-bottom: 1px solid $white8;
+  padding: 0.5em;
+}
+.recent h2{
+  margin:0;
+  font-size: 1em;
+  font-weight: normal;
+}
+.recent-wrapper > .items{
+  display:flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.recent-wrapper > .items img{
+  height:128px;
+  @include mobile {
+    height: 96px;
+  }
+}
+.recent-wrapper > .items > .item{
+  @include mobile {
+    flex:50%;
+  }
+}
+footer {
+  padding: 0.3em 0;
+  text-align: center;
+  border-top: 1px solid $white8;
+  margin-top:10px;
+}
+.header_wrap{
+  display: flex;
+  flex-flow: row;
+
+  align-items: baseline;
+  @include mobile {
+    flex-wrap: wrap;
+  }
+}
+.list-wrap ul{
+  margin:0;
+}
+.list-wrap .list-select{
+  display: flex;
+  padding: 0.5em;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #757981;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  min-width: 10em;
+  justify-content: center;
+  margin: 15px 0.5em 0 0;
+}
+
+.recipe_object span {
+  display: inline-block;
+  padding: 0.2em;
+  margin: 0 0.1em 0;
+  border: 1px solid;
+}
+.recipe_object li {
+  padding:0.1em;
+}
+
+.recipe_object .jp{
+  display: none;
+}
+.recipe_object .ko{
+  display: none;
+}
+.thumb{
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.thumb2{
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.alc_wrap{
+  display:flex;
+  flex-direction: column;
+  color:white;
+  min-height: 90%;
+  .menu{
+    font-size: 0.9em;
+    border-radius: 0.5em;
+    background: #282844;
+    margin: 0.5em 0;
+    ul{
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+    li{
+      color: $white;
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      padding: 0.5em;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      flex: 1;
+      font-size: 0.9em;
+      justify-content: center;
+      &:hover, &:active {
+        color: $gray;
+      }
+    }
+    li:last-child{
+      border:0;
+    }
+    a{
+      border:0;
+    }
+  }
+  .top{
+    display:flex;
+    background-color:#282844;
+    border-radius: 0.5em;
+    h1{
+      font-size:1.2em;
+    }
+    .thumb2{
+      width:64px;
+      height:64px;
+      margin:0.5em;
+    }
+    .legendary{
+      color: rgba(126,61,207,0.93);
+    }
+    .epic{
+      color: rgba(198,0,0,0.93);
+    }
+    .rare{
+      color:#006fc6;
+    }
+    .uncommon{
+      color:rgba(0,135,11,0.93);
+    }
+    .common{
+      color:#bbbbbb;
+    }
+  }
+
+  .price{
+    display: flex;
+    padding: 0.5em;
+    flex-direction: column;
+    background-color: #282844;
+    margin: 0.5em 0;
+    border-radius: 0.5em;
+
+    .price_info{
+	    background-color:#282844;
+	    padding:0 0.5em 0 0.5em;
+    }
+    .price_select{
+  		display:flex;
+  		align-items: center;
+    }
+  }
+
+  .info{
+    h2{
+      color:rgb(153,134,119);
+      margin:0.2em;
+    }
+  }
+}
+
+
+.list-wrapper{
+  padding: 0 1em 0;
+  header > h1{
+    margin:0;
+  }
+  .menu{
+    list-style: none;
+    display: flex;
+    padding: 0.5em 0;
+    margin: 0 auto;
+    li{
+      margin: 0.2em;
+    }
+    a{
+      padding: 0.3em;
+      color: $white;
+      text-decoration: none;
+      cursor: pointer;
+      background: $white2;
+    }
+    li:first-child{
+      margin-left: 0;
+    }
+  }
+  .list {
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding:0;
+      margin:0;
+    }
+    li{
+      padding: 0.3em;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      width: fit-content;
+      min-width: 320px;
+      margin: 0.2em;
+    }
+    a{
+      display: block;
+      text-align: center;
+    }
+    .thumb{
+      width:64px;
+      margin: 0 auto;
+      height:64px;
+      display: block;
+    }
+  }
+}
+.list-wrapper .menu:nth-child(2){
+  width:100%;
+  background: #CF631F;
+  padding: 0.2em 10px 0.2em 10px;
+  font-size: 0.8em;
+}
+
+.item_list{
+  list-style-type: none;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  background: #171717;
+  text-align: center;
+  padding: 0.3em;
+  width: fit-content;
+  li{
+    padding: 0.3em;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: $gray;
+    text-decoration: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    margin: 0.1em;
+    &:hover, &:active {
+      color: $white;
+    }
+  }
+}
+
+
+.class_change{
+  ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .skill{
+    height:100%;
+  }
+  .type{
+    display: flex;
+    align-items: center;
+    border: 1px solid $white8;
+    padding: 0.3em;
+  }
+  .list{
+    align-items: center;
+    border: 1px solid $white8;
+    padding: 0.3em;
+    flex:1;
+  }
+}
+.class_list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  li{
+    background: black;
+    width: fit-content;
+    padding: 0.2em;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+  }
+  img{
+    width: 48px;
+    height: 48px;
+  }
+}
+.class_change .list{
+  h4{
+    margin: 0.2em;
+    text-align: center;
+    border: 1px solid $white8;
+  }
+  ul {
+    flex-wrap: nowrap;
+    width: max-content;
+    align-items: center;
+  }
+  li{
+    padding: 0.2em;
+  }
+  li:nth-child(2){
+    font-size:0.8em;
+    background: #282844;
+    color: white;
+  }
+}
+.class_change:nth-child(1) .list{
+  li{
+    font-size: 0.8em;
+  }
+  li:nth-child(2){
+    font-size:0.5em;
+  }
+  li:nth-child(4){
+    font-size:0.5em;
+  }
+}
+.view_wrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+  padding:10px;
+  z-index: 1;
+  .view{
+    background: #111216;
+    max-width: 995px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    padding: 10px;
+    .recipe_slot{
+      list-style: none;
+      li{
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.view_wrap > .view > .view_header{
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid $white8;
+  li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  li:first-child{
+    display: none;
+  }
+  li:last-child{
+    margin-left: auto;
+    height: 2em;
+    width: 2em;
+    cursor:pointer
+  }
+}
+.recipe_item_list{
+  height: calc(100% - 100px);
+  overflow: auto;
+  padding: 10px;
+}
+.categories ul{
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 각 아이템의 너비 설정 */
+  justify-items: center; /* 가로 정렬 방식 설정 */
+  gap: 10px; /* 각 아이템 간의 간격 조절 */
+  margin: 0;
+  padding: 0;
+}
+.categories-top li{
+  width: 100%;
+}
+.categories-child li{
+  width: 100%;
+}
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "highlights";
+@import "svg-icons";
