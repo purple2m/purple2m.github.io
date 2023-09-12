@@ -266,7 +266,7 @@ function get_recipe2(data, lng, type){
 		  for (var j=0; j < 6;++j){
 			if(j == 0){
 			}else if(j == recipe[1]){
-				slot += "<li>" + $(".thumb-img").eq(0).html() + "<span class='up'>+"+step[0]+"</span></li>";
+				slot += "<li>" + $(".thumb").eq(0).html() + "<span class='up'>+"+step[0]+"</span></li>";
 			}else{
 				slot += "<li></li>";
 			}
