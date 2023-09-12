@@ -164,7 +164,7 @@ img {
 }
 .wrapper-masthead > .header-wrapper > .header-left{
   display: flex;
-  width: 160px;
+  width: 120px;
   padding-left: 10px;
   align-items: center;
 }
@@ -196,7 +196,7 @@ img {
     align-items: center;
   }
   li{
-    padding: 0 20px;
+    padding: 0 10px;
   }
 }
 
@@ -221,14 +221,16 @@ img {
 #autoMaker div{
   cursor:pointer;
   padding: 5px;
+  flex: auto;
 }
 #autoMaker a{
   display: block;
   color: white;
   padding: 0.4em;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1c1c1f;
+  text-align: center;
   &:hover, &:active {
-    background-color: #1c1c1f;
     font-weight: bold;
   }
 }
