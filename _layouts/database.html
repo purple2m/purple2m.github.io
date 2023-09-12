@@ -55,13 +55,11 @@ data-ad-slot="2335136293"></ins>
 <section class="content">{{ content }}</section>
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20230204"></script>
 <script>
-	
-	let this_item_id = getParameterByName('item');
-	let this_type = getParameterByName('type');
+	var pathnames = $(location).attr('pathname').split('/');
+
+	let this_item_id = pathnames[3];
 	
 	let this_page = $(location).attr('host') + '' + $(location).attr('pathname');
-	var lng = $(location).attr('pathname').split('/');
-	lng = lng[1];
 
 	if(lng == 'jp'){
 		$(".menu").eq(2).children().children().eq(0).text('情報');
