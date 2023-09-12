@@ -287,9 +287,23 @@ function get_recipe2(data, lng, type){
 }
 function recipe_info(alc_type){
 	$.getJSON(baseurl+"/alchemist/"+alc_type+".json?version=20230202", function(data) {
-		var lng = $(location).attr('pathname');
-        lng = lng.split('/');
-        lng = lng[1];
+		function getLang() {
+			var userLang = navigator.language || navigator.userLanguage;
+			return userLang;
+		  }
+	  
+		lang = getLang();
+		if (lang.includes('ko')){
+			var lng = "ko";
+		} else if (lang.includes('jp')){
+			var lng = "jp";
+		} else if (lang.includes('tw')){
+			var lng = "tw";
+		} else if (lang.includes('ru')){
+			var lng = "ru";
+		} else {
+			var lng = "ko";
+		}
 
 		let recipe_list = $(".normal_alc").eq(0).children().length;
 		var icon_1 = '<img class="thumb3" src="https://assets.playnccdn.com/gamedata/powerbook/l2m/icon/Icon_128/Item/Icon_Item_Usable_Rune_STR_02.png">';
