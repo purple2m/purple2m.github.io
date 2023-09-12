@@ -33,11 +33,35 @@
           </div>
         </div>
         <div class="header-nav-wrapper">
-          <ul>
+          <ul class="ko">
             <li>뉴스</li>
             <li>데이터베이스</li>
             <li>도구</li>
             <li>가이드</li>
+          </ul>
+          <ul class="en">
+            <li>News</li>
+            <li>Database</li>
+            <li>Tools</li>
+            <li>Guides</li>
+          </ul>
+          <ul class="jp">
+            <li>ニュース</li>
+            <li>データベース</li>
+            <li>道具</li>
+            <li>ガイド</li>
+          </ul>
+          <ul class="tw">
+            <li>新聞</li>
+            <li> 數據庫</li>
+            <li>工具</li>
+            <li>導遊</li>
+          </ul>
+          <ul class="ru">
+            <li>Новости</li>
+            <li>База данных</li>
+            <li>Сервис</li>
+            <li>Путеводитель</li>
           </ul>
         </div>
       </div>
@@ -61,14 +85,20 @@
     $(document).ready(function() {
       lang = getLang();
       if (lang.includes('ko')){
-        $('.menu').eq(1).children().children().children().children('li.en').hide();
-        $('.menu').eq(1).children().children().children().children('li.ko').show();
+        $('.header-nav-wrapper').eq(0).children().hide();
+        $('.header-nav-wrapper').eq(0).children('ul.ko').show();
       } else if (lang.includes('jp')){
-        $('.menu').eq(1).children().children().children().children('li.en').hide();
-        $('.menu').eq(1).children().children().children().children('li.jp').show();
+        $('.header-nav-wrapper').eq(0).children().hide();
+        $('.header-nav-wrapper').eq(0).children('ul.jp').show();
       } else if (lang.includes('tw')){
-        $('.menu').eq(1).children().children().children().children('li.en').hide();
-        $('.menu').eq(1).children().children().children().children('li.tw').show();
+        $('.header-nav-wrapper').eq(0).children().hide();
+        $('.header-nav-wrapper').eq(0).children('ul.tw').show();
+      } else if (lang.includes('ru')){
+        $('.header-nav-wrapper').eq(0).children().hide();
+        $('.header-nav-wrapper').eq(0).children('ul.ru').show();
+      } else {
+        $('.header-nav-wrapper').eq(0).children().hide();
+        $('.header-nav-wrapper').eq(0).children('ul.en').show();
       }
     });
     </script>
