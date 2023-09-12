@@ -46,6 +46,24 @@ layout: default2
 </section>
 <script src="{{ base.url | prepend: site.url }}/assets/ncapi.js?version=20230204"></script>
 <script>
+    function getLang() {
+      var userLang = navigator.language || navigator.userLanguage;
+      return userLang;
+    }
+
+		lang = getLang();
+		if (lang.includes('ko')){
+			var lng = "ko";
+		} else if (lang.includes('jp')){
+			var lng = "jp";
+		} else if (lang.includes('tw')){
+			var lng = "tw";
+		} else if (lang.includes('ru')){
+			var lng = "ru";
+		} else {
+			var lng = "ko";
+		}
+
 	var pathnames = $(location).attr('pathname').split('/');
 
 	let this_item_id = pathnames[3];
