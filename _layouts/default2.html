@@ -83,7 +83,7 @@
     }
 
     $(document).ready(function() {
-      lang = getLang();
+      var lang = getLang();
       if (lang.includes('ko')){
         $('.header-nav-wrapper').eq(0).children().hide();
         $('.header-nav-wrapper').eq(0).children('ul.ko').show();
