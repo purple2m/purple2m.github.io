@@ -254,6 +254,35 @@ img {
 //
 // .main
 //
+.summary{
+  display: flex;
+  align-items: center;
+  align-items: center;
+}
+.summary < .spec{
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+.content{
+  display: flex;
+  flex-direction: column;
+
+  ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  li{
+    display: flex;
+  }
+  div{
+    padding-right: 10px;
+  }
+}
+
 .posts > .post {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
@@ -341,8 +370,8 @@ img {
     }
   }
   .thumb2{
-    width: 32px;
-    height: 32px;
+    width: 128px;
+    height: 128px;
     margin: 0;
   }
 }
